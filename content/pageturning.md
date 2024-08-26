@@ -12,7 +12,7 @@ Having moved on from [World Historical Gazetteer](https://whgazetteer.org), I am
 
 ## Subheading
 
-The configutation of this site - supposedly dead simple, is taking hours.
+The configutation of this site - supposedly dead simple, is taking hours. Approaching lunchtime.
 
 ### Lists
 
