@@ -12,7 +12,7 @@ Having moved on from [World Historical Gazetteer](https://whgazetteer.org), I am
 
 ## Subheading
 
-Add more sections as needed. Markdown supports lists, code blocks, images, and more.
+The configutation of this site - supposedly dead simple, is taking hours.
 
 ### Lists
 
