@@ -13,6 +13,7 @@
                 <h1><a href="/">kgeographer</a></h1>
                 <nav><ul>
                     <li><a href="/category/personal.html">personal</a></li>
+                    <li><a href="/category/research.html">research</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
@@ -29,37 +30,31 @@
         </address>
 <p>In <a href="/category/personal.html">personal</a>.</p>
 <p>tags: <a href="/tag/personal.html">personal</a> <a href="/tag/research.html">research</a> </p>
-</footer><!-- /.post-info --><h1>Turning the page</h1>
-<p>Having moved on from <a href="https://whgazetteer.org">World Historical Gazetteer</a>, I am now experimenting with graphs and various AI techniques, aimed at new approaches to "computing place." Still highly mobile, I am writing this from Vienna, Austria where I'm located through October 2024.</p>
-<h2>Subheading</h2>
-<p>Add more sections as needed. Markdown supports lists, code blocks, images, and more.</p>
-<h3>Lists</h3>
-<ul>
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-</ul>
-<h3>Code Block</h3>
-<p>```python
-def hello_world():
-    print("Hello, world!")</p>                </article>
+</footer><!-- /.post-info --><p>Having moved on from <a href="https://whgazetteer.org">World Historical Gazetteer</a>, I am now experimenting with graphs, discrete global grids (S2 specifically), and various AI techniques, aimed at new approaches to "computing place." Still in digital nomad mode, I am writing this from Vienna, Austria where I'll be through October 2024.</p>
+<h2>Graphs</h2>
+<p>I've developed a script to serialize WHG data as turtle RDF, for import into a GraphDB database. Works fine for an initial export of 20k sample records; now to run it for all 2.2 million WHG places. After that I'd like to add all of Getty Thesaurus of Geographic Names (TGN), Wikidata places, and GeoNames. Records for the same place in different datasets will be linked, passively so to speak, by virtue of shared URIs. WHG currently does quite a bit of linking in this way, but a graph database should allow for more sophisticated recursive queries and analytics. If this proves useful, I'll propose it as a new feature for WHG.</p>
+<h2>Discrete Global Grids</h2>
+<p>I've been experimenting with Google's S2 geometry library, which provides a way to index the surface of a sphere. I've begun computing a set of one or more S2 grid IDs for each WHG place, which may prove useful for visualizing the rough extents of historical regions. Early stages, but I'm curious about the possibilities.</p>
+<h2>AI</h2>
+<p>I've begun investigating Retrieval Augmented Generation (RAG) as a method for augmenting prompts made to Large Language models (LLMs), with high quality contextual information. I'm interested in the potential for using this to enhance descriptions of historical places--possibly with with WHG data, but also with other sources.</p>
+<h3>Cultural Heritage, NLP and AI</h3>
+<p>One dataset I've nearly finished developing comprises textual descriptions of UNESCO's 730 Intangible Cultural Heritage (ICH) elements, drawn from short synopses and much longer published nomination documents. Each element is associated with some places or named geographic areas at varying scales. This is a baby step towards a long-held goal of mine: to represent and geographically index cultural practices and traditions, for use in historical research and education. </p>
+<p>There have been advances in topic modeling since I last did several projects using Latent Dirichlet Allocation (LDA). I'm looking forward to trying out some of the newer techniques, and to integrating them with the graph database and S2 grid experiments.</p>                </article>
             </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
                         <ul>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                            <li><a href="https://www.python.org/">Python.org</a></li>
-                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
+                            <li><a href="https://github.com/kgeographer">Github</a></li>
+                            <li><a href="https://whgazetteer">World Historical Gazetteer</a></li>
                         </ul>
                 </div><!-- /.blogroll -->
                 <div class="social">
                         <h2>social</h2>
                         <ul>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
+                            <li><a href="https://x.com/kgeographer">@kgeographer on The site formerly known as Twitter</a></li>
+                            <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
                         </ul>
                 </div><!-- /.social -->
         </section><!-- /#extras -->

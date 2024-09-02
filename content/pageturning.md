@@ -6,7 +6,7 @@ Slug: page-turning
 Authors: Karl Grossner
 Summary: Moving on...next phase.
 
-Having moved on from [World Historical Gazetteer](https://whgazetteer.org), I am now experimenting with graphs, discrete global grids (S2 specifically), and various AI techniques, aimed at new approaches to "computing place." Still in "digital nomad" mode, I am writing this from Vienna, Austria where I'll be through October 2024.
+Having moved on from [World Historical Gazetteer](https://whgazetteer.org), I am now experimenting with graphs, discrete global grids (S2 specifically), and various AI techniques, aimed at new approaches to "computing place." Still in digital nomad mode, I am writing this from Vienna, Austria where I'll be through October 2024.
 
 ## Graphs
 I've developed a script to serialize WHG data as turtle RDF, for import into a GraphDB database. Works fine for an initial export of 20k sample records; now to run it for all 2.2 million WHG places. After that I'd like to add all of Getty Thesaurus of Geographic Names (TGN), Wikidata places, and GeoNames. Records for the same place in different datasets will be linked, passively so to speak, by virtue of shared URIs. WHG currently does quite a bit of linking in this way, but a graph database should allow for more sophisticated recursive queries and analytics. If this proves useful, I'll propose it as a new feature for WHG.
