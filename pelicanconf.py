@@ -1,5 +1,6 @@
 AUTHOR = 'Karl Grossner, PhD'
 SITENAME = 'kgeographer'
+SITESUBTITLE = 'Karl Grossner, PhD'
 SITEURL = ""
 
 PATH = "content"

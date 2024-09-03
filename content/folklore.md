@@ -1,4 +1,4 @@
-Title: Another Perspective on Place: Exploring the Geography of Folkloric Motifs
+Title: Another Dimension of Place: Exploring the Geography of Folkloric Motifs
 Date: 2024-09-02 13:10
 Category: research
 Tags: folklore, place, culture
@@ -6,7 +6,7 @@ Slug: folklore-vectors
 Authors: Karl Grossner
 Summary: A prospective project: Geography of Folkloric Motifs
 
-In this next "semi-retirement" phase of my life as a professional geographer and Digital Humanities Research Developer&trade;, I am planning an ambitious new project that continues my passion for "computing place." [1] The project will leverage my expertise in geospatial, geo-semantic and textual methods to further develop and explore formalizations of another dimension of place: the folkloric motifs that emerge from and are associated with different regions and societies.
+In this new "semi-retirement" phase of my life as a professional geographer and Digital Humanities Research Developer&trade;, I have begin planning an ambitious new project that continues my passion for "computing place." [1] The project will leverage my expertise in geospatial, geo-semantic and textual methods to further develop and explore formalizations of another dimension of place: the folkloric motifs that emerge from and are associated with different regions and societies.
 
 The core of this project involves creating a vector database of embeddings [2] for the approximately 2,500 folklore motifs outlined in the Aarne-Thompson-Uther (ATU) Folkloric Index [3]. With these embeddings, I aim to generate a 2,500-dimensional motif "signature" for any given piece of folkloric text. By combining these motif signatures with spatial and temporal metadata, I hope to characterize and compare the conceptual content of folklore as it relates to specific places. The system would be made freely available and its development open to collaboration.
 
@@ -18,6 +18,8 @@ While my academic background is in Geographic Information Science, my profession
 
 I’m reaching out to scholars and practitioners in folklore studies, literary analysis, and related fields to gather preliminary feedback on this initiative. I am certainly not expert in these areas, but rather a methods-focused researcher keen on applying new tools to the study of place. I believe this project has the potential to offer valuable insights into how the stories we tell are tied to the places we inhabit, and I would greatly appreciate your thoughts and advice as I move forward.
 
+---------
+
 [1] my favorite Rumi quote is "Start a huge, foolish project. Like Noah."
 
 [2] Embeddings are a way to represent complex data, like the words and sentences representing concepts, as multi-dimensional vectors (essentially, lists of numbers) in such a way that similar items are closer together in that vector "space." These relative positions capture semantic relationships between concepts in a format that computers can process. A vector database stores these embeddings, allowing for efficient searching and comparison based on their semantics.
@@ -26,4 +28,4 @@ I’m reaching out to scholars and practitioners in folklore studies, literary a
 
 [4] Timothy Tangherlini: [Bio](https://vcresearch.berkeley.edu/faculty/timothy-tangherlini); [academia.edu](https://berkeley.academia.edu/TimothyTangherlini) [Folklore Macroscope Tools](https://scando.ist.berkeley.edu/macroscope.html)
 
-[5] Prompts could take two forms, requesting 1) a structural description of the motif outlining the essential components and patterns that define it, such as character roles, key events, conflicts, resolutions, and themes, or 2) ann example narrative representative of it. The first is likely to be the most effective.
+[5] Prompts could take two forms, requesting either 1) a structural description of the motif outlining the essential components and patterns that define it, such as character roles, key events, conflicts, resolutions, and themes, or 2) ann example narrative representative of it. The first is likely to be the most effective.
