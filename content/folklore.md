@@ -6,7 +6,7 @@ Slug: folklore-vectors
 Authors: Karl Grossner
 Summary: A prospective project: Geography of Folkloric Motifs
 
-In this new "semi-retirement" phase of my life as a professional geographer and Digital Humanities Research Developer&trade;, I have begin planning an ambitious new project that continues my passion for "computing place." [1] The project will leverage my expertise in geospatial, geo-semantic and textual methods to further develop and explore formalizations of another dimension of place: the folkloric motifs that emerge from and are associated with different regions and societies.
+In this new "semi-retirement" phase of my life as a professional geographer and Digital Humanities Research Developer&trade;, I have begun planning an ambitious new project that continues my passion for "computing place." [1] The project will leverage my expertise in geospatial, geo-semantic and textual methods to further develop and explore formalizations of another dimension of place: the folkloric motifs that emerge from and are associated with different regions and societies.
 
 The core of this project involves creating a vector database of embeddings [2] for the approximately 2,500 folklore motifs outlined in the Aarne-Thompson-Uther (ATU) Folkloric Index [3]. With these embeddings, I aim to generate a 2,500-dimensional motif "signature" for any given piece of folkloric text. By combining these motif signatures with spatial and temporal metadata, I hope to characterize and compare the conceptual content of folklore as it relates to specific places. The system would be made freely available and its development open to collaboration.
 

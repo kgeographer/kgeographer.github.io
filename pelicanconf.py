@@ -3,6 +3,8 @@ SITENAME = 'kgeographer'
 SITESUBTITLE = 'Karl Grossner, PhD'
 SITEURL = ""
 
+THEME = "themes/notmyidea"
+
 PATH = "content"
 
 TIMEZONE = 'Europe/Rome'
