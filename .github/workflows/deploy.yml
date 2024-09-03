@@ -24,7 +24,11 @@ jobs:
         pip install pelican markdown
 
     - name: Build the site
-      run: pelican content
+      run: pelican content -s pelicanconf.py
+
+    - name: Copy CNAME to output
+      run: |
+        cp CNAME output/CNAME
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
