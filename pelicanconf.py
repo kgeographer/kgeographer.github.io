@@ -7,6 +7,22 @@ THEME = "themes/notmyidea"
 
 PATH = "content"
 
+PAGE_SAVE_AS = '{slug}/index.html'
+PAGE_URL = '{slug}/'
+
+DISPLAY_CATEGORIES_ON_MENU = False
+MENUITEMS = [
+    ("Research", "/category/research/"),
+    ("Personal", "/category/personal/"),
+    ("CV", "/cv/"),
+]
+
+# MENUITEMS = [
+#     ("Research", "/folklore-vectors/"),
+#     ("CV", "/cv/"),
+#     ("Personal", "/page-turning/"),
+# ]
+
 TIMEZONE = 'Europe/Rome'
 
 DEFAULT_LANG = 'en'
@@ -26,7 +42,7 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-    ("@kgeographer on The site formerly known as Twitter", "https://x.com/kgeographer"),
+    ("@kgeographer on Bluesky", "https://bsky.app/profile/kgeographer.bsky.social"),
     ("@kgeographer on Mastodon", "https://mas.to/@kgeographer"),
 )
 

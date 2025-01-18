@@ -28,8 +28,9 @@
             </h1>
             <nav>
                 <ul>
-                            <li><a href="/category/personal.html">personal</a></li>
-                            <li><a href="/category/research.html">research</a></li>
+                        <li><a href="/category/research/">Research</a></li>
+                        <li><a href="/category/personal/">Personal</a></li>
+                        <li><a href="/cv/">CV</a></li>
                 </ul>
             </nav>
         </header><!-- /#banner -->
@@ -39,14 +40,69 @@
                     <span class="float-right"><img src="./Klee-ManHead.png" height=48/></span>
                 </h1>
                 <nav><ul>
-                    <li><a href="/category/personal.html">personal</a></li>
-                    <li><a href="/category/research.html">research</a></li>
+                    <li><a href="/category/research/">Research</a></li>
+                    <li><a href="/category/personal/">Personal</a></li>
+                    <li><a href="/cv/">CV</a></li>
                 </ul></nav>
         </header> --><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/folklore-vectors.html">Another Dimension of Place: Exploring the Geography of Folkloric Motifs</a></h1>
+                    <h1 class="entry-title"><a href="/glos_jan2025.html">GLOS (Geographic Lens on Stories)</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2024-11-30T00:00:00+01:00">
+                Published: Sat 30 November 2024
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
+        </address>
+<p>In <a href="/category/research.html">research</a>.</p>
+<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
+</footer><!-- /.post-info --><p>I have begun work on a new project, tentatively named  <strong>GLOS</strong>, standing for <em>Geographic Lens on Stories</em>. The broad goal is to develop digital tools to aid in the comparative analysis of folkloric text traditions from around the world, with a focus on the relationship between stories and the places and societies they emerge from. One guiding premise is that the elements of folklore emerging from societies in a place are in some sense descriptive dimensions of that place. These elements include all categories of folkloric material, but the immediate concern of the GLOS project is stories: folktales, fairy tales, myths, epics, and so forth.</p>
+<h3>Qualifiers, more premises, and expectations</h3>
+<p>I do not have training in, or specialized knowledge of, folkloristics, nor of the anthropological themes closely associated with folklore. I approach this from a geographic perspective; I do have considerable knowledge and experience in representing place computationally, and I do have experience and skills in various natural language processing (NLP) methods. While I do expect GLOS work to elicit interesting distributional patterns, explanations for differences and similarities between story motifs and types will always include non-spatial factors I am not competent to analyze. Nevertheless, I expect to be able to generate and publish interesting patterns and will invite their analysis by others who do have interest and expertise.</p>
+<p>Another premise of GLOS is that some of the emerging methodologies in NLP and machine learning, for example embeddings and large languages models (LLMs), can be usefully applied to folkloric text in novel ways. </p>
+<h3>Initial data preparation</h3>
+<p>I began by making digital text representations of the two canonical folktale indexes I'm aware of: <em>Motif-index of folk-literature;</em> (Stith Thompson, 1966) and <em>The Types of International Folktales: A Classification and Bibliography</em> (Hans-Jürg Uther, 2011). The latter is commonly referred to the "<strong>ATU</strong> index" because it folds together work from Antti Arne's <em>The Types of the Folk-tale</em> (1928), Thompson's motif index (<strong>TMI</strong>), and Uther's own considerable efforts. In each case, following OCR and cleaning, I parsed the raw, clean contents into structured and normalized formats amenable to storing in a relational database. The results include tables with the unique identifiers and text content of the TMI motifs and the ATU tale types.</p>
+<p>There is also considerable metadata to be found in both the TMI and ATU, including references to the sources of cited tales, the societies and geographic areas they are associated with, and in the ATU, elaborate cross-referencing to related tale types and to the TMI motifs. These too have been parsed and stored in relational tables.</p>
+<p>One of the outstanding challenges is establishing a geographic location for given motifs and tale types, so that they may be mapped and analyzed spatially. The data includes, variously 1) names of countries, provinces, historical regions; 2) names of indigenous tribes and societies; 3) languages. The task of establishing some kind of normalized gazetteer of place references is therefore quite complex and a comprehensive "where" attribute remains incomplete. For example, what is the geographic footprint of a tale type tagged only as "Hebrew" or "Spanish"? How can the locations of tribal territories or historical regions be represented given the dearth of spatial data for many of them? This is a major challenge that will require considerable research and expert consultation.</p>
+<h3>Initial computation</h3>
+<p>Leaving aside geography for the time being, I proceded to generate vector embeddings for the text of each of the 46,234 motifs in the TMI and 2,232 tale types in the ATU, using the OpenAI model, <em>text-embedding-3-small</em>. These are stored in relational tables, and wired to a very simple pilot web interface that allows a user to paste any piece of text into a form, and find the 10 motifs or tale types (a user choice) that are <em>nearest neighbors</em> in that 1536-dimension vector space.</p>
+<h3>Initial results</h3>
+<p>This first GLOS tool (tentatively <em>Embedding Explorer</em>) generates some interesting and essentially inadequate results that indicate other, more sophisticated approaches are necessary. </p>
+<p><img alt="Screenshot of the pilot Embedding Explorer tool" src="/images/embedding_explorer_tool.jpg"></p>
+<p>One goal of the tools is to find conceptual similarity without relying on term frequencies and co-occurence, as embedding technology promises. A search for a term like "altruism" should identify motifs and tale types that concern that concept in any of a number of societally differentiated ways. 
+For example, an altruistic act in one tradition might involve communal sharing of resources, while in another it might emphasize individual sacrifice for the greater good. Such nuances are important for understanding the cultural lenses through which altruism is interpreted. The tool succeeds to some extent - results for "altruism" include motifs and tales concerning charity, hospitality, and various acts of giving - but not all of the 10 nearest neighbors are recognizably conceptual neighbors, and it seems likely the method will miss some important matches.</p>
+<h3>Possible next steps</h3>
+<p>Some things I am considering:</p>
+<ul>
+<li>
+<p><em>Project corpora and fine-tuning.</em>  For instance, a corpus could include mythological texts from specific regions or curated examples of folk narratives with well-documented motifs and themes. Fine-tuning an LLM on this corpus could help improve the model’s ability to detect nuanced conceptual similarities and cultural context in motif analysis. This step might also involve aligning embeddings with external ontologies of folklore and mythology.</p>
+</li>
+<li>
+<p><em>Enhance and extend the <strong>Embedding Explorer</strong> tool</em>. Once results are improved, adding the ability to "drill down" and explore connections. The data includes relational information, like co-occurence of motifs and types, and could support various followup queries and graph navigation of those realtionships. </p>
+</li>
+<li>
+<p>Once geographic information is made comprehensive, many interactive maps will be possible.</p>
+</li>
+</ul>
+<h3>Feedback and suggestions are welcome!</h3>
+<p>The GLOS project has just begun, and I am feeling my way forward, reading disciplinary literature, coming up to speed on the fast-expanding AI methodologies that could help, and searching for prospective corpus material.</p>
+<p>If any of this interests, or you have questions or comments (including critiques), please get in touch: karl [at] kgeographer [dot] org.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/folklore-vectors.html" rel="bookmark"
+                           title="Permalink to Another Dimension of Place: Exploring the Geography of Folkloric Motifs">Another Dimension of Place: Exploring the Geography of Folkloric Motifs</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2024-09-02T13:10:00+02:00">
                 Published: Mon 02 September 2024
@@ -57,19 +113,12 @@
         </address>
 <p>In <a href="/category/research.html">research</a>.</p>
 <p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/culture.html">culture</a> </p>
-</footer><!-- /.post-info --><p>In this new "semi-retirement" phase of my life as a professional geographer and Digital Humanities Research Developer&trade;, I have begun planning an ambitious new project that continues my passion for "computing place." [1] The project will leverage my expertise in geospatial, geo-semantic and textual methods to further develop and explore formalizations of another dimension of place: the folkloric motifs that emerge from and are associated with different regions and societies.</p>
-<p>The core of this project involves creating a vector database of embeddings [2] for the approximately 2,500 folklore motifs outlined in the Aarne-Thompson-Uther (ATU) Folkloric Index [3]. With these embeddings, I aim to generate a 2,500-dimensional motif "signature" for any given piece of folkloric text. By combining these motif signatures with spatial and temporal metadata, I hope to characterize and compare the conceptual content of folklore as it relates to specific places. The system would be made freely available and its development open to collaboration.</p>
-<p>This approach treats the narratives and motifs emerging from a place as essential components of its identity, offering a novel way to describe, compare, and contrast regions based on their folkloric output. The scope would be global. Notwithstanding the extraordinary work in this vein done by Timothy Tangherlini and colleagues over the past two decades [4], I believe that considering the conceptual content of literature and vernacular narrative as a dimension of place is a relatively under-explored notion — certainly at a global scope. I believe it holds great potential for deepening our understanding of how cultural narratives shape and reflect the character of places.</p>
-<p>The embeddings for each narrative motif will be generated using a Large Language Model (LLM), prompted with terms from the ATU index to create detailed synopses [5]. An essential early step in this process will be expert evaluation of the material generated by the LLM, leading to refinement of the prompts or, if necessary, reconsideration of the method. My goal is to ensure that the embeddings accurately capture the conceptual content of the ATU motifs they represent.</p>
-<p>While my academic background is in Geographic Information Science, my professional journey as a research developer has consistently involved developing models to better represent the dynamic nature of place, in the context of collaborative projects from other fields, including History, Archaeology, Political Science, Literary Studies, and Environmental Science. The recent and ongoing explosion of capabilities in machine learning and generative language models is presenting opportunities for novel approaches to place-based cultural analytics.</p>
-<p>I’m reaching out to scholars and practitioners in folklore studies, literary analysis, and related fields to gather preliminary feedback on this initiative. I am certainly not expert in these areas, but rather a methods-focused researcher keen on applying new tools to the study of place. I believe this project has the potential to offer valuable insights into how the stories we tell are tied to the places we inhabit, and I would greatly appreciate your thoughts and advice as I move forward.</p>
-<hr>
-<p>[1] my favorite Rumi quote is "Start a huge, foolish project. Like Noah."</p>
-<p>[2] Embeddings are a way to represent complex data, like the words and sentences representing concepts, as multi-dimensional vectors (essentially, lists of numbers) in such a way that similar items are closer together in that vector "space." These relative positions capture semantic relationships between concepts in a format that computers can process. A vector database stores these embeddings, allowing for efficient searching and comparison based on their semantics.</p>
-<p>[3] See <a href="https://guides.library.harvard.edu/folk_and_myth/indices">Library Research Guide for Folklore and Mythology: Tale-Types &amp; Motifs</a></p>
-<p>[4] Timothy Tangherlini: <a href="https://vcresearch.berkeley.edu/faculty/timothy-tangherlini">Bio</a>; <a href="https://berkeley.academia.edu/TimothyTangherlini">academia.edu</a> <a href="https://scando.ist.berkeley.edu/macroscope.html">Folklore Macroscope Tools</a></p>
-<p>[5] Prompts could take two forms, requesting either 1) a structural description of the motif outlining the essential components and patterns that define it, such as character roles, key events, conflicts, resolutions, and themes, or 2) ann example narrative representative of it. The first is likely to be the most effective.</p>                </article>
-            </aside><!-- /#featured -->
+</footer><!-- /.post-info -->                <p>A prospective project: Geography of Folkloric Motifs</p>
+                <a class="readmore" href="/folklore-vectors.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
@@ -82,7 +131,7 @@
                         <h2>social</h2>
                         <ul>
 
-                            <li><a href="https://x.com/kgeographer">@kgeographer on The site formerly known as Twitter</a></li>
+                            <li><a href="https://bsky.app/profile/kgeographer.bsky.social">@kgeographer on Bluesky</a></li>
                             <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
                         </ul>
                 </div><!-- /.social -->

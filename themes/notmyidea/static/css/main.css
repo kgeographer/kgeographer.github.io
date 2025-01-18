@@ -184,7 +184,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 
 	#banner h1 a:link, #banner h1 a:visited {
 		color: #000305;
-		display: block;
+		/*display: block;*/
 		font-weight: bold;
 		margin: 0 0 0 .2em;
 		text-decoration: none;
