@@ -17,6 +17,9 @@ MENUITEMS = [
     ("CV", "/cv/"),
 ]
 
+CATEGORY_SAVE_AS = 'category/{slug}/index.html'
+CATEGORY_URL = 'category/{slug}/'
+
 # MENUITEMS = [
 #     ("Research", "/folklore-vectors/"),
 #     ("CV", "/cv/"),
