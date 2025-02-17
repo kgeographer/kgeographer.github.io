@@ -14,7 +14,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = [
     ("Research", "/category/research/"),
     ("Personal", "/category/personal/"),
-    ("CV", "/cv/"),
+    ("CV", "/cv.html"),
 ]
 
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
