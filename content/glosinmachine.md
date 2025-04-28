@@ -6,7 +6,7 @@ Slug: glos_and_machine
 Authors: Karl Grossner
 Summary: Reflections on collaboration with chatbots in the GLOS project
 
-I will soon be posting an update here on my **Geographic Lens on Stories** (GLOS) project in a follow-up to this one, and it will be co-authored with OpenAI’s ChatGPT (!). 
+I will soon be posting an update here on my **Geographic Lens on Stories** (GLOS) project as a follow-up to this one, and it will be co-authored with OpenAI’s ChatGPT (!). 
 
 <img src="{static}/images/glos_logo_800w.jpg" alt="GLOS logo" style="width: 200px; float: right; margin: 15px 0 10px 5px;">
 
@@ -30,7 +30,7 @@ Some roles the bots have played so far include:
 
 This entire exercise has not been without challenges, hiccups, and a bit of nonsense. As everyone knows, bots using LLMs can and do get things wrong sometimes. To the extent I can catch errors they will earnestly try to fix them.
 
-It is hard for me to express how extraordinary this new technology’s impact has been. I think folks who don’t write code may not appreciate the bots’ capabilities in that respect. ChatGPT is no slouch at coding, but Claude is astounding. It is not only a question of incredible time savings, but quality. Both know more Python than I ever will (NB. I’m pretty handy with it). Beyond that, they know what is “pythonic,” a principle defined by ChatGPT as code that is “beautiful, idiomatic, clear, and respectful of Python’s strengths.”
+It is hard for me to express how extraordinary this new technology’s impact has been. I think folks who don’t write code may not appreciate the bots’ capabilities in that respect. ChatGPT is no slouch at coding, but Claude is astounding. It is not only a question of incredible time savings, but quality. Both know more Python than I ever will (NB: I’m pretty handy with it). Beyond that, they know what is “pythonic,” a principle defined by ChatGPT as code that is “beautiful, idiomatic, clear, and respectful of Python’s strengths.”
 
 In short, while the bots I’m working with are not partners in any human sense, they have become indispensable in ways I hadn’t anticipated. In the next post you’ll see how they "think" of what we’ve done so far and plan to do going forward.
 
