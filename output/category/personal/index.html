@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>kgeographer - personal</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="../../static/css/main.css" />
         <style>
             #banner h1 {
                 display: flex;
@@ -22,9 +22,9 @@
 <body id="index" class="home">
         <header id="banner" class="body">
             <h1>
-                <img src="/Klee-ManHead.png" height="48" alt="Logo" />
-                <a href="/">kgeographer <strong>Karl Grossner, PhD</strong></a>
-                <!-- <span class="float-right"><img src="/Klee-ManHead.png" height="48" alt="Logo" /></span> -->
+                <img src="../../Klee-ManHead.png" height="48" alt="Logo" />
+                <a href="../../">kgeographer <strong>Karl Grossner, PhD</strong></a>
+                <!-- <span class="float-right"><img src="../../Klee-ManHead.png" height="48" alt="Logo" /></span> -->
             </h1>
             <nav>
                 <ul>
@@ -36,7 +36,7 @@
         </header><!-- /#banner -->
 <!--         <header id="banner" class="body">
                 <h1>
-                    <a href="/">kgeographer <strong>Karl Grossner, PhD</strong></a>
+                    <a href="../../">kgeographer <strong>Karl Grossner, PhD</strong></a>
                     <span class="float-right"><img src="./Klee-ManHead.png" height=48/></span>
                 </h1>
                 <nav><ul>
@@ -48,17 +48,17 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/page-turning.html">Turning the page</a></h1>
+                    <h1 class="entry-title"><a href="../../page-turning.html">Turning the page</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2024-08-26T10:00:00+02:00">
                 Published: Mon 26 August 2024
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="../../author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="/category/personal/">personal</a>.</p>
-<p>tags: <a href="/tag/personal.html">personal</a> <a href="/tag/research.html">research</a> </p>
+<p>In <a href="../../category/personal/">personal</a>.</p>
+<p>tags: <a href="../../tag/personal.html">personal</a> <a href="../../tag/research.html">research</a> </p>
 </footer><!-- /.post-info --><p>Having moved on from <a href="https://whgazetteer.org">World Historical Gazetteer</a>, I am now experimenting with graphs, discrete global grids (S2 specifically), and various AI techniques, aimed at new approaches to "computing place." Still in digital nomad mode, I am writing this from Vienna, Austria where I'll be through October 2024.</p>
 <h2>Graphs</h2>
 <p>I've developed a script to serialize WHG data as turtle RDF, for import into a GraphDB database. Works fine for an initial export of 20k sample records; now to run it for all 2.2 million WHG places. After that I'd like to add all of Getty Thesaurus of Geographic Names (TGN), Wikidata places, and GeoNames. Records for the same place in different datasets will be linked, passively so to speak, by virtue of shared URIs. WHG currently does quite a bit of linking in this way, but a graph database should allow for more sophisticated recursive queries and analytics. If this proves useful, I'll propose it as a new feature for WHG.</p>

@@ -1,7 +1,11 @@
 AUTHOR = 'Karl Grossner, PhD'
 SITENAME = 'kgeographer'
 SITESUBTITLE = 'Karl Grossner, PhD'
-SITEURL = ""
+SITEURL = "http://localhost"
+# SITEURL = ""
+# RELATIVE_URLS = False
+RELATIVE_URLS = True
+
 
 THEME = "themes/notmyidea"
 
@@ -16,6 +20,10 @@ MENUITEMS = [
     ("Personal", "/category/personal/"),
     ("CV", "/cv.html"),
 ]
+
+
+THEME_STATIC_DIR = 'static'
+EXTRA_PATH_METADATA = {'extra/custom.css': {'path': 'static/custom.css'}}
 
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 CATEGORY_URL = 'category/{slug}/'
