@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Simple deploy script for Pelican site using gh-pages
-if [ ! -f "pelicanconf.py" ]; then
-  echo "⚠️  This doesn't look like the root of your _kgeographer Pelican repo. Aborting."
-  exit 1
-fi
+# Robust deploy script for Pelican site using gh-pages
 
 set -e  # Exit on any error
 
 echo "🌀 Switching to main branch..."
 git checkout main
+
+echo "🧹 Cleaning up unnecessary files..."
+rm -rf __pycache__/
+git restore output/ || echo "Nothing to restore in output/"
 
 echo "🛠  Building site with Pelican..."
 pelican content
@@ -33,4 +33,3 @@ echo "🔄 Switching back to main branch..."
 git checkout main
 
 echo "✅ Deployment complete."
-
