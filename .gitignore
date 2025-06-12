@@ -11,3 +11,5 @@ __pycache__/
 
 # Pelican build output
 output/
+
+README_DEPLOY.md
