@@ -1,2 +1,13 @@
+# Python artifacts
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+.env
+.venv
+
+# PyCharm project files
+.idea/
+*.iml
+
+# Pelican build output
+output/
