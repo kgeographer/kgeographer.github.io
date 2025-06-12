@@ -1,6 +1,10 @@
 #!/bin/bash
 
 # Simple deploy script for Pelican site using gh-pages
+if [ ! -f "pelicanconf.py" ]; then
+  echo "⚠️  This doesn't look like the root of your _kgeographer Pelican repo. Aborting."
+  exit 1
+fi
 
 set -e  # Exit on any error
 
