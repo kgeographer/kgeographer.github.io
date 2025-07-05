@@ -40,7 +40,7 @@ The starting point was to bring structure and semantic accessibility to two foun
 - **The Aarne–Thompson–Uther (ATU) Index**: classifying folktales by tale type
 - **The Thompson Motif Index (TMI)**: a massive catalog of narrative elements, or motifs
 
-Harvard's [Library Research Guide for Folklore and Mythology](Library Research Guide for Folklore and Mythology) outlines the structure of both of these canonical indexes.
+Harvard's [Library Research Guide for Folklore and Mythology](https://guides.library.harvard.edu/folk_and_myth) outlines the structure of both of these canonical indexes.
 
 These were digitized into a normalized relational database and enriched using machine learning techniques. Specifically, I generated **embeddings** for:
 

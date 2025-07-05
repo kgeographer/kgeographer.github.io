@@ -59,5 +59,14 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = 5
 
+MARKDOWN = {
+    'extensions': [
+        'markdown.extensions.extra',
+        'markdown.extensions.codehilite',
+        'markdown.extensions.meta',
+        'markdown.extensions.attr_list',
+    ]
+}
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
