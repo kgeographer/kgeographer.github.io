@@ -2,7 +2,7 @@ Title: Toward a Schema for Creation Myths: Structuring Conceptual Content with L
 Date: 2025-07-04
 Slug: glos_creation_schema
 Summary: Using large language models to induce and evaluate a schema for conceptual content in creation myths.
-Category: GLOS Project
+Category: research
 Tags: creation myths, schema, LLMs, folklore, ontology, concept modeling
 Author: Karl Grossner
 Status: published

@@ -21,18 +21,16 @@ MENUITEMS = [
     ("CV", "/cv.html"),
 ]
 
+WITH_FUTURE_DATES = True
 
 THEME_STATIC_DIR = 'static'
-EXTRA_PATH_METADATA = {'extra/custom.css': {'path': 'static/custom.css'}}
+EXTRA_PATH_METADATA = {
+    'extra/custom.css': {'path': 'static/custom.css'},
+    'extra/Klee-ManHead.png': {'path': 'Klee-ManHead.png'},
+}
 
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 CATEGORY_URL = 'category/{slug}/'
-
-# MENUITEMS = [
-#     ("Research", "/folklore-vectors/"),
-#     ("CV", "/cv/"),
-#     ("Personal", "/page-turning/"),
-# ]
 
 TIMEZONE = 'Europe/Rome'
 

@@ -1,13 +1,11 @@
-# Where the Lens Turned Back: Reflections on GLOS
+Title: Where the Lens Turned Back: Reflections on GLOS
 Date: 2025-11-20
+Category: research
 Slug: glos_on_pause
 Summary: GLOS hits an epistemological roadblock
-Category: GLOS Project
 Tags: creation myths, LLMs, folklore, ontology, concept modeling
 Author: Karl Grossner
 Status: published
-
-### Where the Lens Turned Back: Reflections on GLOS
 
 When I began the *Geographic Lens on Stories (GLOS)* project, I imagined building a global atlas of creation myths as a way to map how different cultures have conceived the origins of the world, both conceptually and geographically. I hoped that by using modern NLP tools and embeddings, I could visualize conceptual relationships among myths: a geography of meaning.  
 

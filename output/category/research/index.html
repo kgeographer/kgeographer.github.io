@@ -22,7 +22,7 @@
 <body id="index" class="home">
         <header id="banner" class="body">
             <h1>
-                <img src="../../Klee-ManHead.png" height="48" alt="Logo" />
+                <img src="../../images/Klee-ManHead.png" height="48" alt="Logo" />
                 <a href="../../">kgeographer <strong>Karl Grossner, PhD</strong></a>
                 <!-- <span class="float-right"><img src="../../Klee-ManHead.png" height="48" alt="Logo" /></span> -->
             </h1>
@@ -48,7 +48,104 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../../glos_june2025.html">GLOS: A Geographer’s Computational Journey into Story</a></h1>
+                    <h1 class="entry-title"><a href="../../glos_on_pause.html">Where the Lens Turned Back: Reflections on GLOS</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2025-11-20T00:00:00+01:00">
+                Published: Thu 20 November 2025
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../author/karl-grossner.html">Karl Grossner</a>
+        </address>
+<p>In <a href="../../category/research/">research</a>.</p>
+<p>tags: <a href="../../tag/creation-myths.html">creation myths</a> <a href="../../tag/llms.html">LLMs</a> <a href="../../tag/folklore.html">folklore</a> <a href="../../tag/ontology.html">ontology</a> <a href="../../tag/concept-modeling.html">concept modeling</a> </p>
+</footer><!-- /.post-info --><p>When I began the <em>Geographic Lens on Stories (GLOS)</em> project, I imagined building a global atlas of creation myths as a way to map how different cultures have conceived the origins of the world, both conceptually and geographically. I hoped that by using modern NLP tools and embeddings, I could visualize conceptual relationships among myths: a geography of meaning.  </p>
+<p><strong>The TL;DR:</strong> the work hit an epistemological roadblock. Its methods could only reveal the interpretive processes of LLMs and not the conceptual content of the myths themselves in any empirical sense.</p>
+<hr />
+<h3>Phase One</h3>
+<p>I spent months digitizing and normalizing 69 myths from Barbara Sproul’s <em>Primal Myths</em>, designing schemas, segmenting texts, and creating embeddings using Anthropic and OpenAI APIs. The work proceeded in phases, beginning with a 20-myth sampling.</p>
+<p>The initial schema divided each myth across high-level dimensions: <strong>Primordial State (incl. entities present)</strong>, <strong>Creation Sequence (events, incl. participants and locale)</strong>, <strong>Cosmic Structure (incl. social and ecological hierarchies, dualities)</strong>, and <strong>Distinctive Elements (free text)</strong>. Each myth was submitted to an LLM with an elaborate prompt that requested values (or nulls) for each attribute. Significant manual normalization was required, as the models often described the same concept with divergent terminology.</p>
+<p>I then generated whole-myth and section-level embeddings from these extracted values and performed clustering analyses to explore patterns of similarity across cultures and regions. The early results were promising, but the schema itself had been derived from LLM responses and my own non-expert judgment. It lacked grounding in any shared motivating theory and quickly became unwieldy.</p>
+<hr />
+<h3>Phase Two</h3>
+<p>In the second phase I added 49 additional myths from around the world and anchored a new schema in a respected work on comparative mythology, <em>The Truth of Myth</em> (Thompson &amp; Schrempp). They propose “points to consider” for new students of mythology along five axes: <strong>time</strong>, <strong>space</strong>, <strong>quantity</strong>, <strong>quality</strong>, <strong>relation</strong>. My prompts followed these axes closely, requesting a mixture of free-text and standardized responses.  </p>
+<p>For example, the <strong>space</strong> axis asked for <em>narrative location</em>, <em>landscape type</em>, <em>place correspondence</em>, <em>spatial symbolism</em>, and <em>spatial boundaries</em> — all in free text.</p>
+<p>Preliminary results suggested that this organization could inform a new “Schema_v2.” But eventually the realization came to me that every attribute in both schemas was again the result of <em>a large language model’s interpretation</em>. I wasn’t extracting meaning; I was eliciting it.  </p>
+<p>At that point it became clear that what I was analyzing was not the myths themselves, but the <em>hermeneutic machinery of the model.</em></p>
+<hr />
+<h3>From Extraction to Interpretation</h3>
+<p>That realization changed the direction of the project. GLOS became less a study of world mythology and more a study of <strong>machine hermeneutics</strong> — how an AI trained on vast textual corpora constructs (or invents) meaning when asked to interpret a myth.</p>
+<p>I shifted to asking broader, less constrained questions, along four dimensions: <em>Central Metaphors and Oppositions</em>, <em>Cultural Lessons or Functions</em>, <em>Distinctive Features</em>, and <em>Brief Interpretive Commentary</em>. Anthropic’s model Claude summarized the pattern succinctly:</p>
+<blockquote>
+<p>“The model’s interpretive tone emerged clearly. Its commentary style was fluent and persuasive, yet strangely generic: every myth seemed to be about chaos giving way to order, the joining of opposites, the restoration of balance. It had learned the language of comparative mythology and was applying it reflexively. In essence, it was channeling the Lévi-Straussian worldview back at me.”</p>
+</blockquote>
+<p>After reading some Lévi-Strauss, I agreed.</p>
+<hr />
+<h3>Embeddings as a Mirror of Interpretation</h3>
+<p>I continued the embedding analysis to see what the geometry of those interpretations might reveal. Each myth now had four section embeddings plus a whole-myth vector. Comparing them showed a clear pattern:</p>
+<ul>
+<li><strong>Metaphors</strong> and <strong>Commentary</strong> were the closest pair in embedding space.  </li>
+<li>The <strong>Metaphors → whole-myth</strong> similarity was nearly as strong.</li>
+</ul>
+<p>A scatterplot across all myths produced a correlation of <strong>0.89</strong> between Commentary–Metaphor similarity and Whole-Myth–Metaphor similarity. Astonishingly high — and deeply telling. It showed that the model’s overall conception of a myth is dominated by its perception of oppositional structure. It was quantitative confirmation of what Lévi-Strauss proposed qualitatively: <em>mythic meaning is organized through oppositions.</em></p>
+<figure>
+  <img src="/images/cross-section-similarity.png" alt="Scatterplot of similarity correlations">
+  <figcaption>Scatterplot of similarity correlations between Commentary–Metaphor and Whole-Myth–Metaphor similarity.</figcaption>
+</figure>
+
+<hr />
+<h3>Mapping the Model’s World</h3>
+<p>In the final stage, I turned that insight outward and mapped these embedding similarities across regions. The 69×69 similarity matrices and regional heatmaps showed where the model perceived conceptual proximity — first in <em>commentary</em> (interpretive tone), then in <em>metaphor</em> (conceptual structure).</p>
+<p>The results were both revealing and humbling.  </p>
+<p>In the commentary heatmap, global similarity hovered around 0.6–0.7 across nearly all regions — evidence of how homogenized the model’s interpretive voice is.  </p>
+<p>In the metaphor map, more structure appeared: <strong>China</strong>, <strong>Japan</strong>, and <strong>Australia</strong> formed tight internal clusters, while <strong>Siberia</strong> (and again Australia) showed lower similarity to other regions. Whether this reflects genuinely distinctive mythic styles or simply uneven model familiarity is impossible to know.  </p>
+<p>In truth, these maps visualize <em>the model’s own geography of interpretive coherence</em> — its zones of certainty and its blind spots — not the world’s mythological landscape.</p>
+<hr />
+<h3>What Remains</h3>
+<p>So what has GLOS accomplished? Not the empirical discovery I had once imagined, but something subtler: a demonstration that large language models had spontaneously reproduced the structuralist insight that oppositions organize mythic thought. They do this not because they understand the myths, but because they have internalized the linguistic and conceptual patterns through which humans have described them.</p>
+<p>The work has also produced a reusable framework for structuring interpretive text into analyzable semantic layers — and that may prove useful in future collaborations with scholars in folklore or comparative mythology.  </p>
+<p>But ultimately, this experiment turned the lens back on me and because I don't possess sufficient expertise in comparative mythology to evaluate the models' interpretations, the GLOS project is suspended unless and until I find a better approach to realizing its goal. </p>
+<hr />
+<h3>Closing the Circle</h3>
+<p>One of my earliest GLOS posts was co-authored with ChatGPT, acknowledging from the outset that this was a collaborative experiment in meaning-making. It feels appropriate that this concluding reflection should also be co-written.</p>
+<p>I began with the hope of charting a geography of creation myths.<br />
+I end with a geography of how a machine <em>thinks about</em> creation myths.  </p>
+<p>Perhaps that is still a kind of map — a topography not of the world’s stories, but of the interpretive imagination that both humans and machines now share.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../../glos_creation_schema.html" rel="bookmark"
+                           title="Permalink to Toward a Schema for Creation Myths: Structuring Conceptual Content with Large Language Models">Toward a Schema for Creation Myths: Structuring Conceptual Content with Large Language Models</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-07-04T00:00:00+02:00">
+                Published: Fri 04 July 2025
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="../../author/karl-grossner.html">Karl Grossner</a>
+        </address>
+<p>In <a href="../../category/research/">research</a>.</p>
+<p>tags: <a href="../../tag/creation-myths.html">creation myths</a> <a href="../../tag/schema.html">schema</a> <a href="../../tag/llms.html">LLMs</a> <a href="../../tag/folklore.html">folklore</a> <a href="../../tag/ontology.html">ontology</a> <a href="../../tag/concept-modeling.html">concept modeling</a> </p>
+</footer><!-- /.post-info -->                <p>Using large language models to induce and evaluate a schema for conceptual content in creation myths.</p>
+                <a class="readmore" href="../../glos_creation_schema.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="../../glos_june2025.html" rel="bookmark"
+                           title="Permalink to GLOS: A Geographer’s Computational Journey into Story">GLOS: A Geographer’s Computational Journey into Story</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2025-06-11T00:00:00+02:00">
                 Published: Wed 11 June 2025
@@ -59,112 +156,10 @@
         </address>
 <p>In <a href="../../category/research/">research</a>.</p>
 <p>tags: <a href="../../tag/folklore.html">folklore</a> <a href="../../tag/place.html">place</a> <a href="../../tag/ai.html">AI</a> </p>
-</footer><!-- /.post-info --><p><em>This post is co-authored with ChatGPT, as promised.</em></p>
-<hr />
-<h2>Introduction</h2>
-<p>In a recent post, I described how large language models (LLMs) and chatbots like ChatGPT have begun playing a role in my work. This is the follow-up I promised—a deeper look into that work itself. It’s called <strong>GLOS</strong>, short for <strong>Geographic Lens on Stories</strong>. What began as vaguely formed ideas about applying computational methods to cultural narrative has taken on shape, tools, and even a kind of mission.</p>
-<p>As a retired geographer with a lifelong interest in folklore and myth, and not a trained folklorist, I approach this as a professional interloper—albeit a respectful one. GLOS isn’t a grant-funded lab project; it’s a post-career intellectual venture shaped by curiosity, technical skills, and the freedom to explore.</p>
-<hr />
-<h2>What Is GLOS?</h2>
-<p>At its core, GLOS asks a set of simple but ambitious questions:</p>
-<blockquote>
-<p>Can computational methods help reveal cultural, geographic, and conceptual patterns in traditional stories? And, are stories dimensions of place?</p>
-</blockquote>
-<p>To explore this, GLOS is unfolding in and across <strong>two interrelated phases</strong>:</p>
-<ul>
-<li><strong>Phase A</strong>: Digitizing and computationally modeling existing reference systems in folkloristics (ATU and TMI)</li>
-<li><strong>Phase B</strong>: Building a structured, analyzable corpus of global <strong>creation myths</strong></li>
-</ul>
-<p>The two phases are not strictly sequential—they proceed in parallel, informing and shaping each other as they go.</p>
-<hr />
-<h2>Phase A: Indexing the Indexes</h2>
-<p>The starting point was to bring structure and semantic accessibility to two foundational resources in folk narrative studies:</p>
-<ul>
-<li><strong>The Aarne–Thompson–Uther (ATU) Index</strong>: classifying folktales by tale type</li>
-<li><strong>The Thompson Motif Index (TMI)</strong>: a massive catalog of narrative elements, or motifs</li>
-</ul>
-<p>Harvard's <a href="https://guides.library.harvard.edu/folk_and_myth">Library Research Guide for Folklore and Mythology</a> outlines the structure of both of these canonical indexes.</p>
-<p>These were digitized into a normalized relational database and enriched using machine learning techniques. Specifically, I generated <strong>embeddings</strong> for:</p>
-<ul>
-<li><strong>46,245 motifs</strong></li>
-<li><strong>2,232 tale types</strong></li>
-</ul>
-<p>This set the stage for two early tools. The first was the <a href="http://glos.kgeographer.org/explore"><strong>Concept Matcher</strong></a>, which allows users to input a snippet of text and retrieve the nearest motifs or tale types in semantic space. While intriguing, it quickly became clear that:</p>
-<ul>
-<li>Motif descriptions are often too short to yield meaningful embeddings</li>
-<li>Precision and recall were mediocre—good enough for a demo, but not for serious inference</li>
-</ul>
-<p>This led to a pivot. In response to feedback from academic folklorists, I developed a second tool:</p>
-<ul>
-<li><a href="http://glos.kgeographer.org/atu_tmi_v2"><strong>The ATU–TMI Cross-Reference Tool</strong></a>: lets users view tale types alongside the motifs they contain in a structured, explorable interface</li>
-</ul>
-<p>This tool will soon be presented informally to folklorists for feedback and further refinement. Phase A, in that sense, is very much ongoing.</p>
-<hr />
-<h2>Phase B: Creation Myths and Conceptual Modeling</h2>
-<p>While Phase A engaged with existing reference systems, Phase B turns to narrative itself—specifically, the genre of <strong>creation myths</strong>.</p>
-<p>Using Barbara Sproul’s <a href="https://www.goodreads.com/book/show/1295530.Primal_Myths"><em>Primal Myths: Creation Myths Around the World</em></a> as a source, I've built a curated test corpus of myths from numerous societal traditions. Each was scanned, OCR-processed, cleaned, and structured into JSON-LD files with key metadata. Then came the conceptual modeling.</p>
-<p>Using LLMs, I extracted recurring elements from these myths to begin assembling a <strong>draft structured schema and vocabulary</strong>. While not a formal ontology, this preliminary schema has been used to guide an LLM in distinguishing several elements of creation myths:</p>
-<ul>
-<li>Key <strong>events in sequence</strong></li>
-<li><strong>Entities</strong> as participants in events, including classes of actors in roles (creator, transformer, rebel, etc.), and various artifacts and natural objects</li>
-<li><strong>Cosmic structure</strong> (sky, sea, underworld)</li>
-<li><strong>Thematic dualities</strong> (order/chaos, male/female, light/dark)</li>
-</ul>
-<p>It’s a speculative schema, and clearly only applicable at this stage to <strong>creation myths</strong>. But it lays groundwork for a kind of computational comparative mythology.</p>
-<p>Much depends on future expert validation from experts in comparative mythology to determine whether these structures resonate or miss the mark.</p>
-<hr />
-<h2>Looking Ahead: Retrieval, Visualization, and Place</h2>
-<p>Three significant methodological tracks apart from refinement of the schema-induction experiments are in GLOS’s future.</p>
-<h3>Refining the Schema Induction method</h3>
-<p>Early results from <strong>Phase B</strong> are promising, yet underscore the need for deeper experimentation. Upcoming work will explore tools like BERTopic, Stanford’s LLOOM package for concept induction, and other unsupervised methods to identify, cluster, and validate conceptual components across myth texts. The goal is to move toward a reusable, structured schema capable of supporting large-scale cross-cultural comparisons.</p>
-<h3>Retrieval-Augmented Generation (RAG)</h3>
-<p>RAG allows language models to incorporate external knowledge in real-time, and it’s a promising way to improve LLM reasoning across the GLOS corpus. Instead of relying purely on embedding similarity, RAG workflows can support question answering, summarization, or inference grounded in structured data.</p>
-<h3>Geography and Visualization</h3>
-<p>The <strong>geographic</strong> component of GLOS—its namesake lens—is both central and complex. Cultural metadata for tales and myths varies widely: sometimes it's a country, sometimes a language family, a religion, or a historical polity.</p>
-<p>While this diversity resists clean mapping, it doesn’t preclude it. There <strong>will be</strong> geographic maps—but they will be embedded in a <strong>dashboard of visualizations</strong>, including:</p>
-<ul>
-<li>Thematic clustering</li>
-<li>Narrative structure maps</li>
-<li>Motif density distributions</li>
-<li>Cross-cultural timelines</li>
-</ul>
-<p>Together, these will offer multiple ways to “see” how stories are structured and shared across cultures and regions.</p>
-<hr />
-<h2>Why Do This?</h2>
-<p>Because it’s deeply interesting.</p>
-<p>Because the stories people tell—about the beginning of the world and of particular societies, the meaning of life and death, the sources of knowledge—are variously universal and profoundly local.</p>
-<p>Because stories may themselves be considered and analyzed as <strong>dimensions of place</strong>.</p>
-<p>And because the tools now available to us—LLMs, embeddings, RAG, semantic visualization—create a new frontier for exploring these stories at scale.</p>
-<p>GLOS is also becoming a <strong>meta-project</strong>, one that will evaluate the performance of AI models in aspects of the humanities. Can LLMs meaningfully support cultural analysis? Where do they falter? This evaluative angle may become one of the project’s most significant contributions.</p>
-<hr />
-<h2>Co-Authoring with ChatGPT</h2>
-<p>This blog post—like much of GLOS—is co-authored with a chatbot. That’s not a gimmick, and it’s not outsourcing. It’s a method.</p>
-<p>ChatGPT acts as an idea bouncer, a paragraph generator, a software design and coding assistant, and sometimes a devil’s advocate. It doesn’t know what myths <em>mean</em>, but it can help me sort them, structure them, and propose ways to think about them.</p>
-<p>This post was written through dialogue—my prompts, my revisions, my judgment—but its speed and shape were made possible by AI.</p>
-<hr />
-<h2>What’s Next?</h2>
-<ul>
-<li>Expand the myth corpus, especially with better cultural metadata</li>
-<li>Refine the conceptual schema with feedback from scholars and new methods</li>
-<li>Build out RAG-based tools for interacting with the data</li>
-<li>Develop the visualization dashboard, including geographic maps</li>
-<li>Continue probing the limits and affordances of AI in folklore research</li>
-<li>Invite collaborators from digital humanities, folklore, and geography</li>
-</ul>
-<hr />
-<h2>Closing</h2>
-<p>GLOS is an evolving experimental project, but has already shown (me) that traditional stories, approached computationally, yield surprising structures and fascinating patterns.</p>
-<p>For more, visit:</p>
-<ul>
-<li>🌐 <a href="https://glos.kgeographer.org">glos.kgeographer.org</a>  </li>
-<li>🧾 <a href="https://github.com/kgeographer/glos">GLOS on GitHub</a></li>
-</ul>
-<p>Inquiries of all kinds always welcome: karl[at]kgeographer[dot]org</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>Status update on the Geographic Lens on Stories (GLOS) project, co-authored with ChatGPT. It explores the digitization of folklore indexes and the analysis of creation myths, using computational methods to reveal cultural patterns.</p>
+                <a class="readmore" href="../../glos_june2025.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -209,29 +204,14 @@
                 <a class="readmore" href="../../glos_jan2025.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="../../folklore-vectors.html" rel="bookmark"
-                           title="Permalink to Another Dimension of Place: Exploring the Geography of Folkloric Motifs">Another Dimension of Place: Exploring the Geography of Folkloric Motifs</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2024-09-02T13:10:00+02:00">
-                Published: Mon 02 September 2024
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="../../author/karl-grossner.html">Karl Grossner</a>
-        </address>
-<p>In <a href="../../category/research/">research</a>.</p>
-<p>tags: <a href="../../tag/folklore.html">folklore</a> <a href="../../tag/place.html">place</a> <a href="../../tag/culture.html">culture</a> </p>
-</footer><!-- /.post-info -->                <p>A prospective project: Geography of Folkloric Motifs</p>
-                <a class="readmore" href="../../folklore-vectors.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
                 </ol><!-- /#posts-list -->
+<nav>
+  <ul>
+    <li>Page 1 / 2</li>
+        <li><a href="../../category/research/index2.html">&rang;</a></li>
+        <li><a href="../../category/research/index2.html">&Rang;</a></li>
+  </ul>
+</nav>
                 </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
