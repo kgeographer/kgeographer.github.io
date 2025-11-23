@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>kgeographer - folklore</title>
-        <link rel="stylesheet" href="../static/css/main.css" />
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" /> <!--<link rel="stylesheet" href="/static/css/main.css" />-->
         <style>
             #banner h1 {
                 display: flex;
@@ -13,7 +13,9 @@
             }
 
             #banner h1 img.logo {
-                margin-right: 10px; /* Adds spacing between the image and the title text */
+              margin-right: 10px; /* Adds spacing between the image and the title text */
+              height: 48px;      /* or 40 if you prefer even smaller */
+              width: 48px;       /* keeps it square */
             }
             p {font-size: 1rem !important;}
         </style>
@@ -22,43 +24,49 @@
 <body id="index" class="home">
         <header id="banner" class="body">
             <h1>
-                <img src="../images/Klee-ManHead.png" height="48" alt="Logo" />
-                <a href="../">kgeographer <strong>Karl Grossner, PhD</strong></a>
-                <!-- <span class="float-right"><img src="../Klee-ManHead.png" height="48" alt="Logo" /></span> -->
+
+                <!--<img src="/images/Klee-ManHead.png" height="48" alt="Logo" />-->
+                <a href="/"><img src="/Klee-ManHead.png" alt="kgeographer logo" height="48">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+                <!-- <span class="float-right"><img src="/Klee-ManHead.png" height="48" alt="Logo" /></span> -->
             </h1>
             <nav>
                 <ul>
-                        <li><a href="/category/research/">Research</a></li>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/blog/">Blog</a></li>
                         <li><a href="/category/personal/">Personal</a></li>
-                        <li><a href="/cv.html">CV</a></li>
+                        <li><a href="/cv/">CV</a></li>
                 </ul>
             </nav>
         </header><!-- /#banner -->
 <!--         <header id="banner" class="body">
                 <h1>
-                    <a href="../">kgeographer <strong>Karl Grossner, PhD</strong></a>
+                    <a href="/">kgeographer <strong>Karl Grossner, PhD</strong></a>
                     <span class="float-right"><img src="./Klee-ManHead.png" height=48/></span>
                 </h1>
                 <nav><ul>
-                    <li><a href="/category/research/">Research</a></li>
+                    <li><a href="/">KGEO Research</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/category/personal/">Personal</a></li>
-                    <li><a href="/cv.html">CV</a></li>
+                    <li><a href="/cv/">CV</a></li>
                 </ul></nav>
         </header> --><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../glos_on_pause.html">Where the Lens Turned Back: Reflections on GLOS</a></h1>
+                    <h1 class="entry-title"><a href="/glos_on_pause.html">Where the Lens Turned Back: Reflections on GLOS</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2025-11-20T00:00:00+01:00">
                 Published: Thu 20 November 2025
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="../category/research/">research</a>.</p>
-<p>tags: <a href="../tag/creation-myths.html">creation myths</a> <a href="../tag/llms.html">LLMs</a> <a href="../tag/folklore.html">folklore</a> <a href="../tag/ontology.html">ontology</a> <a href="../tag/concept-modeling.html">concept modeling</a> </p>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/creation-myths.html">creation myths</a> <a href="/tag/llms.html">LLMs</a> <a href="/tag/folklore.html">folklore</a> <a href="/tag/ontology.html">ontology</a> <a href="/tag/concept-modeling.html">concept modeling</a> </p>
 </footer><!-- /.post-info --><p>When I began the <em>Geographic Lens on Stories (GLOS)</em> project, I imagined building a global atlas of creation myths as a way to map how different cultures have conceived the origins of the world, both conceptually and geographically. I hoped that by using modern NLP tools and embeddings, I could visualize conceptual relationships among myths: a geography of meaning.  </p>
 <p><strong>The TL;DR:</strong> the work hit an epistemological roadblock. Its methods could only reveal the interpretive processes of LLMs and not the conceptual content of the myths themselves in any empirical sense.</p>
 <hr />
@@ -119,7 +127,7 @@ I end with a geography of how a machine <em>thinks about</em> creation myths.  <
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../glos_creation_schema.html" rel="bookmark"
+                    <h1><a href="/glos_creation_schema.html" rel="bookmark"
                            title="Permalink to Toward a Schema for Creation Myths: Structuring Conceptual Content with Large Language Models">Toward a Schema for Creation Myths: Structuring Conceptual Content with Large Language Models</a></h1>
                 </header>
 
@@ -130,18 +138,18 @@ I end with a geography of how a machine <em>thinks about</em> creation myths.  <
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="../category/research/">research</a>.</p>
-<p>tags: <a href="../tag/creation-myths.html">creation myths</a> <a href="../tag/schema.html">schema</a> <a href="../tag/llms.html">LLMs</a> <a href="../tag/folklore.html">folklore</a> <a href="../tag/ontology.html">ontology</a> <a href="../tag/concept-modeling.html">concept modeling</a> </p>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/creation-myths.html">creation myths</a> <a href="/tag/schema.html">schema</a> <a href="/tag/llms.html">LLMs</a> <a href="/tag/folklore.html">folklore</a> <a href="/tag/ontology.html">ontology</a> <a href="/tag/concept-modeling.html">concept modeling</a> </p>
 </footer><!-- /.post-info -->                <p>Using large language models to induce and evaluate a schema for conceptual content in creation myths.</p>
-                <a class="readmore" href="../glos_creation_schema.html">read more</a>
+                <a class="readmore" href="/glos_creation_schema.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../glos_june2025.html" rel="bookmark"
+                    <h1><a href="/glos_june2025.html" rel="bookmark"
                            title="Permalink to GLOS: A Geographer’s Computational Journey into Story">GLOS: A Geographer’s Computational Journey into Story</a></h1>
                 </header>
 
@@ -152,18 +160,18 @@ I end with a geography of how a machine <em>thinks about</em> creation myths.  <
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="../category/research/">research</a>.</p>
-<p>tags: <a href="../tag/folklore.html">folklore</a> <a href="../tag/place.html">place</a> <a href="../tag/ai.html">AI</a> </p>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
 </footer><!-- /.post-info -->                <p>Status update on the Geographic Lens on Stories (GLOS) project, co-authored with ChatGPT. It explores the digitization of folklore indexes and the analysis of creation myths, using computational methods to reveal cultural patterns.</p>
-                <a class="readmore" href="../glos_june2025.html">read more</a>
+                <a class="readmore" href="/glos_june2025.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../glos_and_machine.html" rel="bookmark"
+                    <h1><a href="/glos_and_machine.html" rel="bookmark"
                            title="Permalink to GLOS and the Machine">GLOS and the Machine</a></h1>
                 </header>
 
@@ -174,18 +182,18 @@ I end with a geography of how a machine <em>thinks about</em> creation myths.  <
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="../category/research/">research</a>.</p>
-<p>tags: <a href="../tag/folklore.html">folklore</a> <a href="../tag/place.html">place</a> <a href="../tag/ai.html">AI</a> </p>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
 </footer><!-- /.post-info -->                <p>Reflections on collaboration with chatbots in the GLOS project</p>
-                <a class="readmore" href="../glos_and_machine.html">read more</a>
+                <a class="readmore" href="/glos_and_machine.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="../glos_jan2025.html" rel="bookmark"
+                    <h1><a href="/glos_jan2025.html" rel="bookmark"
                            title="Permalink to GLOS (Geographic Lens on Stories)">GLOS (Geographic Lens on Stories)</a></h1>
                 </header>
 
@@ -196,20 +204,20 @@ I end with a geography of how a machine <em>thinks about</em> creation myths.  <
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="../category/research/">research</a>.</p>
-<p>tags: <a href="../tag/folklore.html">folklore</a> <a href="../tag/place.html">place</a> <a href="../tag/ai.html">AI</a> </p>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
 </footer><!-- /.post-info -->                <p>Status report on the GLOS project</p>
-                <a class="readmore" href="../glos_jan2025.html">read more</a>
+                <a class="readmore" href="/glos_jan2025.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
 <nav>
   <ul>
     <li>Page 1 / 2</li>
-        <li><a href="../tag/folklore2.html">&rang;</a></li>
-        <li><a href="../tag/folklore2.html">&Rang;</a></li>
+        <li><a href="/tag/folklore2.html">&rang;</a></li>
+        <li><a href="/tag/folklore2.html">&Rang;</a></li>
   </ul>
 </nav>
                 </section><!-- /#content -->

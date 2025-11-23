@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>kgeographer - Authors</title>
-        <link rel="stylesheet" href="./static/css/main.css" />
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" /> <!--<link rel="stylesheet" href="/static/css/main.css" />-->
         <style>
             #banner h1 {
                 display: flex;
@@ -13,7 +13,9 @@
             }
 
             #banner h1 img.logo {
-                margin-right: 10px; /* Adds spacing between the image and the title text */
+              margin-right: 10px; /* Adds spacing between the image and the title text */
+              height: 48px;      /* or 40 if you prefer even smaller */
+              width: 48px;       /* keeps it square */
             }
             p {font-size: 1rem !important;}
         </style>
@@ -22,34 +24,40 @@
 <body id="index" class="home">
         <header id="banner" class="body">
             <h1>
-                <img src="./images/Klee-ManHead.png" height="48" alt="Logo" />
-                <a href="./">kgeographer <strong>Karl Grossner, PhD</strong></a>
-                <!-- <span class="float-right"><img src="./Klee-ManHead.png" height="48" alt="Logo" /></span> -->
+
+                <!--<img src="/images/Klee-ManHead.png" height="48" alt="Logo" />-->
+                <a href="/"><img src="/Klee-ManHead.png" alt="kgeographer logo" height="48">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+                <!-- <span class="float-right"><img src="/Klee-ManHead.png" height="48" alt="Logo" /></span> -->
             </h1>
             <nav>
                 <ul>
-                        <li><a href="/category/research/">Research</a></li>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/blog/">Blog</a></li>
                         <li><a href="/category/personal/">Personal</a></li>
-                        <li><a href="/cv.html">CV</a></li>
+                        <li><a href="/cv/">CV</a></li>
                 </ul>
             </nav>
         </header><!-- /#banner -->
 <!--         <header id="banner" class="body">
                 <h1>
-                    <a href="./">kgeographer <strong>Karl Grossner, PhD</strong></a>
+                    <a href="/">kgeographer <strong>Karl Grossner, PhD</strong></a>
                     <span class="float-right"><img src="./Klee-ManHead.png" height=48/></span>
                 </h1>
                 <nav><ul>
-                    <li><a href="/category/research/">Research</a></li>
+                    <li><a href="/">KGEO Research</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/category/personal/">Personal</a></li>
-                    <li><a href="/cv.html">CV</a></li>
+                    <li><a href="/cv/">CV</a></li>
                 </ul></nav>
         </header> --><!-- /#banner -->
 
 <section id="content" class="body">
     <h1>Authors on kgeographer</h1>
     <ul>
-        <li><a href="./author/karl-grossner.html">Karl Grossner</a> (7)</li>
+        <li><a href="/author/karl-grossner.html">Karl Grossner</a> (7)</li>
     </ul>
 </section>
 

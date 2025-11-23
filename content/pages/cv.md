@@ -1,8 +1,5 @@
 Title: CV
-Date: 2024-11-30
-Category: cv
 Slug: cv
-Status: hidden
 
 #### Karl Grossner, Ph.D.
 Denver, Colorado US. November, 2024
@@ -53,7 +50,9 @@ Netage, Inc., West Newton, MA
 
 ### Peer-reviewed Publications
 - Grossner, K., Mostern, R. (2024). The Lure and Limits of Linked Data: the case of World Historical
-Gazetteer. In *Spatial Humanities 2024 Book of Abstracts* 
+Gazetteer. In *Spatial Humanities 2024 Book of Abstracts*
+- Grossner, K., Grunewald, S. & Mostern, R. (2022) Bringing places from the distant past to the present: a report on the World Historical Gazetteer. *Int J Digit Libr_ 24*, 159–162 (2023). https://doi.org/10.1007/s00799-022-00341-2
+- Grunewald, S., Mostern, R., Grossner, K. (2022): The world historical gazetteer: a digital humanities interface for transregional research, In: TRAFO: Blog for Transregional Research (2022), https://trafo.hypotheses.org/33401.
 - Grossner, K., Mostern, R. (2021). Linked Places in World Historical Gazetteer. In *5th ACM SIGSPATIAL International Workshop on Geospatial Humanities* (GeoHumanities'21), Beijing, China. ACM, New York, USA. [https://doi.org/10.1145/3486187.3490203](https://doi.org/10.1145/3486187.3490203)
 - Andris, C., Ayers, E., Grossner, K., Hu, Y., Hart, K., Thatcher, J., Tally Jr., R. T., & Giordano, A. (2020). Panel Paper: Towards Geospatial Humanities: Reflections from Two Panels. *International Journal of Humanities & Arts Computing: A Journal of Digital Humanities*, 14(1/2), 6–26. [https://doi-org.pitt.idm.oclc.org/10.3366/ijhac.2020.0242](https://doi-org.pitt.idm.oclc.org/10.3366/ijhac.2020.0242)
 - Grossner, K. (2017). Spatial Concepts. in D. Richardson, N. Castree, M. Goodchild, W. Liu, A. Kobayashi, & R. Marston (Eds.) *The International Encyclopedia of Geography: People, the Earth, Environment, and Technology*. Hoboken, NJ: Wiley/AAG

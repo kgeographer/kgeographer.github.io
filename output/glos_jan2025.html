@@ -5,41 +5,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>GLOS (Geographic Lens on Stories)</title>
-        <link rel="stylesheet" href="./static/css/main.css" />
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" /> <!--<link rel="stylesheet" href="/static/css/main.css" />-->
         <meta name="description" content="Status report on the GLOS project" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
             <h1>
-                <img src="./images/Klee-ManHead.png" height="48" alt="Logo" />
-                <a href="./">kgeographer <strong>Karl Grossner, PhD</strong></a>
-                <!-- <span class="float-right"><img src="./Klee-ManHead.png" height="48" alt="Logo" /></span> -->
+
+                <!--<img src="/images/Klee-ManHead.png" height="48" alt="Logo" />-->
+                <a href="/"><img src="/Klee-ManHead.png" alt="kgeographer logo" height="48">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+                <!-- <span class="float-right"><img src="/Klee-ManHead.png" height="48" alt="Logo" /></span> -->
             </h1>
             <nav>
                 <ul>
-                        <li><a href="/category/research/">Research</a></li>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/blog/">Blog</a></li>
                         <li><a href="/category/personal/">Personal</a></li>
-                        <li><a href="/cv.html">CV</a></li>
+                        <li><a href="/cv/">CV</a></li>
                 </ul>
             </nav>
         </header><!-- /#banner -->
 <!--         <header id="banner" class="body">
                 <h1>
-                    <a href="./">kgeographer <strong>Karl Grossner, PhD</strong></a>
+                    <a href="/">kgeographer <strong>Karl Grossner, PhD</strong></a>
                     <span class="float-right"><img src="./Klee-ManHead.png" height=48/></span>
                 </h1>
                 <nav><ul>
-                    <li><a href="/category/research/">Research</a></li>
+                    <li><a href="/">KGEO Research</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/category/personal/">Personal</a></li>
-                    <li><a href="/cv.html">CV</a></li>
+                    <li><a href="/cv/">CV</a></li>
                 </ul></nav>
         </header> --><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="./glos_jan2025.html" rel="bookmark"
+        <a href="/glos_jan2025.html" rel="bookmark"
            title="Permalink to GLOS (Geographic Lens on Stories)">GLOS (Geographic Lens on Stories)</a></h1>
     </header>
 
@@ -50,10 +56,10 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="./author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="./category/research/">research</a>.</p>
-<p>tags: <a href="./tag/folklore.html">folklore</a> <a href="./tag/place.html">place</a> <a href="./tag/ai.html">AI</a> </p>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
 </footer><!-- /.post-info -->      <p>I have begun work on a new project, tentatively named  <strong>GLOS</strong>, standing for <em>Geographic Lens on Stories</em>. The broad goal is to develop digital tools to aid in the comparative analysis of folkloric text traditions from around the world, with a focus on the relationship between stories and the places and societies they emerge from. One guiding premise is that the elements of folklore emerging from societies in a place are in some sense descriptive dimensions of that place. These elements include all categories of folkloric material, but the immediate concern of the GLOS project is stories: folktales, fairy tales, myths, epics, and so forth.</p>
 <h3>Qualifiers, more premises, and expectations</h3>
 <p>I do not have training in, or specialized knowledge of, folkloristics, nor of the anthropological themes closely associated with folklore. I approach this from a geographic perspective; I do have considerable knowledge and experience in representing place computationally, and I do have experience and skills in various natural language processing (NLP) methods. While I do expect GLOS work to elicit interesting distributional patterns, explanations for differences and similarities between story motifs and types will always include non-spatial factors I am not competent to analyze. Nevertheless, I expect to be able to generate and publish interesting patterns and will invite their analysis by others who do have interest and expertise.</p>
@@ -66,7 +72,7 @@
 <p>Leaving aside geography for the time being, I proceded to generate vector embeddings for the text of each of the 46,234 motifs in the TMI and 2,232 tale types in the ATU, using the OpenAI model, <em>text-embedding-3-small</em>. These are stored in relational tables, and wired to a very simple pilot web interface that allows a user to paste any piece of text into a form, and find the 10 motifs or tale types (a user choice) that are <em>nearest neighbors</em> in that 1536-dimension vector space.</p>
 <h3>Initial results</h3>
 <p>This first GLOS tool (tentatively <em>Embedding Explorer</em>) generates some interesting and essentially inadequate results that indicate other, more sophisticated approaches are necessary. </p>
-<p><img alt="Screenshot of the pilot Embedding Explorer tool" src="./images/embedding_explorer_tool.jpg" /></p>
+<p><img alt="Screenshot of the pilot Embedding Explorer tool" src="/images/embedding_explorer_tool.jpg" /></p>
 <p>One goal of the tools is to find conceptual similarity without relying on term frequencies and co-occurence, as embedding technology promises. A search for a term like "altruism" should identify motifs and tale types that concern that concept in any of a number of societally differentiated ways. 
 For example, an altruistic act in one tradition might involve communal sharing of resources, while in another it might emphasize individual sacrifice for the greater good. Such nuances are important for understanding the cultural lenses through which altruism is interpreted. The tool succeeds to some extent - results for "altruism" include motifs and tales concerning charity, hospitality, and various acts of giving - but not all of the 10 nearest neighbors are recognizably conceptual neighbors, and it seems likely the method will miss some important matches.</p>
 <h3>Possible next steps</h3>

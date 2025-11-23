@@ -1,28 +1,36 @@
 AUTHOR = 'Karl Grossner, PhD'
 SITENAME = 'kgeographer'
 SITESUBTITLE = 'Karl Grossner, PhD'
-SITEURL = "http://localhost"
-# SITEURL = ""
-# RELATIVE_URLS = False
-RELATIVE_URLS = True
+# SITEURL = "http://localhos:8000"
+SITEURL = ""
+RELATIVE_URLS = False
+# RELATIVE_URLS = True
 
+# Put the article index under /blog/ instead of at the site root
+INDEX_SAVE_AS = 'blog/index.html'
 
 THEME = "themes/notmyidea"
+THEME_STATIC_DIR = 'static'
 
 PATH = "content"
 
 PAGE_SAVE_AS = '{slug}/index.html'
 PAGE_URL = '{slug}/'
 
+DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
+
 MENUITEMS = [
-    ("Research", "/category/research/"),
+    ("KGEO Research", "/"),
+    ("Gallery", "/gallery/"),
+    ("Blog", "/blog/"),
     ("Personal", "/category/personal/"),
-    ("CV", "/cv.html"),
+    ("CV", "/cv/"),
 ]
 
 WITH_FUTURE_DATES = True
 
+STATIC_PATHS = ['images', 'extra']
 THEME_STATIC_DIR = 'static'
 EXTRA_PATH_METADATA = {
     'extra/custom.css': {'path': 'static/custom.css'},

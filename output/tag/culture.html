@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>kgeographer - culture</title>
-        <link rel="stylesheet" href="../static/css/main.css" />
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" /> <!--<link rel="stylesheet" href="/static/css/main.css" />-->
         <style>
             #banner h1 {
                 display: flex;
@@ -13,7 +13,9 @@
             }
 
             #banner h1 img.logo {
-                margin-right: 10px; /* Adds spacing between the image and the title text */
+              margin-right: 10px; /* Adds spacing between the image and the title text */
+              height: 48px;      /* or 40 if you prefer even smaller */
+              width: 48px;       /* keeps it square */
             }
             p {font-size: 1rem !important;}
         </style>
@@ -22,43 +24,49 @@
 <body id="index" class="home">
         <header id="banner" class="body">
             <h1>
-                <img src="../images/Klee-ManHead.png" height="48" alt="Logo" />
-                <a href="../">kgeographer <strong>Karl Grossner, PhD</strong></a>
-                <!-- <span class="float-right"><img src="../Klee-ManHead.png" height="48" alt="Logo" /></span> -->
+
+                <!--<img src="/images/Klee-ManHead.png" height="48" alt="Logo" />-->
+                <a href="/"><img src="/Klee-ManHead.png" alt="kgeographer logo" height="48">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+                <!-- <span class="float-right"><img src="/Klee-ManHead.png" height="48" alt="Logo" /></span> -->
             </h1>
             <nav>
                 <ul>
-                        <li><a href="/category/research/">Research</a></li>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/blog/">Blog</a></li>
                         <li><a href="/category/personal/">Personal</a></li>
-                        <li><a href="/cv.html">CV</a></li>
+                        <li><a href="/cv/">CV</a></li>
                 </ul>
             </nav>
         </header><!-- /#banner -->
 <!--         <header id="banner" class="body">
                 <h1>
-                    <a href="../">kgeographer <strong>Karl Grossner, PhD</strong></a>
+                    <a href="/">kgeographer <strong>Karl Grossner, PhD</strong></a>
                     <span class="float-right"><img src="./Klee-ManHead.png" height=48/></span>
                 </h1>
                 <nav><ul>
-                    <li><a href="/category/research/">Research</a></li>
+                    <li><a href="/">KGEO Research</a></li>
+                    <li><a href="/gallery/">Gallery</a></li>
+                    <li><a href="/blog/">Blog</a></li>
                     <li><a href="/category/personal/">Personal</a></li>
-                    <li><a href="/cv.html">CV</a></li>
+                    <li><a href="/cv/">CV</a></li>
                 </ul></nav>
         </header> --><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../folklore-vectors.html">Another Dimension of Place: Exploring the Geography of Folkloric Motifs</a></h1>
+                    <h1 class="entry-title"><a href="/folklore-vectors.html">Another Dimension of Place: Exploring the Geography of Folkloric Motifs</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2024-09-02T13:10:00+02:00">
                 Published: Mon 02 September 2024
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="../author/karl-grossner.html">Karl Grossner</a>
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="../category/research/">research</a>.</p>
-<p>tags: <a href="../tag/folklore.html">folklore</a> <a href="../tag/place.html">place</a> <a href="../tag/culture.html">culture</a> </p>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/culture.html">culture</a> </p>
 </footer><!-- /.post-info --><p>In this new "semi-retirement" phase of my life as a professional geographer and Digital Humanities Research Developer&trade;, I have begun planning an ambitious new project that continues my passion for "computing place." [1] The project will leverage my expertise in geospatial, geo-semantic and textual methods to further develop and explore formalizations of another dimension of place: the folkloric motifs that emerge from and are associated with different regions and societies.</p>
 <p>The core of this project involves creating a vector database of embeddings [2] for the approximately 2,500 folklore motifs outlined in the Aarne-Thompson-Uther (ATU) Folkloric Index [3]. With these embeddings, the system can generate a 2,500-dimensional motif "signature" for any given piece of folkloric text. By combining these motif signatures with spatial and temporal metadata, I hope to characterize and compare the conceptual content of folklore as it relates to specific places. The system would be made freely available and its development open to collaboration.</p>
 <p>This approach treats the narratives and motifs emerging from a place as essential components of its identity, offering a novel way to describe, compare, and contrast regions based on their folkloric output. The scope would be global. Notwithstanding the extraordinary work in this vein done by Timothy Tangherlini and colleagues over the past two decades [4], I believe that considering the conceptual content of literature and vernacular narrative as a dimension of place is a relatively under-explored notion — certainly at a global scope. I believe it holds great potential for deepening our understanding of how cultural narratives shape and reflect the character of places.</p>
