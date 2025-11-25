@@ -3,9 +3,9 @@ Date: 2025-11-23
 Slug: index
 Save_as: index.html
 
-KGEO Research is my one–person consultancy for experimenting at the intersection of **geography**, **digital humanities**, and **software development**, established in 2017 following about 5 years employ at Stanford University's Center for Interdisciplinary Research (CIDR).
+KGEO Research is my one–person consultancy for experiments at the intersection of **geography**, **digital humanities**, and **software development**, established in 2017 following about 5 years employ at Stanford University's Center for Interdisciplinary Research (CIDR).
 
-I’m Karl Grossner, PhD – a geographer and digital humanities **research developer**. My work entails both traditional academic research and software development. I have co-conceived and co-designed a number of DH projects with scholars, cultural heritage professionals, and research groups, then built the bespoke tools the projects required.
+I’m Karl Grossner, PhD – a geographer and **digital humanities research developer**. My work entails both traditional academic research and software development. I have co-conceived and co-designed a number of DH projects with scholars, cultural heritage professionals, and research groups, then built the bespoke tools and platforms the projects required.
 
 Over the past fifteen years I’ve helped design and implement projects such as:
 
@@ -15,7 +15,7 @@ Over the past fifteen years I’ve helped design and implement projects such as:
 - linked open data gazetteers and formats for historical place data  
 - experimental interfaces for exploring myths, and folklore motifs geographically  
 
-These projects are described in more detail in the **Gallery**, with links to running sites and code where possible.
+These projects are described in more detail in the **Portfolio**, with links to running sites and code where possible.
 
 ### What I do
 
@@ -31,9 +31,9 @@ The common thread is collaboration: I have worked closely with domain experts an
 
 ### How this site is organized
 
-- **Gallery** – a portfolio of selected projects and infrastructures I’ve co-designed and built  
+- **Portfolio** – selected projects and infrastructures I’ve co-designed and built  
 - **Blog** – occasional posts about ongoing work, methods, and reflections  
-- **Personal** – more informal notes, photos, and art; a reminder that I’m a whole human being  
+- **Personal** – more informal notes, photos, and art  
 - **CV** – full academic and professional background
 
-If you’re interested in working together on a project, the Gallery and CV are good places to start.
+If you’re interested in working together on a project, the Portfolio and CV are good places to start.

@@ -22,7 +22,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 MENUITEMS = [
     ("KGEO Research", "/"),
-    ("Gallery", "/gallery/"),
+    ("Portfolio", "/portfolio/"),
     ("Blog", "/blog/"),
     ("Personal", "/category/personal/"),
     ("CV", "/cv/"),
@@ -30,7 +30,8 @@ MENUITEMS = [
 
 WITH_FUTURE_DATES = True
 
-STATIC_PATHS = ['images', 'extra']
+PAGE_PATHS = ['projects', 'pages']
+STATIC_PATHS = ['images', 'extra', 'pubs']
 THEME_STATIC_DIR = 'static'
 EXTRA_PATH_METADATA = {
     'extra/custom.css': {'path': 'static/custom.css'},
