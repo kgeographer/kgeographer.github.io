@@ -13,3 +13,5 @@ __pycache__/
 output/
 
 README_DEPLOY.md
+output/
+.idea/
