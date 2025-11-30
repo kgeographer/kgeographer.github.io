@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>CityNature</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <h1>
+                <a href="/"><img src="/roundabout.png" alt="KGEO Research logo" height="48" style="vertical-align:bottom;">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+            </h1>
+            <nav>
+                <ul>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/category/research/">Blog</a></li>
+                        <li><a href="/category/personal/">Personal</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                </ul>
+            </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">CityNature</h1>
+    
+    <h2>Screenshots</h2>
+<div class="project-screens">
+  <a href="/images/projects/citynature-2.png" class="modal-image">
+    <img src="/images/projects/citynature-2.png"
+         alt="CityNature Naturehoods" width="240">
+  </a>
+  <a href="/images/projects/citynature-4.png" class="modal-image">
+    <img src="/images/projects/citynature-4.png"
+         alt="Naturehoods Explorer" width="240">
+  </a>
+  <a href="/images/projects/citynature-3.png" class="modal-image">
+    <img src="/images/projects/citynature-3.png"
+         alt="CityNature Planning Language Analysis" width="240">
+  </a>
+</div>
+
+<hr />
+<h2>Organization</h2>
+<p>Stanford University Libraries</p>
+<h2>Roles</h2>
+<p>Lead developer; data modeling; GIS and remote-sensing analysis and workflow design</p>
+<h2>Technologies</h2>
+<p>ArcGIS/remote sensing workflows; Landsat &amp; NAIP land-cover analysis; Python ETL; statistical modeling; PostgreSQL; Ruby on Rails; JavaScript (Backbone/Marionette); Leaflet/Mapbox; D3.js; LDA topic modeling (MALLET)</p>
+<hr />
+<h2>Description</h2>
+<p><strong>CityNature</strong> was an interdisciplinary research and visualization project at Stanford led by environmental scientist Jon Christensen, examining the presence, distribution, and representation of “nature” in major U.S. cities. Combining remote sensing, GIS analysis, natural language processing, and digital humanities methods, the project sought to understand how urban environments provide access to parks, open space, and everyday forms of “greenness” — and how those patterns intersect with planning documents, historical influences, and lived neighborhood experience.  </p>
+<p>The work addressed a pressing global issue: urban populations are projected to double within forty years, with most growth occurring in medium-sized cities. Planners face urgent questions about environmental quality, access to open space, and the social inequities surrounding who experiences “nature” and where. City Nature contributed foundational tools and datasets to support this emerging area of scholarship.</p>
+<p>The project generated two principal outputs.</p>
+<p><strong>First</strong>, we produced a national dataset of neighborhood-scale indicators of <em>greenness</em> and <em>pavedness</em> for 34 of the largest U.S. cities. Using satellite-derived land-cover indices, we quantified the degree to which residents encounter vegetation and impervious surfaces not only through parks, but also via backyards, vacant lots, street trees, and other everyday landscapes. These datasets were merged with demographic variables and presented through an interactive "Naturehoods" mapping interface that allowed researchers, planners, and the public to explore relationships within and across cities.</p>
+<p><strong>Second</strong>, we compiled and analyzed the full comprehensive plans from 37 large cities, applying Latent Dirichlet Allocation (LDA) to reveal their thematic structures. This produced an interactive text-mining tool that allowed users to explore how planners articulate priorities regarding open space, environmental quality, development, and “nature” at both document and section scales.</p>
+<p>CityNature also provided extensive research opportunities for Stanford undergraduates in GIS, textual analysis, and urban environmental scholarship. The project’s datasets and tools were of interest to practitioners as well as scholars; organizations such as The Nature Conservancy and the Trust for Public Land expressed interest in applying the results to urban conservation work.</p>
+<p>Although the original application is no longer online, CityNature remains a strong example of digital humanities and digital social science converging around a shared set of spatial questions — integrating environmental data, demographic trends, planning language, and urban history into a single analytic and exploratory framework.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://github.com/kgeographer">Github</a></li>
+                            <li><a href="https://whgazetteer">World Historical Gazetteer</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://bsky.app/profile/kgeographer.bsky.social">@kgeographer on Bluesky</a></li>
+                            <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<!-- Image modal -->
+<div id="image-modal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <button class="image-modal-close" aria-label="Close image">&times;</button>
+    <img id="image-modal-img" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('image-modal');
+    if (!modal) return;
+
+    var modalImg = document.getElementById('image-modal-img');
+    var closeBtn = modal.querySelector('.image-modal-close');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Click on any <a class="modal-image">
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.modal-image');
+      if (!link) return;
+
+      e.preventDefault();
+      var img = link.querySelector('img');
+      openModal(link.href, img ? img.alt : '');
+    });
+
+    // Click on the X button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Click on the dark background (outside the inner box)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>

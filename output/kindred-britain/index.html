@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Kindred Britain</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <h1>
+                <a href="/"><img src="/roundabout.png" alt="KGEO Research logo" height="48" style="vertical-align:bottom;">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+            </h1>
+            <nav>
+                <ul>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/category/research/">Blog</a></li>
+                        <li><a href="/category/personal/">Personal</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                </ul>
+            </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Kindred Britain</h1>
+    
+    <h2>Screenshots</h2>
+<div class="project-screens">
+  <a href="/images/projects/kindred-1.png" class="modal-image">
+    <img src="/images/projects/kindred-1.png"
+         alt="Kindred Britain home page" height="160">
+  </a>
+  <a href="/images/projects/kindred-2.png" class="modal-image">
+    <img src="/images/projects/kindred-2.png"
+         alt="Kindred Britain individual connections page" width="240">
+  </a>
+</div>
+
+<hr />
+<h2>Organization</h2>
+<p>Stanford University (Stanford University Libraries; Department of English)</p>
+<h2>Roles</h2>
+<p>Early contributor as data modeler and data conversion engineer</p>
+<h2>Technologies</h2>
+<p>PostgreSQL; event-based data modeling; Python parsing and ETL; GEDCOM/PHPGedView data structures; relational database design; normalization and schema development</p>
+<hr />
+<h2>Description</h2>
+<p><strong>Kindred Britain</strong> was an ambitious digital humanities project that visualizes connections among nearly 30,000 individuals in British cultural history, reconstructing family relationships stretching across centuries. Conceived and led by English professor Nicholas Jenkins, and later developed extensively by Elijah Meeks and collaborators, the final project combines a richly curated biographical dataset with sophisticated network visualizations, interactive timelines, and narrative essays that explore patterns of kinship in British society.</p>
+<p>My involvement occurred during the early development phase, when the dataset existed primarily as a single genealogical file exported in PHPGedView/GEDCOM format. Although structurally complete for genealogical purposes, this format was not suitable for the kinds of analytical, temporal, or relational operations the project envisioned. Drawing on my prior research in event-based modeling, including work from my dissertation on the centrality of events in representing human activity, I advocated for and implemented an <strong>event-based data model</strong> as the foundation of the project’s relational database.</p>
+<p>This work included parsing the GEDCOM file, identifying modeling limitations, and designing a PostgreSQL schema that represented births, deaths, marriages, occupations, residences, and other biographical occurrences as discrete, typed events with participants and temporal attributes. This structure provided a flexible and extensible basis for later development, facilitating the complex relationship queries, network analyses, and additional event types incorporated by the project team as Kindred Britain grew in scope and sophistication.</p>
+<p>My contribution concluded after this initial data-modeling period. The later interface design, visualization work, interpretive essays, and final shaping of the project as a public scholarly resource were led by Elijah Meeks and Nicholas Jenkins. My role is best understood as helping establish the project’s early technical underpinnings: converting the source genealogical data into a normalized event-based structure that enabled subsequent developments.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://github.com/kgeographer">Github</a></li>
+                            <li><a href="https://whgazetteer">World Historical Gazetteer</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://bsky.app/profile/kgeographer.bsky.social">@kgeographer on Bluesky</a></li>
+                            <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<!-- Image modal -->
+<div id="image-modal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <button class="image-modal-close" aria-label="Close image">&times;</button>
+    <img id="image-modal-img" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('image-modal');
+    if (!modal) return;
+
+    var modalImg = document.getElementById('image-modal-img');
+    var closeBtn = modal.querySelector('.image-modal-close');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Click on any <a class="modal-image">
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.modal-image');
+      if (!link) return;
+
+      e.preventDefault();
+      var img = link.querySelector('img');
+      openModal(link.href, img ? img.alt : '');
+    });
+
+    // Click on the X button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Click on the dark background (outside the inner box)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>
