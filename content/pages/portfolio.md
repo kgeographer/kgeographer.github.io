@@ -25,7 +25,7 @@ An ongoing KGEO Research personal project applying computational methods to glob
 ---
 
 
-<img src="/images/projects/authorial-1.png" alt="Dissertation screenshot" height="150" class="portfolio-thumb">
+<img src="/images/projects/authorial-1.png" alt="Authorial London home page" height="150" class="portfolio-thumb">
 ### Authorial London (<a href="https://authorial.stanford.edu" target="_blank">web site</a>)
 
 A literary geography project mapping place references in works by 47 London-based writers across seven centuries, built as the first instance of a potential “Authorial {X}” platform. I served as co-investigator with Kenneth Ligda and lead developer, designing and developing the data model, mapping workflows, and Rails-based application.  
@@ -33,7 +33,7 @@ A literary geography project mapping place references in works by 47 London-base
 ---
 
 
-<img src="/images/projects/catal-1.png" alt="Dissertation screenshot" height="150" class="portfolio-thumb">
+<img src="/images/projects/catal-1.png" alt="Catalhöyük Living Archive home page (retired)" height="150" class="portfolio-thumb">
 ### Çatalhöyük Living Archive
 
 A pilot digital archive transformation integrating decades of excavation data from Ian Hodder’s Çatalhöyük project into a linked, spatial-temporal, multimodal research environment. I designed the Living Archive concept, restructured the underlying datasets, published the record as Linked Open Data, and built a prototype interface for exploring units, finds, features, and interpretations across time and space.  
@@ -44,7 +44,7 @@ A pilot digital archive transformation integrating decades of excavation data fr
 <img src="/images/projects/citynature-1.png" alt="CityNature" height="150" class="portfolio-thumb">
 ### CityNature
 
-An interdisciplinary Stanford project led by Jon Christensen combining remote sensing, GIS analysis, topic modeling, and urban environmental history to examine how major U.S. cities provide — or fail to provide — access to “nature.” I co-developed the data models, designed GIS and land-cover workflows, and designed and built built the interactive visualization tools used to explore neighborhood-scale greenness and planning-language themes.  
+An interdisciplinary Stanford project led by Jon Christensen combining remote sensing, GIS analysis, topic modeling, and urban environmental history to examine how major U.S. cities provide — or fail to provide — access to “nature.” I co-developed the data models, designed GIS and land-cover workflows, and designed and built the interactive visualization tools used to explore neighborhood-scale greenness and planning-language themes.  
 [Read more →](/city-nature/)
 ---
 

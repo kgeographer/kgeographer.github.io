@@ -13,7 +13,7 @@ Over the past fifteen years I’ve helped design and implement projects involvin
 
 - Route modeling and mapped simulation of historical movement (ORBIS)
 - Linked gazetteers and open spatial infrastructures (World Historical Gazetteer)
-- Literary-geographical analysis text-to-map workflows (Authorial London)
+- Literary-geographical analysis and text-to-map workflows (Authorial London)
 - Living archives for multimodal archaeological data environments (Catalhöyük)
 - Urban environmental analysis and interactive visualizations (CityNature)
 - Computational tools for exploring folklore motifs and myth structure (Geographic Lens on Stories)
@@ -39,7 +39,7 @@ The common thread is collaboration: I have worked closely with domain experts an
 - **Personal** – more informal notes, photos, and art  
 - **CV** – full academic and professional background
 
-ave a look at the Portfolio and CV, and if you’re interested in working together on a project, contact me at <a id="email-link"></a>.
+Have a look at the Portfolio and CV, and if you’re interested in working together on a project, contact me at <a id="email-link"></a>.
 
 <script>
   (function () {
