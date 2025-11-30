@@ -1,6 +1,6 @@
 Title: Where the Lens Turned Back: Reflections on GLOS
 Date: 2025-11-20
-Category: research
+Category: Research
 Slug: glos_on_pause
 Summary: GLOS hits an epistemological roadblock
 Tags: creation myths, LLMs, folklore, ontology, concept modeling

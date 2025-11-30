@@ -1,6 +1,6 @@
 Title: Turning the page
 Date: 2024-08-26 10:00
-Category: personal
+Category: Personal
 Tags: personal, research
 Slug: page-turning
 Authors: Karl Grossner

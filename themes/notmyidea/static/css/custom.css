@@ -1,0 +1,99 @@
+h2 {
+  margin-bottom: .2rem !important;
+}
+p {
+  margin-top: .2rem !important;
+}
+
+/* Thumbnails: hand cursor */
+.project-screens img {
+  cursor: pointer;
+  border: 1px solid gainsboro;
+}
+.portfolio-thumb {
+  margin-left:2px;
+  float: right;
+  border: 1px gainsboro solid;
+  max-height: 150px !important;
+}
+.portfolio-item {
+  position: relative;
+  margin-bottom: 2.5rem;   /* space between projects */
+  overflow: auto;          /* contain the float */
+}
+
+/* Thumbnail on the right for desktop-ish widths */
+.project-thumb {
+  float: right;
+  width: 160px;            /* or 180/200 as you like */
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Make sure the "Read more" link isn't jammed against the text */
+.project-more {
+  margin-top: 0.75rem;
+}
+
+/* Mobile: stack the image above the text */
+@media (max-width: 700px) {
+  .project-thumb {
+    float: none;
+    display: block;
+    margin: 0 auto 0.75rem auto;
+    width: 60%;           /* or 100% if you want full width */
+  }
+}
+
+/* Modal overlay */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75); /* slightly transparent, not pure black */
+  display: none;                   /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.image-modal.is-open {
+  display: flex;
+}
+
+/* Inner wrapper */
+.image-modal-inner {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+/* Big image */
+#image-modal-img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  background: #111;
+}
+
+/* Close button (X in top-right) */
+.image-modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border: none;
+  background: #f5f5f5;   /* light background so it stands out */
+  color: #000;           /* black X */
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+  z-index: 10000;        /* higher than the image */
+}
+
+.image-modal-close:hover {
+  background: #fff;
+}

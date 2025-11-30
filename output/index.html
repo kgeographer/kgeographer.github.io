@@ -5,63 +5,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>KGEO Research</title>
-        <link rel="stylesheet" href="/static/css/main.css" type="text/css" /> <!--<link rel="stylesheet" href="/static/css/main.css" />-->
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
             <h1>
-
-                <!--<img src="/images/Klee-ManHead.png" height="48" alt="Logo" />-->
-                <a href="/"><img src="/Klee-ManHead.png" alt="kgeographer logo" height="48">
+                <a href="/"><img src="/roundabout.png" alt="KGEO Research logo" height="48" style="vertical-align:bottom;">
                   kgeographer <strong>Karl Grossner, PhD</strong></a>
-                <!-- <span class="float-right"><img src="/Klee-ManHead.png" height="48" alt="Logo" /></span> -->
             </h1>
             <nav>
                 <ul>
                         <li><a href="/">KGEO Research</a></li>
                         <li><a href="/portfolio/">Portfolio</a></li>
-                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/category/research/">Blog</a></li>
                         <li><a href="/category/personal/">Personal</a></li>
                         <li><a href="/cv/">CV</a></li>
                 </ul>
             </nav>
         </header><!-- /#banner -->
-<!--         <header id="banner" class="body">
-                <h1>
-                    <a href="/">kgeographer <strong>Karl Grossner, PhD</strong></a>
-                    <span class="float-right"><img src="./Klee-ManHead.png" height=48/></span>
-                </h1>
-                <nav><ul>
-                    <li><a href="/">KGEO Research</a></li>
-                    <li><a href="/portfolio/">Portfolio</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                    <li><a href="/category/personal/">Personal</a></li>
-                    <li><a href="/cv/">CV</a></li>
-                </ul></nav>
-        </header> --><!-- /#banner -->
 <section id="content" class="body">
     <h1 class="entry-title">KGEO Research</h1>
     
-    <p>KGEO Research is my one–person consultancy for experiments at the intersection of <strong>geography</strong>, <strong>digital humanities</strong>, and <strong>software development</strong>, established in 2017 following about 5 years employ at Stanford University's Center for Interdisciplinary Research (CIDR).</p>
-<p>I’m Karl Grossner, PhD – a geographer and <strong>digital humanities research developer</strong>. My work entails both traditional academic research and software development. I have co-conceived and co-designed a number of DH projects with scholars, cultural heritage professionals, and research groups, then built the bespoke tools and platforms the projects required.</p>
-<p>Over the past fifteen years I’ve helped design and implement projects such as:</p>
+    <p><img src="/images/dai_viet.jpg"
+         alt="Karl Grossner" height="150" align="right" style="margin-left:2px;"> 
+KGEO Research is my one–person consultancy for work at the intersection of <strong>geography</strong>, <strong>digital humanities</strong>, and <strong>software development</strong>, established in 2017 following five years at Stanford University's Center for Interdisciplinary Research (CIDR).</p>
+<p>I’m Karl Grossner, PhD – a geographer and <strong>digital humanities research developer</strong>. My work entails both traditional academic research and software development. I have co-conceived and co-designed a number of DH projects with scholars, cultural heritage professionals, and research groups, then built bespoke tools and/or digital platforms, as required. </p>
+<p>Over the past fifteen years I’ve helped design and implement projects involving:</p>
 <ul>
-<li>historical travel models and narrative maps of the Roman world  </li>
-<li>visual and analytical tools for urban nature and environmental justice  </li>
-<li>living archives for archaeological fieldwork  </li>
-<li>linked open data gazetteers and formats for historical place data  </li>
-<li>experimental interfaces for exploring myths, and folklore motifs geographically  </li>
+<li>Route modeling and mapped simulation of historical movement (ORBIS)</li>
+<li>Linked gazetteers and open spatial infrastructures (World Historical Gazetteer)</li>
+<li>Literary-geographical analysis text-to-map workflows (Authorial London)</li>
+<li>Living archives for multimodal archaeological data environments (Catalhöyük)</li>
+<li>Urban environmental analysis and interactive visualizations (CityNature)</li>
+<li>Computational tools for exploring folklore motifs and myth structure (Geographic Lens on Stories)</li>
 </ul>
-<p>These projects are described in more detail in the <strong>Portfolio</strong>, with links to running sites and code where possible.</p>
+<p>These projects are described in more detail in the <a href="/portfolio"><strong>Portfolio</strong></a>, with links to running sites and code where possible.</p>
 <h3>What I do</h3>
 <p>KGEO Research focuses on:</p>
 <ul>
-<li><strong>Concept and data modeling</strong> for humanities and social-science projects  </li>
-<li><strong>Geographic information workflows</strong> (spatial databases, gazetteers, historical place data)  </li>
-<li><strong>Prototype web applications</strong> in Python/Django and related stacks  </li>
+<li><strong>Concept and data modeling</strong> for humanities and social science projects  </li>
+<li><strong>Geographic information workflows</strong> involving spatial-temporal databases, historical place data, and thematic content</li>
+<li><strong>Building web applications</strong> using Python/Django and related software stacks, from pilots to finished platforms</li>
 <li><strong>Narrative and text-analysis pipelines</strong>, experimental use and evaluation of AI technologies and methods (LLMs, embeddings)</li>
-<li><strong>Consulting on DH infrastructure</strong>, especially where place, time, and story intersect  </li>
+<li><strong>Consulting on DH research design</strong>, especially where place, time, and story intersect  </li>
 </ul>
 <p>The common thread is collaboration: I have worked closely with domain experts and project teams to shape the questions, the data models, tools, and interfaces required by research projects. Software follows from that co-design process.</p>
 <h3>How this site is organized</h3>
@@ -71,7 +59,20 @@
 <li><strong>Personal</strong> – more informal notes, photos, and art  </li>
 <li><strong>CV</strong> – full academic and professional background</li>
 </ul>
-<p>If you’re interested in working together on a project, the Portfolio and CV are good places to start.</p>
+<p>ave a look at the Portfolio and CV, and if you’re interested in working together on a project, contact me at <a id="email-link"></a>.</p>
+<script>
+  (function () {
+    var user = 'karl';
+    var domain = 'kgeographer.org';
+    var addr = user + '@' + domain;
+
+    var link = document.getElementById('email-link');
+    if (!link) return;
+
+    link.textContent = addr;
+    link.setAttribute('href', 'mailto:' + addr);
+  })();
+</script>
 </section>
         <section id="extras" class="body">
                 <div class="blogroll">
@@ -99,5 +100,69 @@
                 <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
+<!-- Image modal -->
+<div id="image-modal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <button class="image-modal-close" aria-label="Close image">&times;</button>
+    <img id="image-modal-img" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('image-modal');
+    if (!modal) return;
+
+    var modalImg = document.getElementById('image-modal-img');
+    var closeBtn = modal.querySelector('.image-modal-close');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Click on any <a class="modal-image">
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.modal-image');
+      if (!link) return;
+
+      e.preventDefault();
+      var img = link.querySelector('img');
+      openModal(link.href, img ? img.alt : '');
+    });
+
+    // Click on the X button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Click on the dark background (outside the inner box)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      }
+    });
+  })();
+</script>
 </body>
 </html>

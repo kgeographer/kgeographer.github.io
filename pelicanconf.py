@@ -1,7 +1,6 @@
 AUTHOR = 'Karl Grossner, PhD'
 SITENAME = 'kgeographer'
 SITESUBTITLE = 'Karl Grossner, PhD'
-# SITEURL = "http://localhos:8000"
 SITEURL = ""
 RELATIVE_URLS = False
 # RELATIVE_URLS = True
@@ -23,7 +22,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = [
     ("KGEO Research", "/"),
     ("Portfolio", "/portfolio/"),
-    ("Blog", "/blog/"),
+    ("Blog", "/category/research/"),
     ("Personal", "/category/personal/"),
     ("CV", "/cv/"),
 ]
