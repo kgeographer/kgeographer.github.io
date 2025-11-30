@@ -19,7 +19,7 @@ A lightweight JSON-LD/GeoJSON extension for representing historical places with 
 
 
 <img src="/images/projects/glos-1.png" alt="Geographic Lens on Stories (GLOS)" height="135" class="portfolio-thumb">
-### Geographic Lens on Stories (GLOS; <a href="https://glos.kgeographer.org" target="_blank">web site</a> )
+### Geographic Lens on Stories (GLOS; <a href="http://glos.kgeographer.org" target="_blank">web site</a> )
 An ongoing KGEO Research personal project applying computational methods to global folklore and creation myths, including digitized ATU/TMI indexes, semantic-embedding tools, and structured myth analysis pipelines utilizing large language models from OpenAI and Anthropic.
 [Read more →](/glos/)
 ---
