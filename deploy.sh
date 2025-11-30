@@ -31,7 +31,8 @@ echo "✅ Committing changes..."
 git commit -m "Deploy latest site updates" || echo "No changes to commit."
 
 echo "🚀 Pushing to GitHub..."
-git push origin gh-pages
+# git push origin gh-pages
+git push --force-with-lease origin gh-pages
 
 echo "🔄 Switching back to main branch..."
 git checkout main
