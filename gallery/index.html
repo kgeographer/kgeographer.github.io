@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Project Gallery</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <h1>
+                <a href="/"><img src="/roundabout.png" alt="KGEO Research logo" height="48" style="vertical-align:bottom;">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+            </h1>
+            <nav>
+                <ul>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/category/research/">Blog</a></li>
+                        <li><a href="/category/personal/">Personal</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                </ul>
+            </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Project Gallery</h1>
+    
+    <p>This is a selection of digital humanities projects and infrastructures I’ve co-designed and developed, usually in close collaboration with principal investigators and research teams.</p>
+<p>Each entry notes my role and links out to the project where possible. Longer narrative and technical notes may follow.</p>
+<h2>PhD – Representing Historical Knowledge in Geographic Information Systems (2010)</h2>
+<p><strong>Role:</strong> Doctoral research, UCSB Geography<br />
+Developed conceptual and logical models for representing historical knowledge in GIS databases, aimed at both collaborative digital atlases and analytical spatial history applications.</p>
+<h2>TeachSpatial (2011)</h2>
+<p><strong>Role:</strong> Principal developer, co-planning with Don Janelle<br />
+Co-developed the project plan (NSF-DUE 1043777), conducted research on a theoretical basis for a portal to spatial teaching resources, and built the Drupal-based site “A spatial lens on the National Science Digital Library.”</p>
+<h2>ORBIS: The Stanford Geospatial Network Model of the Roman World (2012)</h2>
+<p><strong>Role:</strong> Site design and initial lead developer<br />
+Led design and development of the original ORBIS web publication (superceded in 2014) in collaboration with PI Walter Scheidel and lead developer Elijah Meeks, integrating a GIS routing application with visualizations and an embedded scholarly article reconstructing time and cost of travel in the Roman world around 200 CE.</p>
+<h2>City Nature (2013)</h2>
+<p><strong>Role:</strong> Researcher and lead developer<br />
+With PI Jon Christensen and collaborators, led design and implementation of analytic tools and the “NatureHoods” interface, combining satellite imagery, spatial analysis, and social indicators to explore access to urban nature across 34 large U.S. cities.</p>
+<h2>Çatalhöyük Living Archive (2014–2015)</h2>
+<p><strong>Role:</strong> Lead developer, co-designer with PI Ian Hodder, Claudia Engel, and Elijah Meeks
+Designed and implemented a linked open data “living archive” for 21 years of excavation and analysis at Çatalhöyük, enabling ongoing expert annotation and multi-vocal interpretation beyond the end of active fieldwork.</p>
+<h2>Authorial London (2016)</h2>
+<p><strong>Role:</strong> Co-designer and lead developer with PI Kenneth Ligda<br />
+The site compiles and maps ~1,600 place references from 193 works by 47 authors across 600 years of London literary history, supporting exploration by period, genre, form, social standing, and neighborhood.</p>
+<h2>World Historical Gazetteer (2017–2024)</h2>
+<p><strong>Role:</strong> Co-investigator, technical director, lead developer<br />
+Co-led design and implementation of an open platform for linked historical place data (“Empowering discovery by connecting place names across time and language”), including data pipelines, APIs, and web interfaces.</p>
+<h2>Linked Places Format (LPF) (2017– )</h2>
+<p><strong>Role:</strong> Principal author and maintainer<br />
+Extended GeoJSON to support historical place representation, adding temporal descriptors and structures for multiple names, geometries, timespans, and relations per record; used extensively in WHG and adopted by other projects.</p>
+<h2>Geographic Lens on Stories (GLOS) (2024– )</h2>
+<p><strong>Role:</strong> Creator and developer<br />
+An ongoing project to develop tools and resources for exploring and comparing written and transcribed stories, beginning with global creation myths, through geographic and conceptual lenses.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://github.com/kgeographer">Github</a></li>
+                            <li><a href="https://whgazetteer">World Historical Gazetteer</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://bsky.app/profile/kgeographer.bsky.social">@kgeographer on Bluesky</a></li>
+                            <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<!-- Image modal -->
+<div id="image-modal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <button class="image-modal-close" aria-label="Close image">&times;</button>
+    <img id="image-modal-img" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('image-modal');
+    if (!modal) return;
+
+    var modalImg = document.getElementById('image-modal-img');
+    var closeBtn = modal.querySelector('.image-modal-close');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Click on any <a class="modal-image">
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.modal-image');
+      if (!link) return;
+
+      e.preventDefault();
+      var img = link.querySelector('img');
+      openModal(link.href, img ? img.alt : '');
+    });
+
+    // Click on the X button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Click on the dark background (outside the inner box)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>PhD Dissertation – Representing Historical Knowledge in Geographic Information Systems</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <h1>
+                <a href="/"><img src="/roundabout.png" alt="KGEO Research logo" height="48" style="vertical-align:bottom;">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+            </h1>
+            <nav>
+                <ul>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/category/research/">Blog</a></li>
+                        <li><a href="/category/personal/">Personal</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                </ul>
+            </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">PhD Dissertation – Representing Historical Knowledge in Geographic Information Systems</h1>
+    
+    <h2>Screenshots</h2>
+<div class="project-screens">
+  <a href="/images/projects/diss-1.png" class="modal-image">
+    <img src="/images/projects/diss-1.png"
+         alt="Dissertation screenshot 1" width="240">
+  </a>
+  <a href="/images/projects/diss-2.png" class="modal-image">
+    <img src="/images/projects/diss-2.png"
+         alt="Dissertation screenshot 2" width="240">
+  </a>
+  <a href="/images/projects/diss-3.png" class="modal-image">
+    <img src="/images/projects/diss-3-thumb.png"
+         alt="Dissertation screenshot 3" width="240" height="180">
+  </a>
+</div>
+<hr />
+<h2>Organization</h2>
+<p>University of California, Santa Barbara — Department of Geography</p>
+<h2>Roles</h2>
+<p>Doctoral Researcher; Concept and Data Modeler; System Architect</p>
+<h2>Technologies</h2>
+<p>First-order logic; Protégé; PostgreSQL + PostGIS; QGIS; ontology engineering methods</p>
+<hr />
+<h2>Description</h2>
+<p>My dissertation, <em>Representing Historical Knowledge in Geographic Information Systems</em>, addressed a perceived conceptual problem facing digital historical scholarship in the 21st century: how to move beyond static print historical atlases toward <strong>geo-historical information systems</strong> capable of modeling dynamic human activity across space and time. The research asked three questions: <em>(i)</em> What may digital historical atlases be? <em>(ii)</em> What are their representational requirements? and <em>(iii)</em> What extensions to traditional GIS data models are necessary to meet those requirements?</p>
+<p>The work proceeded from the premise that historical knowledge requires representational structures capable of representing events, processes, change, simultaneity, uncertainty, and multiple interpretive voices. Using ontology engineering as the primary methodological framework, I enumerated a set of representational requirements for an emerging genre of digital historical atlas and formulated competency questions to evaluate candidate models.</p>
+<p>One outcome was a <strong>Spatial History Ontology (SHO)</strong>, an ontological extension of the DOLCE top-level ontology, designed to support formal expression of historical entities, relations, and processes within geographic computing environments. SHO was implemented in Protégé and realized in a prototype <strong>object-relational spatial database</strong> (PostgreSQL + PostGIS) populated with six diverse exemplar datasets. This prototype demonstrated how ontology-informed modeling can enable new forms of historical representation and analysis beyond the capabilities of conventional GIS or print atlases.</p>
+<p>The dissertation contributed both a conceptual framework and an implemented model for representing historical knowledge in geographic information systems, broadly speaking, and laid groundwork for my later work on Linked Places Format (LPF), the World Historical Gazetteer, and other digital humanities works and infrastructures built around spatial-temporal knowledge representation.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://github.com/kgeographer">Github</a></li>
+                            <li><a href="https://whgazetteer">World Historical Gazetteer</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://bsky.app/profile/kgeographer.bsky.social">@kgeographer on Bluesky</a></li>
+                            <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<!-- Image modal -->
+<div id="image-modal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <button class="image-modal-close" aria-label="Close image">&times;</button>
+    <img id="image-modal-img" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('image-modal');
+    if (!modal) return;
+
+    var modalImg = document.getElementById('image-modal-img');
+    var closeBtn = modal.querySelector('.image-modal-close');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Click on any <a class="modal-image">
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.modal-image');
+      if (!link) return;
+
+      e.preventDefault();
+      var img = link.querySelector('img');
+      openModal(link.href, img ? img.alt : '');
+    });
+
+    // Click on the X button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Click on the dark background (outside the inner box)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>

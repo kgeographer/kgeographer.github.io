@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Linked Places Format (LPF)</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <h1>
+                <a href="/"><img src="/roundabout.png" alt="KGEO Research logo" height="48" style="vertical-align:bottom;">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+            </h1>
+            <nav>
+                <ul>
+                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/category/research/">Blog</a></li>
+                        <li><a href="/category/personal/">Personal</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                </ul>
+            </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Linked Places Format (LPF)</h1>
+    
+    <h2>Screenshots</h2>
+<div class="project-screens">
+  <a href="/images/projects/lpf-1.png" class="modal-image">
+    <img src="/images/projects/lpf-1.png"
+         alt="LPF conceptual model" width="240">
+  </a>
+  <a href="/images/projects/lpf-2.png" class="modal-image">
+    <img src="/images/projects/lpf-2.png"
+         alt="LPF model links disciplines" width="240">
+  </a>
+  <a href="/images/projects/lpf-3.png" class="modal-image">
+    <img src="/images/projects/lpf-3-thumb.png"
+         alt="Single LPF JSON object" height="160">
+  </a>
+</div>
+<hr />
+<h2>Organization</h2>
+<p>University of Pittsburgh World History Center and broadly, the Pelagios Network</p>
+<h2>Roles</h2>
+<p>Principal Author; Developer; Data Modeling Lead</p>
+<h2>Technologies</h2>
+<p>JSON-LD; GeoJSON; RDF; Linked Data; Python; data modeling; temporal GIS concepts; gazetteer interoperability frameworks</p>
+<hr />
+<h2>Description</h2>
+<p><strong>Linked Places Format (LPF)</strong> is a lightweight, extensible data format for representing historical place information with temporal depth and semantic clarity. It offers a pragmatic solution to a longstanding challenge in geographic information science: how to incorporate <strong>time</strong>—often complex, uncertain, or culturally variable—into spatial data models. It also answers requirements of gazetteer systems for standard ways of including multiple values for temporally scoped place attributes.</p>
+<p>LPF grew out of two earlier efforts. The first was <strong>TopoTime</strong>, developed with Elijah Meeks at Stanford Libraries, which drafted a formal scheme for expressing uncertain or complex historical timespans. The second was <strong>GeoJSON-T</strong>, an experimental extension to GeoJSON that introduced standardized <code>"when"</code> elements for temporal scoping. GeoJSON-T attracted early interest but remained a prototype. When the World Historical Gazetteer (WHG) launched, GeoJSON-T became the conceptual foundation for LPF, which extended the format further by supporting <strong>multiple temporally scoped names, geometries, types, relations, and citations</strong> in a single place record. LPF is thus the culmination of a multiyear line of research into bringing temporal structures into web-native geographic data models.</p>
+<p>LPF is designed around <strong>JSON-LD</strong>, making every instance valid RDF and enabling interoperability with Linked Data ecosystems. At the same time, it remains <strong>valid GeoJSON</strong>, ensuring immediate compatibility with web mapping tools. This dual nature supports a key goal: enabling researchers to integrate place attestations from many sources without imposing a single “canonical” model. As emphasized in the chapter <a href="/pubs/Place_Period_Setting.pdf" target="_blank"><em>Place, Period, and Setting for Linked Data Gazetteers</em></a> historical gazetteers must represent an interplay of spatial and temporal characteristics, described therein as <em>settings</em>. LPF provides an applied, implementation-friendly mechanism for representing those settings in practical workflows.</p>
+<p>Originally developed for contributions to partner projects in the <strong>Pelagios Network</strong>—including the World Historical Gazetteer, Recogito, and PeriodO—LPF has since become a general-purpose format for publishing spatio-temporal place data. Its aim is not to define a single universal gazetteer schema but to offer a minimal, flexible structure that enables <strong>linking between diverse gazetteers</strong>, helping users search across them, disambiguate places, and annotate data with stable URIs.</p>
+<p>LPF represents one of my most sustained contributions to digital humanities and geographic information science: a workable, community-adopted approach for representing <strong>place + time</strong> together in a machine-readable, web-native format suitable for historical research at scale.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://github.com/kgeographer">Github</a></li>
+                            <li><a href="https://whgazetteer">World Historical Gazetteer</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://bsky.app/profile/kgeographer.bsky.social">@kgeographer on Bluesky</a></li>
+                            <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<!-- Image modal -->
+<div id="image-modal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <button class="image-modal-close" aria-label="Close image">&times;</button>
+    <img id="image-modal-img" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('image-modal');
+    if (!modal) return;
+
+    var modalImg = document.getElementById('image-modal-img');
+    var closeBtn = modal.querySelector('.image-modal-close');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Click on any <a class="modal-image">
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.modal-image');
+      if (!link) return;
+
+      e.preventDefault();
+      var img = link.querySelector('img');
+      openModal(link.href, img ? img.alt : '');
+    });
+
+    // Click on the X button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Click on the dark background (outside the inner box)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>
