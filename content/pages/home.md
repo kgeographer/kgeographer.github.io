@@ -26,7 +26,7 @@ KGEO Research focuses on:
 
 - **Concept and data modeling** for humanities and social science projects  
 - **Geographic information workflows** involving spatial-temporal databases, historical place data, and thematic content
-- **Building web applications** using Python/Django and related software stacks, from pilots to finished platforms
+- **Building web applications and notebooks** using Python, Django and related software stacks, from pilots to finished platforms
 - **Narrative and text-analysis pipelines**, experimental use and evaluation of AI technologies and methods (LLMs, embeddings)
 - **Consulting on DH research design**, especially where place, time, and story intersect  
 

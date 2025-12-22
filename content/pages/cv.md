@@ -105,10 +105,10 @@ Gazetteer. In *Spatial Humanities 2024, Bamberg Book of Abstracts* <a href="/pub
 - _Linked Places --> Linked Pasts_ (Invited talk; session co-convener). First US Semantic Technologies Symposium. Wright State University; March, 2018.
 - _Linking Pasts with Historical Gazetteers_ (Invited talk). Vanderbilt University Library, November 2017.
 - _From Linking Places to a Linked Pasts Network_ (white paper). Linked Pasts III symposium (co-convener), Stanford University; December 2017.
-- _Spatial Discovery III Expert Meeting_. (Expert meeting: invited participant). University of California, Santa Barbara, May 2019. ([http://spatial.ucsb.edu/2019/spatial-discovery-3](http://spatial.ucsb.edu/2019/spatial-discovery-3)).
-- _Linked Places, Linked Pasts_ (Position paper, invited participant). Spatial Discovery II Expert Meeting, University of California, Santa Barbara, June 2017. ([http://spatial.ucsb.edu/2017/spatial-discovery-2](http://spatial.ucsb.edu/2017/spatial-discovery-2)).
+- _Spatial Discovery III Expert Meeting_. (Expert meeting: invited participant). University of California, Santa Barbara, May 2019.
+- _Linked Places, Linked Pasts_ (Position paper, invited participant). Spatial Discovery II Expert Meeting, University of California, Santa Barbara, June 2017.
 - _Joining Place and Period in Historical Gazetteers_ (Workshop: invited presenter) in A place for places: current trends and challenges in the development and use of geo-historical gazetteers. Digital Humanities 2016; Krakow, Poland; July 2016.
-- _A Next-Stage Digital Geo-library_ (Position paper, invited participant). Expert Meeting on Spatial Discovery, University of California, Santa Barbara; June 2015. ([http://spatial.ucsb.edu/2015/spatial-discovery](http://spatial.ucsb.edu/2015/spatial-discovery)).
+- _A Next-Stage Digital Geo-library_ (Position paper, invited participant). Expert Meeting on Spatial Discovery, University of California, Santa Barbara; June 2015.
 - _Geospatial Narrative: Perspectives from the humanities, cartography, and geographic information science_. (Half-day workshop, organizer, participant). Center for Interdisciplinary Digital Research; Stanford University; May, 2015.
 - _Geographic Search_ (Position paper, invited participant) in Spatial Search specialist workshop, University of California Santa Barbara Center for Spatial Studies; 8-9 December 2014
 - _Setting a Research and Development Agenda for Moving Historical Geodata to the Web_. Invited workshop at New York Public Library, 5-7 November 2014
@@ -148,11 +148,15 @@ Gazetteer. In *Spatial Humanities 2024, Bamberg Book of Abstracts* <a href="/pub
 
 ### Technical Competencies
 
-- Software development: Python, Django, JavaScript, Rails, HTML
-- Data stores: PostgreSQL, PostGIS, Elasticsearch, MySQL
+- Software development: Python, Django, JavaScript, D3, HTML
+- Notebooks: Jupyter
+- Data stores: PostgreSQL/PostGIS, Elasticsearch, SQLite
 - AI: large language models (LLMs), text embeddings, ChatGPT, Claude
+- Web mapping: MapLibre/Mapbox, Leaflet
 - GIS software: QGIS, ArcMap
-- Sysadmin: Ubuntu, CentOS, RedHat
+- Graphical design: Affinity Photo, Designer
+- Static web sites: Pelican, Flask
+- Sysadmin: Ubuntu, Docker, CentOS, RedHat
 
 ### Selected Awards
 
