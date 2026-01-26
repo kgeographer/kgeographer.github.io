@@ -1,5 +1,5 @@
 Title: KGEO Research
-Date: 2025-11-23
+Date: 2026-01-26
 Slug: index
 Save_as: index.html
 
@@ -7,7 +7,7 @@ Save_as: index.html
          alt="Karl Grossner" height="150" align="right" style="margin-left:2px;"> 
 KGEO Research is my one–person consultancy for work at the intersection of **geography**, **digital humanities**, and **software development**, established in 2017 following five years at Stanford University's Center for Interdisciplinary Research (CIDR).
 
-I’m Karl Grossner, PhD – a geographer and **digital humanities research developer**. My work entails both traditional academic research and software development. I have co-conceived and co-designed a number of DH projects with scholars, cultural heritage professionals, and research groups, then built bespoke tools and/or digital platforms, as required. 
+I’m Karl Grossner, PhD – a geographer and **digital humanities research developer**. My work entails both traditional academic research and software development. I have co-conceived and co-designed a number of DH projects with scholars, cultural heritage professionals, and research groups, then built bespoke tools and/or digital platforms, as required. My current personal research is the subject of a new <a href="/computing-place">**Computing Place**</a> project in development.
 
 Over the past fifteen years I’ve helped design and implement projects involving:
 

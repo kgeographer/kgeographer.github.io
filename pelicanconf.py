@@ -20,8 +20,9 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 
 MENUITEMS = [
-    ("KGEO Research", "/"),
+    ("Home", "/"),
     ("Portfolio", "/portfolio/"),
+    ("Computing Place", "/computing-place/"),
     ("Blog", "/category/research/"),
     ("Personal", "/category/personal/"),
     ("CV", "/cv/"),
