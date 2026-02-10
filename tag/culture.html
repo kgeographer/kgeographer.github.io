@@ -43,52 +43,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/computing_place.html">Introducing Computing Place</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2026-02-09T00:00:00+01:00">
-                Published: Mon 09 February 2026
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
-        </address>
-<p>In <a href="/category/research/">research</a>.</p>
-<p>tags: <a href="/tag/place.html">place</a> <a href="/tag/landscape.html">landscape</a> <a href="/tag/culture.html">culture</a> <a href="/tag/environment.html">environment</a> <a href="/tag/geohumanities.html">geohumanities</a> </p>
-</footer><!-- /.post-info --><p>Computing Place is a new research initiative aimed at building rich, computable descriptions of places, linking environmental and cultural data to support systematic analyses across those numerous dimensions. This work starts from a simple premise: places differ, and the quality of comparative analyses depends upon the quality and completeness of formal descriptions. Environment and culture are inextricably intertwined, as studied and understood from numerous disciplinary perspectives. I will be experimenting with ways to represent places computationally without collapsing them into a single metric or theory.</p>
-<h3>Some background</h3>
-<p>My reading of geographer Carl Sauer's 1925 article, <a href="/pubs/Sauer_Morphology.pdf" target="_blank" rel="noopener noreferrer">The Morphology of Landscape</a> has had a significant influence on my conception of place as it developed over the years. Sauer introduced the term <strong>cultural landscape</strong> to American readers, having borrowed it from the <em>Kulturlandschaft</em> conception of earlier German geographers.</p>
-<blockquote>
-<p>"The content of landscape is found therefore in the physical qualities of area that are significant to man and in the forms of his use of the area, <strong>in facts of physical background and facts of human culture</strong>." (emphasis added, p.325)</p>
-</blockquote>
-<p>Sauer's <em>morphological method</em> was most concerned with the chorological description of the evidence of cultures' impact upon the natural landscape over time and less so with the impact of environment upon culture. He did however allow for other perspectives, noting that "the continued synthesis of phenomena by morphologic method has been employed with greatest success perhaps in anthropology (p. 327)"</p>
-<p>That concession matters here because the blended conceptualization of place used in this project borrows from the phenomenological view of Yi-Fu Tuan ("place as experienced space" as I paraphrase it), and Doreen Massey's poetic framing of place as a "meeting up of histories." Computing Place is therefore not operationalizing Sauer's cultural landscape concept so much as extending it, treating place as a coupled record of environmental setting and cultural traces, supporting questions in both directions without reverting to determinism.</p>
-<p>The development of the <strong>Computing Place</strong> platform has begun in stepwise fashion, first with an <strong>EDOP</strong> module (Environmental Dimensions of Place) and then with tentative steps for a <strong>CDOP</strong> module (Cultural Dimensions of Place). These datasets and their respective analytic and visualization tools will in time offer both distinct and unified API endpoints that can be consumed internally in features of a Computing Place platform, and by external applications.</p>
-<h3>Environment and Culture (EDOP &amp; CDOP)</h3>
-<h4>EDOP (Environmental Dimensions of Place)</h4>
-<p>A prototype environmental signature has been developed using 42 of the roughly 300 properties for 190,000 Level 8 subbasins in the <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">BasinAtlas v1.0 portion of the HydroAtlas dataset</a>. These have been grouped in four rough temporally scoped bands corresponding to relative persistence and applicability to successive historical eras: <em>A - Physiographic bedrock</em>, <em>B - Hydroclimatic baselines</em>, <em>C - Bioclimatic proxies</em>, and <em>D - Anthropocene markers</em>. Point locations for places can be submitted to a web tool in a few ways so far, including a <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> lookup. Lists of places similar in either environmental terms or in semantic dimensions derived from Wikipedia text embeddings are returned on request.</p>
-<h4>CDOP (Cultural Dimensions of Place)</h4>
-<p>A first step at integrating cultural data has been instantiated within the EDOP module, by linking the 1291 indigenous societies from the <a href="https://d-place.org" target="_blank">D-PLACE dataset</a> to their containing ecoregions on two sample attributes: "Dominant subsistence" and "High Gods."</p>
-<p>An important next step for CDOP is determining what attributes of culture to work with. Evidence of culture is for me a very broad domain, including but not limited to descriptive narrative texts (travel writing, folklore, mythology, and other literature, encyclopedic sources, etc.), folk and "fine" art, and architectural motifs. That said, CDOP experiments will be constrained by what data may be readily available. </p>
-<h3>Linked Traces</h3>
-<p>In 2019 considerable work was done to develop the <strong>Linked Traces annotation format (LTF)</strong> in coordination with the <a href="https://github.com/LinkedPasts/linked-places-format" target= "_blank"><strong>Linked Places Format (LPF)</strong></a> that became a contribution and interconnection standard for World Historical Gazetteer and other projects associated with the <a href="https://pelagios.org" target = "_blank">Pelagios Network</a>.</p>
-<p>LTF has seen limited uptake but is likely now applicable in the Computing Place platform architecture. A <em>trace</em> in LTF is defined as a "web-published resource concerning historical entities of any kind, and conventionally, to the entities themselves." Trace data takes the form of W3C web annotations, as explained on the <a href="https://github.com/LinkedPasts/linked-traces-format" target= "_blank">LTF Github repository</a>. LTF follows Linked Open Data principles in extending the relatively constrained place descriptions of digital gazetteers with all manner of related thematic material. EDOP and CDOP data would seem to fit that framing well.</p>
-<h3>Computing Place and World Historical Gazetteer</h3>
-<p>Computing Place is a research initiative that can also be understood as a downstream application in the ecosystem that <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> was designed to support. WHG’s core contribution is to provide stable, reconcilable place anchors—identifiers and attested names, geometries, and basic relations—while leaving richer thematic data and interpretive detail to external project contributors. Computing Place aligns with that division of labor. It will treat WHG place records as a reference layer, and attach additional evidence to them as linked “traces”: environmental signatures, cultural descriptors, and other place-referenced materials that can be analyzed, compared, and explored. These annotations will be patterned after the Linked Traces Format mentioned above, developed in 2019 under the aegis of the <a href="https://pelagios.org" target="_blank">Pelagios Network</a>.</p>
-<p>Integration between the two can take several forms over time. In the simplest case, Computing Place’s EDOP module will provide API endpoints that WHG and other clients can call on demand&mdash;sending a representative geometry and retrieving environmental context in the form of a concise profile derived from EDOP’s basin-based signatures. Computing Place can also potentially contribute curated sets of place records to WHG that link back to rich Computing Place landing pages for those places; at a larger scale, it can publish an annotation index keyed to WHG identifiers.</p>
-<p>In all cases, the intent is not to expand WHG into a thematic encyclopedia, but to use WHG’s place framework as the anchoring substrate linking to a variety of rich, computable descriptions of place, much as many WHG contributors do now.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/folklore-vectors.html" rel="bookmark"
-                           title="Permalink to Another Dimension of Place: Exploring the Geography of Folkloric Motifs">Another Dimension of Place: Exploring the Geography of Folkloric Motifs</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <h1 class="entry-title"><a href="/folklore-vectors.html">Another Dimension of Place: Exploring the Geography of Folkloric Motifs</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2024-09-02T13:10:00+02:00">
                 Published: Mon 02 September 2024
@@ -99,12 +54,19 @@
         </address>
 <p>In <a href="/category/research/">research</a>.</p>
 <p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/culture.html">culture</a> </p>
-</footer><!-- /.post-info -->                <p>A prospective project: Geography of Folkloric Motifs</p>
-                <a class="readmore" href="/folklore-vectors.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
+</footer><!-- /.post-info --><p>In this new "semi-retirement" phase of my life as a professional geographer and Digital Humanities Research Developer&trade;, I have begun planning an ambitious new project that continues my passion for "computing place." [1] The project will leverage my expertise in geospatial, geo-semantic and textual methods to further develop and explore formalizations of another dimension of place: the folkloric motifs that emerge from and are associated with different regions and societies.</p>
+<p>The core of this project involves creating a vector database of embeddings [2] for the approximately 2,500 folklore motifs outlined in the Aarne-Thompson-Uther (ATU) Folkloric Index [3]. With these embeddings, the system can generate a 2,500-dimensional motif "signature" for any given piece of folkloric text. By combining these motif signatures with spatial and temporal metadata, I hope to characterize and compare the conceptual content of folklore as it relates to specific places. The system would be made freely available and its development open to collaboration.</p>
+<p>This approach treats the narratives and motifs emerging from a place as essential components of its identity, offering a novel way to describe, compare, and contrast regions based on their folkloric output. The scope would be global. Notwithstanding the extraordinary work in this vein done by Timothy Tangherlini and colleagues over the past two decades [4], I believe that considering the conceptual content of literature and vernacular narrative as a dimension of place is a relatively under-explored notion — certainly at a global scope. I believe it holds great potential for deepening our understanding of how cultural narratives shape and reflect the character of places.</p>
+<p>The embeddings for each narrative motif will be generated using a Large Language Model (LLM), prompted with terms from the ATU index to create detailed synopses [5]. An essential early step in this process will be expert evaluation of the material generated by the LLM, leading to refinement of the prompts or, if necessary, reconsideration of the method. My goal is to ensure that the embeddings accurately capture the conceptual content of the ATU motifs they represent.</p>
+<p>While my academic background is in Geographic Information Science, my professional journey as a research developer has consistently involved developing models to better represent the dynamic nature of place, in the context of collaborative projects from other fields, including History, Archaeology, Political Science, Literary Studies, and Environmental Science. The recent and ongoing explosion of capabilities in machine learning and generative language models is presenting opportunities for novel approaches to place-based cultural analytics.</p>
+<p>I’m reaching out to scholars and practitioners in folklore studies, literary analysis, and related fields to gather preliminary feedback on this initiative. I am certainly not expert in these areas, but rather a methods-focused researcher keen on applying new tools to the study of place. I believe this project has the potential to offer valuable insights into how the stories we tell are tied to the places we inhabit, and I would greatly appreciate your thoughts and advice as I move forward.</p>
+<hr />
+<p>[1] my favorite Rumi quote is "Start a huge, foolish project. Like Noah."</p>
+<p>[2] Embeddings are a way to represent complex data, like the words and sentences representing concepts, as multi-dimensional vectors (essentially, lists of numbers) in such a way that similar items are closer together in that vector "space." These relative positions capture semantic relationships between concepts in a format that computers can process. A vector database stores these embeddings, allowing for efficient searching and comparison based on their semantics.</p>
+<p>[3] See <a href="https://guides.library.harvard.edu/folk_and_myth/indices">Library Research Guide for Folklore and Mythology: Tale-Types &amp; Motifs</a></p>
+<p>[4] Timothy Tangherlini: <a href="https://vcresearch.berkeley.edu/faculty/timothy-tangherlini">Bio</a>; <a href="https://berkeley.academia.edu/TimothyTangherlini">academia.edu</a> <a href="https://scando.ist.berkeley.edu/macroscope.html">Folklore Macroscope Tools</a></p>
+<p>[5] Prompts could take two forms, requesting either 1) a structural description of the motif outlining the essential components and patterns that define it, such as character roles, key events, conflicts, resolutions, and themes, or 2) ann example narrative representative of it. The first is likely to be the most effective.</p>                </article>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

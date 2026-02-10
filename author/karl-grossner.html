@@ -43,52 +43,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/computing_place.html">Introducing Computing Place</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2026-02-09T00:00:00+01:00">
-                Published: Mon 09 February 2026
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
-        </address>
-<p>In <a href="/category/research/">research</a>.</p>
-<p>tags: <a href="/tag/place.html">place</a> <a href="/tag/landscape.html">landscape</a> <a href="/tag/culture.html">culture</a> <a href="/tag/environment.html">environment</a> <a href="/tag/geohumanities.html">geohumanities</a> </p>
-</footer><!-- /.post-info --><p>Computing Place is a new research initiative aimed at building rich, computable descriptions of places, linking environmental and cultural data to support systematic analyses across those numerous dimensions. This work starts from a simple premise: places differ, and the quality of comparative analyses depends upon the quality and completeness of formal descriptions. Environment and culture are inextricably intertwined, as studied and understood from numerous disciplinary perspectives. I will be experimenting with ways to represent places computationally without collapsing them into a single metric or theory.</p>
-<h3>Some background</h3>
-<p>My reading of geographer Carl Sauer's 1925 article, <a href="/pubs/Sauer_Morphology.pdf" target="_blank" rel="noopener noreferrer">The Morphology of Landscape</a> has had a significant influence on my conception of place as it developed over the years. Sauer introduced the term <strong>cultural landscape</strong> to American readers, having borrowed it from the <em>Kulturlandschaft</em> conception of earlier German geographers.</p>
-<blockquote>
-<p>"The content of landscape is found therefore in the physical qualities of area that are significant to man and in the forms of his use of the area, <strong>in facts of physical background and facts of human culture</strong>." (emphasis added, p.325)</p>
-</blockquote>
-<p>Sauer's <em>morphological method</em> was most concerned with the chorological description of the evidence of cultures' impact upon the natural landscape over time and less so with the impact of environment upon culture. He did however allow for other perspectives, noting that "the continued synthesis of phenomena by morphologic method has been employed with greatest success perhaps in anthropology (p. 327)"</p>
-<p>That concession matters here because the blended conceptualization of place used in this project borrows from the phenomenological view of Yi-Fu Tuan ("place as experienced space" as I paraphrase it), and Doreen Massey's poetic framing of place as a "meeting up of histories." Computing Place is therefore not operationalizing Sauer's cultural landscape concept so much as extending it, treating place as a coupled record of environmental setting and cultural traces, supporting questions in both directions without reverting to determinism.</p>
-<p>The development of the <strong>Computing Place</strong> platform has begun in stepwise fashion, first with an <strong>EDOP</strong> module (Environmental Dimensions of Place) and then with tentative steps for a <strong>CDOP</strong> module (Cultural Dimensions of Place). These datasets and their respective analytic and visualization tools will in time offer both distinct and unified API endpoints that can be consumed internally in features of a Computing Place platform, and by external applications.</p>
-<h3>Environment and Culture (EDOP &amp; CDOP)</h3>
-<h4>EDOP (Environmental Dimensions of Place)</h4>
-<p>A prototype environmental signature has been developed using 42 of the roughly 300 properties for 190,000 Level 8 subbasins in the <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">BasinAtlas v1.0 portion of the HydroAtlas dataset</a>. These have been grouped in four rough temporally scoped bands corresponding to relative persistence and applicability to successive historical eras: <em>A - Physiographic bedrock</em>, <em>B - Hydroclimatic baselines</em>, <em>C - Bioclimatic proxies</em>, and <em>D - Anthropocene markers</em>. Point locations for places can be submitted to a web tool in a few ways so far, including a <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> lookup. Lists of places similar in either environmental terms or in semantic dimensions derived from Wikipedia text embeddings are returned on request.</p>
-<h4>CDOP (Cultural Dimensions of Place)</h4>
-<p>A first step at integrating cultural data has been instantiated within the EDOP module, by linking the 1291 indigenous societies from the <a href="https://d-place.org" target="_blank">D-PLACE dataset</a> to their containing ecoregions on two sample attributes: "Dominant subsistence" and "High Gods."</p>
-<p>An important next step for CDOP is determining what attributes of culture to work with. Evidence of culture is for me a very broad domain, including but not limited to descriptive narrative texts (travel writing, folklore, mythology, and other literature, encyclopedic sources, etc.), folk and "fine" art, and architectural motifs. That said, CDOP experiments will be constrained by what data may be readily available. </p>
-<h3>Linked Traces</h3>
-<p>In 2019 considerable work was done to develop the <strong>Linked Traces annotation format (LTF)</strong> in coordination with the <a href="https://github.com/LinkedPasts/linked-places-format" target= "_blank"><strong>Linked Places Format (LPF)</strong></a> that became a contribution and interconnection standard for World Historical Gazetteer and other projects associated with the <a href="https://pelagios.org" target = "_blank">Pelagios Network</a>.</p>
-<p>LTF has seen limited uptake but is likely now applicable in the Computing Place platform architecture. A <em>trace</em> in LTF is defined as a "web-published resource concerning historical entities of any kind, and conventionally, to the entities themselves." Trace data takes the form of W3C web annotations, as explained on the <a href="https://github.com/LinkedPasts/linked-traces-format" target= "_blank">LTF Github repository</a>. LTF follows Linked Open Data principles in extending the relatively constrained place descriptions of digital gazetteers with all manner of related thematic material. EDOP and CDOP data would seem to fit that framing well.</p>
-<h3>Computing Place and World Historical Gazetteer</h3>
-<p>Computing Place is a research initiative that can also be understood as a downstream application in the ecosystem that <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> was designed to support. WHG’s core contribution is to provide stable, reconcilable place anchors—identifiers and attested names, geometries, and basic relations—while leaving richer thematic data and interpretive detail to external project contributors. Computing Place aligns with that division of labor. It will treat WHG place records as a reference layer, and attach additional evidence to them as linked “traces”: environmental signatures, cultural descriptors, and other place-referenced materials that can be analyzed, compared, and explored. These annotations will be patterned after the Linked Traces Format mentioned above, developed in 2019 under the aegis of the <a href="https://pelagios.org" target="_blank">Pelagios Network</a>.</p>
-<p>Integration between the two can take several forms over time. In the simplest case, Computing Place’s EDOP module will provide API endpoints that WHG and other clients can call on demand&mdash;sending a representative geometry and retrieving environmental context in the form of a concise profile derived from EDOP’s basin-based signatures. Computing Place can also potentially contribute curated sets of place records to WHG that link back to rich Computing Place landing pages for those places; at a larger scale, it can publish an annotation index keyed to WHG identifiers.</p>
-<p>In all cases, the intent is not to expand WHG into a thematic encyclopedia, but to use WHG’s place framework as the anchoring substrate linking to a variety of rich, computable descriptions of place, much as many WHG contributors do now.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/roundabout.html" rel="bookmark"
-                           title="Permalink to The Long Roundabout: Adventures in Digital Nomadism">The Long Roundabout: Adventures in Digital Nomadism</a></h1>
-                </header>
-
-                <div class="entry-content">
+                    <h1 class="entry-title"><a href="/roundabout.html">The Long Roundabout: Adventures in Digital Nomadism</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2025-11-26T10:00:00+01:00">
                 Published: Wed 26 November 2025
@@ -99,10 +54,30 @@
         </address>
 <p>In <a href="/category/personal/">Personal</a>.</p>
 <p>tags: <a href="/tag/travel.html">travel</a> </p>
-</footer><!-- /.post-info -->                <p>The tale of a digital nomad journey I've named The Long Roundabout</p>
-                <a class="readmore" href="/roundabout.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
+</footer><!-- /.post-info --><p>This is a tale of my planned and unplanned travel since 2021, an ongoing digital nomad experience I have documented only <a href="https://bsky.app/profile/kgeographer.bsky.social/post/3lbgqvev43k2p" target="_blank">on Bluesky with captioned photos</a>, and named <strong>The Long Roundabout</strong> for reasons that will become obvious.</p>
+<h3>A planned emigration</h3>
+<p>A little over four years ago, anticipating a migration to Italy, I put my possessions in storage and hit the road. The first three years of grant-funded <a href="https://whgazetteer.org">World Historical Gazetteer</a> development had just ended, and I anticipated co-authoring more grant applications with my colleague Ruth Mostern, while continuing some WHG work on a very part-time basis with modest support from our Dutch partners at the time and some internal sources at Pitt. Already at "retirement age" I imagined that if no further support for WHG was forthcoming I would find a relaxed lifestyle in Italy and look for occasional contracts in Europe. Covid-19 was still rampant, with vaccine certificates and masks required everywhere. I set out for Italy to scout cities and neighborhoods, by a circuitous route as per usual.</p>
+<h3>Hitting the road, then a roadblock</h3>
+<p>My first stop was Uzbekistan for 10 days or so, visiting a friend now working and living in Tashkent. He led another friend and me around the major sites in Tashkent, Kiva, Bukhara, and Samarkand. From there it was Vienna for a short visit with colleagues and friends in a place I'd grown very fond of, then Paris to pick up a long-term rental car for the remainder of the 90 days allotted by Schengen rules. From Paris I drove to Zurich, touching base with a friend there, then Bern to visit the Paul Klee Zentrum museum (yet again). Next it was south through the Alps&mdash;luckily with no snow&mdash;to my first candidate city, Pavia, and some great pizza with a friend from nearby Milan. Pavia was foggy (the norm I learned) but the scale and feel of the place felt good and I learned the neighborhoods. My airbnb hosts said they would be glad to help me get settled in Pavia when the time came.</p>
+<p>From there I made my way to Lecce for a month-long stay, my first time in Puglia, with brief stops in some familiar places: Firenze, Siena, and Ascoli Piceno. On the return drive north to Paris I stopped in Pavia again, then overnight at a hotel Napoleon had slept at in lovely Auxerre. With my Schengen budget spent, I returned to Denver and holidays with family, planning to put together my immigration papers for Italy, having settled on Pavia. It was then I discovered belatedly that Italy's tax burden made that plan an impossibility. Drat!</p>
+<h3>Staying mobile</h3>
+<p>With my possessions in storage and plans already set for future travel&mdash;California visiting relatives, Pittsburgh to help compose a new NEH grant proposal with my WHG teammates, a World History Association conference in Bilbao&mdash;I decided to keep moving and let the question ride of where if not Italy to ultimately land. Spain and Portugal were possibilities, so I followed up the grant-writing charrette and the Bilbao conference with a long road trip to those countries. Toledo was a long-shot but nothing else stuck.</p>
+<p>August, 2022 brought a new contract for WHG work from the KNAW group in the Netherlands, and I stopped in Vienna for several weeks to do that work. Then, with another KNAW contract in place and my 90-day Schengen budget spent I went to Zagreb to work on that. A few months break followed, with visits to Georgia (Tbilisi, Kutaisi, etc.) and Chiang Mai, Thailand, then a return to the Denver for holidays. </p>
+<h3>WHG gets an NEH renewal!</h3>
+<p>In January, 2023 the WHG team learned we had been awarded a new quite large NEH grant(!), so I was Pittsburgh-boound again to plan the way forward. During this interval, I was invited by an old friend/colleague to come to Vienna for six months, where he had just become chair of the Geography and Regional Research Department at University of Vienna. From a desk on-campus and a great flat in Döbling, So in March 2023 I continued my half-time contract work on WHG extensions, staged an international hackathon for WHG contributions, and met often with my friend and his students to discuss possible collaborations. The question of where to settle was being continually deferred, as it was very clear that I could be very productive working as a digital nomad, and the periodic change of scenery was exhilerating&mdash;albeit tiring at times.</p>
+<h3>Why stop now?</h3>
+<p>The digital nomad lifestyle combined travel with very productive work periods and conferences and meetings with colleagues in interesting locales. Most of the following year was split between Vienna, the UK, and Turkey, with occasional breaks to the US for family visits. A major Version 3 release was the goal, and with the help of a new developer on the team, Stephen Gadd, we launched V3 in July 2024&mdash;a year and a half into the three year NEH grant. Stephen was ow willing and more than able to take over my WHG roles, and so he did. And I "semi-retired" once again, after seven years at the WHG technical helm.</p>
+<h3>Semi-retirement and GLOS</h3>
+<p>Never one to stay idle, I began scratching a long-time itch to investigate the distribution of global folklore concepts and motifs, and to use that opportunity to investigate the latest AI methodologies. I had been using ChatGPT exclusively for coding help for several months, but the potential for NLP work with text embeddings beckoned. I conceived a personal project I called Geographic Lens on Stories (GLOS), and spent the next year plus devoted to that, working from Vienna and Thailand with side trips to Japan and Vietnam. GLOS is now paused, and details about it live in a few blog posts (<a href="http://localhost:8000/glos_june2025.html" target="_blank">here</a>, <a href="http://localhost:8000/glos_creation_schema.html" target="_blank">here</a>, and <a href="http://localhost:8000/glos_on_pause.html" target="_blank">here</a>), and on <a href="https://github.com/kgeographer/glos" target="_blank">the Github site</a>. A couple of early tools live on a pilot site, <a href="http://glos.kgeographer.org" target="_blank">glos.kgeographer.org</a>.</p>
+<h3>Onward</h3>
+<p>In Spring of 2025, ready to settle again, I made a valiant effort to gain residency in Vienna, but was thwarted at the last minute by Austria's very stringent health insurance requirements. At this writing I am looking closely into a little-known and very promising pathway for immigration and residency in the Netherlands. With GLOS paused for the moment I back in the US and preparing to "hang out a shingle" and seek an occasional interesting contract or two, working on a DH projects. In any event, The Long Roundabout will almost certainly come to an end mid-2026 after a fruitful and unexpectedly long run as a true digital nomad. My long-time abbreviated research agenda "Computing Place" might now be amended to "Computing Place, in Places."</p>
+<h3>NB</h3>
+<p>This post was authored by me alone, however a chatbot was enlisted to check spelling and punctuation.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
 
             <li><article class="hentry">
                 <header>
@@ -167,6 +142,28 @@
 <p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
 </footer><!-- /.post-info -->                <p>Status update on the Geographic Lens on Stories (GLOS) project, co-authored with ChatGPT. It explores the digitization of folklore indexes and the analysis of creation myths, using computational methods to reveal cultural patterns.</p>
                 <a class="readmore" href="/glos_june2025.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/glos_and_machine.html" rel="bookmark"
+                           title="Permalink to GLOS and the Machine">GLOS and the Machine</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2025-04-27T00:00:00+02:00">
+                Published: Sun 27 April 2025
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
+        </address>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
+</footer><!-- /.post-info -->                <p>Reflections on collaboration with chatbots in the GLOS project</p>
+                <a class="readmore" href="/glos_and_machine.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
