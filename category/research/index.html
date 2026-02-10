@@ -4,9 +4,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
-        <title>kgeographer - Research</title>
+        <title>kgeographer - research</title>
         <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
         <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+        <link rel="stylesheet" href="/static/custom.css" type="text/css" />
         <style>
             #banner h1 {
                 display: flex;
@@ -30,8 +31,9 @@
             </h1>
             <nav>
                 <ul>
-                        <li><a href="/">KGEO Research</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/computing-place/">Computing Place</a></li>
                         <li><a href="/category/research/">Blog</a></li>
                         <li><a href="/category/personal/">Personal</a></li>
                         <li><a href="/cv/">CV</a></li>
@@ -41,7 +43,52 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/glos_on_pause.html">Where the Lens Turned Back: Reflections on GLOS</a></h1>
+                    <h1 class="entry-title"><a href="/computing_place.html">Introducing Computing Place</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2026-02-09T00:00:00+01:00">
+                Published: Mon 09 February 2026
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
+        </address>
+<p>In <a href="/category/research/">research</a>.</p>
+<p>tags: <a href="/tag/place.html">place</a> <a href="/tag/landscape.html">landscape</a> <a href="/tag/culture.html">culture</a> <a href="/tag/environment.html">environment</a> <a href="/tag/geohumanities.html">geohumanities</a> </p>
+</footer><!-- /.post-info --><p>Computing Place is a new research initiative aimed at building rich, computable descriptions of places, linking environmental and cultural data to support systematic analyses across those numerous dimensions. This work starts from a simple premise: places differ, and the quality of comparative analyses depends upon the quality and completeness of formal descriptions. Environment and culture are inextricably intertwined, as studied and understood from numerous disciplinary perspectives. I will be experimenting with ways to represent places computationally without collapsing them into a single metric or theory.</p>
+<h3>Some background</h3>
+<p>My reading of geographer Carl Sauer's 1925 article, <a href="/pubs/Sauer_Morphology.pdf" target="_blank" rel="noopener noreferrer">The Morphology of Landscape</a> has had a significant influence on my conception of place as it developed over the years. Sauer introduced the term <strong>cultural landscape</strong> to American readers, having borrowed it from the <em>Kulturlandschaft</em> conception of earlier German geographers.</p>
+<blockquote>
+<p>"The content of landscape is found therefore in the physical qualities of area that are significant to man and in the forms of his use of the area, <strong>in facts of physical background and facts of human culture</strong>." (emphasis added, p.325)</p>
+</blockquote>
+<p>Sauer's <em>morphological method</em> was most concerned with the chorological description of the evidence of cultures' impact upon the natural landscape over time and less so with the impact of environment upon culture. He did however allow for other perspectives, noting that "the continued synthesis of phenomena by morphologic method has been employed with greatest success perhaps in anthropology (p. 327)"</p>
+<p>That concession matters here because the blended conceptualization of place used in this project borrows from the phenomenological view of Yi-Fu Tuan ("place as experienced space" as I paraphrase it), and Doreen Massey's poetic framing of place as a "meeting up of histories." Computing Place is therefore not operationalizing Sauer's cultural landscape concept so much as extending it, treating place as a coupled record of environmental setting and cultural traces, supporting questions in both directions without reverting to determinism.</p>
+<p>The development of the <strong>Computing Place</strong> platform has begun in stepwise fashion, first with an <strong>EDOP</strong> module (Environmental Dimensions of Place) and then with tentative steps for a <strong>CDOP</strong> module (Cultural Dimensions of Place). These datasets and their respective analytic and visualization tools will in time offer both distinct and unified API endpoints that can be consumed internally in features of a Computing Place platform, and by external applications.</p>
+<h3>Environment and Culture (EDOP &amp; CDOP)</h3>
+<h4>EDOP (Environmental Dimensions of Place)</h4>
+<p>A prototype environmental signature has been developed using 42 of the roughly 300 properties for 190,000 Level 8 subbasins in the <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">BasinAtlas v1.0 portion of the HydroAtlas dataset</a>. These have been grouped in four rough temporally scoped bands corresponding to relative persistence and applicability to successive historical eras: <em>A - Physiographic bedrock</em>, <em>B - Hydroclimatic baselines</em>, <em>C - Bioclimatic proxies</em>, and <em>D - Anthropocene markers</em>. Point locations for places can be submitted to a web tool in a few ways so far, including a <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> lookup. Lists of places similar in either environmental terms or in semantic dimensions derived from Wikipedia text embeddings are returned on request.</p>
+<h4>CDOP (Cultural Dimensions of Place)</h4>
+<p>A first step at integrating cultural data has been instantiated within the EDOP module, by linking the 1291 indigenous societies from the <a href="https://d-place.org" target="_blank">D-PLACE dataset</a> to their containing ecoregions on two sample attributes: "Dominant subsistence" and "High Gods."</p>
+<p>An important next step for CDOP is determining what attributes of culture to work with. Evidence of culture is for me a very broad domain, including but not limited to descriptive narrative texts (travel writing, folklore, mythology, and other literature, encyclopedic sources, etc.), folk and "fine" art, and architectural motifs. That said, CDOP experiments will be constrained by what data may be readily available. </p>
+<h3>Linked Traces</h3>
+<p>In 2019 considerable work was done to develop the <strong>Linked Traces annotation format (LTF)</strong> in coordination with the <a href="https://github.com/LinkedPasts/linked-places-format" target= "_blank"><strong>Linked Places Format (LPF)</strong></a> that became a contribution and interconnection standard for World Historical Gazetteer and other projects associated with the <a href="https://pelagios.org" target = "_blank">Pelagios Network</a>.</p>
+<p>LTF has seen limited uptake but is likely now applicable in the Computing Place platform architecture. A <em>trace</em> in LTF is defined as a "web-published resource concerning historical entities of any kind, and conventionally, to the entities themselves." Trace data takes the form of W3C web annotations, as explained on the <a href="https://github.com/LinkedPasts/linked-traces-format" target= "_blank">LTF Github repository</a>. LTF follows Linked Open Data principles in extending the relatively constrained place descriptions of digital gazetteers with all manner of related thematic material. EDOP and CDOP data would seem to fit that framing well.</p>
+<h3>Computing Place and World Historical Gazetteer</h3>
+<p>Computing Place is a research initiative that can also be understood as a downstream application in the ecosystem that <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> was designed to support. WHG’s core contribution is to provide stable, reconcilable place anchors—identifiers and attested names, geometries, and basic relations—while leaving richer thematic data and interpretive detail to external project contributors. Computing Place aligns with that division of labor. It will treat WHG place records as a reference layer, and attach additional evidence to them as linked “traces”: environmental signatures, cultural descriptors, and other place-referenced materials that can be analyzed, compared, and explored. These annotations will be patterned after the Linked Traces Format mentioned above, developed in 2019 under the aegis of the <a href="https://pelagios.org" target="_blank">Pelagios Network</a>.</p>
+<p>Integration between the two can take several forms over time. In the simplest case, Computing Place’s EDOP module will provide API endpoints that WHG and other clients can call on demand&mdash;sending a representative geometry and retrieving environmental context in the form of a concise profile derived from EDOP’s basin-based signatures. Computing Place can also potentially contribute curated sets of place records to WHG that link back to rich Computing Place landing pages for those places; at a larger scale, it can publish an annotation index keyed to WHG identifiers.</p>
+<p>In all cases, the intent is not to expand WHG into a thematic encyclopedia, but to use WHG’s place framework as the anchoring substrate linking to a variety of rich, computable descriptions of place, much as many WHG contributors do now.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/glos_on_pause.html" rel="bookmark"
+                           title="Permalink to Where the Lens Turned Back: Reflections on GLOS">Where the Lens Turned Back: Reflections on GLOS</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2025-11-20T00:00:00+01:00">
                 Published: Thu 20 November 2025
@@ -52,63 +99,10 @@
         </address>
 <p>In <a href="/category/research/">Research</a>.</p>
 <p>tags: <a href="/tag/creation-myths.html">creation myths</a> <a href="/tag/llms.html">LLMs</a> <a href="/tag/folklore.html">folklore</a> <a href="/tag/ontology.html">ontology</a> <a href="/tag/concept-modeling.html">concept modeling</a> </p>
-</footer><!-- /.post-info --><p>When I began the <em>Geographic Lens on Stories (GLOS)</em> project, I imagined building a global atlas of creation myths as a way to map how different cultures have conceived the origins of the world, both conceptually and geographically. I hoped that by using modern NLP tools and embeddings, I could visualize conceptual relationships among myths: a geography of meaning.  </p>
-<p><strong>The TL;DR:</strong> the work hit an epistemological roadblock. Its methods could only reveal the interpretive processes of LLMs and not the conceptual content of the myths themselves in any empirical sense.</p>
-<hr />
-<h3>Phase One</h3>
-<p>I spent months digitizing and normalizing 69 myths from Barbara Sproul’s <em>Primal Myths</em>, designing schemas, segmenting texts, and creating embeddings using Anthropic and OpenAI APIs. The work proceeded in phases, beginning with a 20-myth sampling.</p>
-<p>The initial schema divided each myth across high-level dimensions: <strong>Primordial State (incl. entities present)</strong>, <strong>Creation Sequence (events, incl. participants and locale)</strong>, <strong>Cosmic Structure (incl. social and ecological hierarchies, dualities)</strong>, and <strong>Distinctive Elements (free text)</strong>. Each myth was submitted to an LLM with an elaborate prompt that requested values (or nulls) for each attribute. Significant manual normalization was required, as the models often described the same concept with divergent terminology.</p>
-<p>I then generated whole-myth and section-level embeddings from these extracted values and performed clustering analyses to explore patterns of similarity across cultures and regions. The early results were promising, but the schema itself had been derived from LLM responses and my own non-expert judgment. It lacked grounding in any shared motivating theory and quickly became unwieldy.</p>
-<hr />
-<h3>Phase Two</h3>
-<p>In the second phase I added 49 additional myths from around the world and anchored a new schema in a respected work on comparative mythology, <em>The Truth of Myth</em> (Thompson &amp; Schrempp). They propose “points to consider” for new students of mythology along five axes: <strong>time</strong>, <strong>space</strong>, <strong>quantity</strong>, <strong>quality</strong>, <strong>relation</strong>. My prompts followed these axes closely, requesting a mixture of free-text and standardized responses.  </p>
-<p>For example, the <strong>space</strong> axis asked for <em>narrative location</em>, <em>landscape type</em>, <em>place correspondence</em>, <em>spatial symbolism</em>, and <em>spatial boundaries</em> — all in free text.</p>
-<p>Preliminary results suggested that this organization could inform a new “Schema_v2.” But eventually the realization came to me that every attribute in both schemas was again the result of <em>a large language model’s interpretation</em>. I wasn’t extracting meaning; I was eliciting it.  </p>
-<p>At that point it became clear that what I was analyzing was not the myths themselves, but the <em>hermeneutic machinery of the model.</em></p>
-<hr />
-<h3>From Extraction to Interpretation</h3>
-<p>That realization changed the direction of the project. GLOS became less a study of world mythology and more a study of <strong>machine hermeneutics</strong> — how an AI trained on vast textual corpora constructs (or invents) meaning when asked to interpret a myth.</p>
-<p>I shifted to asking broader, less constrained questions, along four dimensions: <em>Central Metaphors and Oppositions</em>, <em>Cultural Lessons or Functions</em>, <em>Distinctive Features</em>, and <em>Brief Interpretive Commentary</em>. Anthropic’s model Claude summarized the pattern succinctly:</p>
-<blockquote>
-<p>“The model’s interpretive tone emerged clearly. Its commentary style was fluent and persuasive, yet strangely generic: every myth seemed to be about chaos giving way to order, the joining of opposites, the restoration of balance. It had learned the language of comparative mythology and was applying it reflexively. In essence, it was channeling the Lévi-Straussian worldview back at me.”</p>
-</blockquote>
-<p>After reading some Lévi-Strauss, I agreed.</p>
-<hr />
-<h3>Embeddings as a Mirror of Interpretation</h3>
-<p>I continued the embedding analysis to see what the geometry of those interpretations might reveal. Each myth now had four section embeddings plus a whole-myth vector. Comparing them showed a clear pattern:</p>
-<ul>
-<li><strong>Metaphors</strong> and <strong>Commentary</strong> were the closest pair in embedding space.  </li>
-<li>The <strong>Metaphors → whole-myth</strong> similarity was nearly as strong.</li>
-</ul>
-<p>A scatterplot across all myths produced a correlation of <strong>0.89</strong> between Commentary–Metaphor similarity and Whole-Myth–Metaphor similarity. Astonishingly high — and deeply telling. It showed that the model’s overall conception of a myth is dominated by its perception of oppositional structure. It was quantitative confirmation of what Lévi-Strauss proposed qualitatively: <em>mythic meaning is organized through oppositions.</em></p>
-<figure>
-  <img src="/images/cross-section-similarity.png" alt="Scatterplot of similarity correlations">
-  <figcaption>Scatterplot of similarity correlations between Commentary–Metaphor and Whole-Myth–Metaphor similarity.</figcaption>
-</figure>
-
-<hr />
-<h3>Mapping the Model’s World</h3>
-<p>In the final stage, I turned that insight outward and mapped these embedding similarities across regions. The 69×69 similarity matrices and regional heatmaps showed where the model perceived conceptual proximity — first in <em>commentary</em> (interpretive tone), then in <em>metaphor</em> (conceptual structure).</p>
-<p>The results were both revealing and humbling.  </p>
-<p>In the commentary heatmap, global similarity hovered around 0.6–0.7 across nearly all regions — evidence of how homogenized the model’s interpretive voice is.  </p>
-<p>In the metaphor map, more structure appeared: <strong>China</strong>, <strong>Japan</strong>, and <strong>Australia</strong> formed tight internal clusters, while <strong>Siberia</strong> (and again Australia) showed lower similarity to other regions. Whether this reflects genuinely distinctive mythic styles or simply uneven model familiarity is impossible to know.  </p>
-<p>In truth, these maps visualize <em>the model’s own geography of interpretive coherence</em> — its zones of certainty and its blind spots — not the world’s mythological landscape.</p>
-<hr />
-<h3>What Remains</h3>
-<p>So what has GLOS accomplished? Not the empirical discovery I had once imagined, but something subtler: a demonstration that large language models had spontaneously reproduced the structuralist insight that oppositions organize mythic thought. They do this not because they understand the myths, but because they have internalized the linguistic and conceptual patterns through which humans have described them.</p>
-<p>The work has also produced a reusable framework for structuring interpretive text into analyzable semantic layers — and that may prove useful in future collaborations with scholars in folklore or comparative mythology.  </p>
-<p>But ultimately, this experiment turned the lens back on me and because I don't possess sufficient expertise in comparative mythology to evaluate the models' interpretations, the GLOS project is suspended unless and until I find a better approach to realizing its goal. </p>
-<hr />
-<h3>Closing the Circle</h3>
-<p>One of my earliest GLOS posts was co-authored with ChatGPT, acknowledging from the outset that this was a collaborative experiment in meaning-making. It feels appropriate that this concluding reflection should also be co-written.</p>
-<p>I began with the hope of charting a geography of creation myths.<br />
-I end with a geography of how a machine <em>thinks about</em> creation myths.  </p>
-<p>Perhaps that is still a kind of map — a topography not of the world’s stories, but of the interpretive imagination that both humans and machines now share.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>GLOS hits an epistemological roadblock</p>
+                <a class="readmore" href="/glos_on_pause.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -173,28 +167,6 @@ I end with a geography of how a machine <em>thinks about</em> creation myths.  <
 <p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
 </footer><!-- /.post-info -->                <p>Reflections on collaboration with chatbots in the GLOS project</p>
                 <a class="readmore" href="/glos_and_machine.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/glos_jan2025.html" rel="bookmark"
-                           title="Permalink to GLOS (Geographic Lens on Stories)">GLOS (Geographic Lens on Stories)</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2024-11-30T00:00:00+01:00">
-                Published: Sat 30 November 2024
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
-        </address>
-<p>In <a href="/category/research/">research</a>.</p>
-<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
-</footer><!-- /.post-info -->                <p>Status report on the GLOS project</p>
-                <a class="readmore" href="/glos_jan2025.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->

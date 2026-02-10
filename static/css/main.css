@@ -52,7 +52,7 @@ a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
 	color: #C74350;
 	padding: 0 1px;
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 }
 a:hover, a:active {
 	background-color: #C74350;
@@ -221,7 +221,7 @@ div.figure p.caption, figure p.caption { /* margin provided by figure */
 		color: #fff;
 		display: inline-block;
 		height: 30px;
-		padding: 5px 1.5em;
+		padding: 5px 1em;
 		text-decoration: none;
 	}
 	#banner nav a:hover, #banner nav a:active,
