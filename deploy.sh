@@ -21,11 +21,15 @@ cp -r output/* "$TMPDIR"
 echo "🔁 Switching to gh-pages branch..."
 git checkout gh-pages
 
+echo "🧹 Cleaning gh-pages working tree..."
+# Remove everything except .git, .nojekyll, and CNAME
+find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name '.nojekyll' ! -name 'CNAME' -exec rm -rf {} +
+
 echo "♻️  Copying files from temp to root of gh-pages..."
 cp -r "$TMPDIR"/* ./
 
 echo "📂 Staging files for commit..."
-git add .
+git add -A
 
 echo "✅ Committing changes..."
 git commit -m "Deploy latest site updates" || echo "No changes to commit."
