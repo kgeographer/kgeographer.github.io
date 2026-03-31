@@ -43,7 +43,148 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/computing_place.html">Introducing Computing Place</a></h1>
+                    <h1 class="entry-title"><a href="/computing-place-prospectus.html">Computing Place: Toward Systematic Environmental Characterization for Cultural Research</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2026-03-30T00:00:00+02:00">
+                Published: Mon 30 March 2026
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
+        </address>
+<p>In <a href="/category/research/">research</a> | tags: <a href="/tag/place.html">place</a>, <a href="/tag/landscape.html">landscape</a>, <a href="/tag/culture.html">culture</a>, <a href="/tag/environment.html">environment</a>, <a href="/tag/geohumanities.html">geohumanities</a>, <a href="/tag/edop.html">EDOP</a>, <a href="/tag/cdop.html">CDOP</a></p>
+
+</footer><!-- /.post-info --><h2>1. Introduction</h2>
+<p>"One has not fully understood the nature of an area until one has learned to see it as an organic unit, to comprehend land and life in terms of each other."</p>
+<p>-- Carl Sauer (1925). <em>Morphology of Landscape</em>.</p>
+<p>The Computing Place initiative introduced here was originally motivated by geographer Carl Sauer's canonical paper <em>Morphology of Landscape</em>. In it, he asserted that "...area or landscape is the field of Geography, because it is a naively given important section of reality, not a sophisticated thesis." He introduced to American geographers the term "cultural landscape" as a translation of "Kulturlandschaft," a conceptual framing well-known to German geographers at the time. Its content, he wrote, is found "...in the physical qualities of area that are significant to man and in the forms of his use of the area, in facts of physical background and facts of human culture." But Sauer sought to constrain the discipline to one direction of analysis: "...we are not concerned in geography with the energy, customs, or beliefs of man but with man's record upon the landscape."</p>
+<p><img src="/images/CP_logo.jpg" style="height:180px; float:right; margin:0 0 1em 1.5em;">I wondered what Sauer might have done if some of the now common technological tools and methods had been available to him, and I thought that given sufficient "facts of physical background and facts of human culture," both directions of analysis are possible and warranted. Sauer did allow that the relations between environment and culture are bi-directional, but left the cultural elements to anthropology. Generously, but I think short-sightedly.</p>
+<p>Historians, archaeologists, and anthropologists invoke environmental context constantly, but almost always qualitatively. What would it mean to make those invocations in some degree computable and reproducible? Computing Place envisions digital infrastructure--data and software tools--that supports both directions of inquiry.</p>
+<p>Cultural analysis with a geographic lens in this context requires a solid environmental data foundation. Computing Place development is organized around two components, <em>Environmental Dimensions of Place</em> (EDOP) and <em>Cultural Dimensions of Place</em> (CDOP). EDOP is naturally the first priority because the environmental foundation must precede the cultural analysis. Most of what follows describes work in progress towards an EDOP "signature," computable for any given terrestrial location. The overall project is designed to surface patterns and expose what can and cannot be characterized computationally, without presupposing results.</p>
+<h2>2. What "computing place" means, and what it doesn't</h2>
+<p>The subject matter of Computing Place is indeed well-trodden intellectual terrain. Scholars in history, anthropology, archaeology, environmental history, historical ecology, and geography have long studied the relations between environment and culture. Computing Place aims at novel methodology--to make many of those relations formally computable and develop tools and features for an accessible and open web platform. EDOP signatures are reproducible environmental characterizations that can be compared systematically across thousands of locations and time periods, linked to cultural datasets from the CDOP component, and tested against independent evidence.</p>
+<p>While there are clear relations between cultural phenomena of all kinds and their environmental settings, the Computing Place project deliberately steers clear of environmental determinism. An underlying premise is that while environment generally defines what activities a geographic area affords and constrains, culture determines which possibilities are realized.</p>
+<h2>3. The environmental signature concept</h2>
+<h3>3.1 Signature components</h3>
+<p>For any terrestrial location, the EDOP service delivers a set of values for selected environmental attributes drawn from one or more global datasets. At present the principal source is the Global BasinATLAS<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> dataset, which compiles a wide range of hydro-environmental attributes from existing global datasets in a consistent, globally applicable format. BasinATLAS is organized hierarchically in 12 "levels" of increasing granularity (decreasing area). Initially, 47 of the 281 BasinATLAS attributes, were drawn from all six of its categories (hydrology, physiography, climate, landcover, soils &amp; geology, anthropogenic) at Level 08 (~190k basins). For EDOP purposes, the attributes have been grouped into four "persistence bands," intended to reflect potential temporal validity. Signature requests can include the values of any combination of bands:</p>
+<ul>
+<li>
+<p><strong>A - Physiographic bedrock (millennia)</strong> <em>[elevation, slope, stream gradient, lithology, karst extent]</em>. Indicative of the energy cost of   movement, defensive advantages of terrain, and raw materials available   for construction and agriculture, stable over millennia.</p>
+</li>
+<li>
+<p><strong>B - Hydro-climatic baselines (centuries)</strong> <em>[discharge, basin area, groundwater depth, natural vegetation potential, soil texture]</em>. The potential of a landscape; while specific values fluctuate over time, the relative hierarchy (e.g., "Basin A is always wetter than Basin B") is usually stable across historical eras.</p>
+</li>
+<li>
+<p><strong>C - Bioclimatic proxies (decadal/cyclical)</strong> <em>[precipitation,   temperature, aridity, wetland extent, permafrost, ecoregion   membership]</em>. Potentially useful as a baseline "modern average" of   values. Interpretation typically requires accounting for known   historical anomalies.</p>
+</li>
+<li>
+<p><strong>D - Anthropocene markers (last 50-100 years)</strong> <em>[reservoir volume, land cover, cropland/pasture, pop density, human footprint, GDP/HDI]</em>. Typically omitted from signature requests for most historical contexts.</p>
+</li>
+</ul>
+<p>What distinguishes an EDOP signature from a simple attribute lookup is a process orientation: the aim is to characterize not merely what surrounds a location but what it experiences through directed spatial processes. In the hydrological case, upstream values indicate what a river system delivers to a location, often seasonally. For example, a signature query for ancient Ur returns 94mm/yr local precipitation and an aridity index of 5--certainly hyper-arid. But the catchment feeding it receives 258mm/yr. That gap between local and upstream is a more complete environmental characterization. Alluvial civilizations are places where those two values diverge sharply.</p>
+<p>Going forward, spatial data and descriptive text from ecoregion datasets will be incorporated as options in user-configured EDOP service API payloads.</p>
+<h3>3.2 Signature extents</h3>
+<p>The EDOP service (EDOPS hereafter) will provide signatures for any given location, given as geographic coordinates. An integrated component facilitates place name resolution using the API of World Historical Gazetteer. If coordinates are of a representative point, for example of a settlement, site, or anthropological observation, the signature returned will be that of a single containing basin--normally less than useful. Environmental context is not intrinsic to a point; it is a modeled neighborhood, therefore EDOPS will treat neighborhood definition as a transparent, swappable parameter, offering multiple ways of defining one on the fly, per-query: for example, (i) single basin at a requested scale level, (ii) immediate siblings, or (iii) basins within the containing watershed.</p>
+<p>When a user supplies a polygon (e.g., a polity boundary, an urban footprint, or a drawn region), the polygon itself defines the neighborhood. EDOPS computes a composite signature by intersecting the polygon with hydrologic basins at a given level, applying area-weighted aggregation of environmental variables, and returning a structured signature. There are several open research questions for this step, including (i) which basin level/scale is most appropriate, (ii) how weighting of partial basins is computed, (iii) how the heterogeneity of a resulting set of multiple signatures is represented and computed over, and (iv) how scale sensitivity is evaluated.</p>
+<h2>4. The EDOPS process orientation, more broadly</h2>
+<p>As mentioned above, a novel aspect of EDOPS signatures is the aim to summarize formally what a place <em>experiences</em>, not only what surrounds it. The hydrological case for Ur mentioned above can be expanded; considering upstream values is only one half of a broader directional frame. Moving forward, other aspects available in the data that could be considered include (i) how far a location sits from its marine outlet, and (ii) whether its linked basins terminate in the sea at all. In many cases, marine resources are an important aspect of environmental affordances a place and its resident cultures may experience.</p>
+<p>Beyond the hydrological case, other process types can follow the same logic: terrain slope and gradient as indicators of intrinsic movement cost and accessibility, or atmospheric conditions shaped by prevailing winds. Social connectivity structured by route networks is a longer-term possibility. Each process type will have its own geometry and its own characteristic distance decay.</p>
+<p>Spatial data and descriptive text from OneEarth ecoregion datasets--including Wikipedia-derived summaries for all 847 ecoregions--are already incorporated into the prototype and will be available as optional parameters in the EDOPS API.</p>
+<h2>5. The EDOP data infrastructure</h2>
+<p>The BasinATLAS and OneEarth ecoregions data<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> are both available under open CC-BY licenses, as are Wikipedia ecoregion articles. The current EDOP prototype utilizes BasinATLAS Level 08 data, which partitions the terrestrial Earth surface into 190,675 nested drainage units (catchments). BasinATLAS defines a 12-level hierarchy (Levels 01--12), spanning scales from continental basins to fine-grained local catchments.</p>
+<p>A well-known characteristic of spatial data is the <em>Modifiable Areal Unit Problem (MAUP)</em>, which can result in widely varying aggregate property values depending on the size and shape of the containing spatial unit considered. A signature computed for the watershed containing Rome looks different from one computed for the small sub-basin immediately beneath a single representative point given for the Capitoline Hill. A systematic scale sensitivity analysis across multiple BasinATLAS levels is the next planned analytical contribution, and will inform which level is most appropriate for which research contexts. When multiple levels are considered, sharp signature changes across them can provide useful information about a place's positioning at edges of ecological zones. Providing real-time multi-level responses will require significant computing and storage capability, but a one-time analysis across many samples should provide useful guidelines for users' choice of level.</p>
+<p>The <em>OneEarth</em> project, self-described as "global network of climate strategists and storytellers," has incorporated data for the 845 "widely cited" ecoregions developed by an international consortium of conservation scientists (Dinerstein, et al, 2017) into a new <em>bioregion framework</em>, presented in maps and essays on their web platform. Ecoregions classify the terrestrial surface into biogeographically distinct areas sharing characteristic species assemblages and ecological conditions. The spatial data for these ecoregions is freely available. Comprehensive articles describing virtually all of them, authored during an earlier World Wildlife Fund effort, are available in Wikipedia, and will be incorporated into the EDOPS prototype as optional contextual outputs alongside numerical signatures.</p>
+<h2>6. Validation: do the signatures capture something real?</h2>
+<p>EDOPS signatures represent computable and configurable summarizations of environmental conditions at given locations utilizing rigorously developed data. In effect EDOP is a model of suitability for human occupation and settlement, which must itself must be validated. How do EDOP signatures  correspond to known human settlements and regions of transitory occupation? The required methodology is similar to that used by ecologists in <em>species distribution modeling (SDM)</em> and by archaeologists predicting likely settlement locations from environmental variables.</p>
+<p>Attempts to predict known settlement locations are sure to have mixed results, because humans have adapted to a great variety of environmental settings. The test is simple in principle: do environmentally favorable locations correspond to where people actually settled? Defining 'favorable' independently of the settlement record itself is the methodological challenge --one the planned validation study will address using held-out data and established SDM techniques. Failure is diagnostic, success will build confidence in the model. The interesting outputs won't be matches, but residuals. The difference between predicted settlement probability and actual settlement record will be the most revealing aspect. In cases of genuine historical absence we can ask: Was there poor connectivity to diffusion networks? Competitive exclusion? Or is there an explanatory variable the current signature doesn't provide? In cases of dense or persistent settlement but an apparently unfavorable signature, were there strategic imperatives like trade or defense? Were there localized resources not captured in the model or was it sheer historical contingency?</p>
+<p>Existing datasets identified for use in a validation process include (i) point locations of anthropological fieldwork in indigenous societies in <em>D-PLACE</em><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, (ii) polygon geometry for over 800 temporally scoped historical polities, from the recent Cliopatria dataset<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> developed by the Seshat <em>Global History Databank</em> project<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>, and (iii) temporally scoped point locations for roughly 1700 historical settlements spanning 6,000 years, developed by Reba, et al (2016).</p>
+<p>One important caveat is that given the dimensions of the current EDOP model, signatures are most likely to be predictive of fixed settlements relying on terrestrial resources. Hence there will be blind spots that need to be accounted for. We can expect signatures across the Eurasian steppe would read as unfavorable, despite it having been occupied intensively by mobile cultures whose movement was adaptive to apparently hostile conditions. Likewise, the terrestrial signature for Tierra del Fuego is undoubtedly relatively harsh: hyper-humid and wind-battered, with low growing-season temperatures and minimal agricultural potential, yet the rich marine resources allowed the Yaghan to thrive for millennia, and the presence of guanaco in the interior supported the Selknam societies.</p>
+<h2>7. Culture, CDOP and the larger goal</h2>
+<p><img alt="Figure 1 - Computing Place architecture. Lines indicate connections in prototype platform as of March, 2026" src="/images/CP_architecture.jpg" />
+The Cultural Dimensions of Place (CDOP) component of Computing Place complements EDOP, and the exploratory and analytical space linking them requires EDOP signatures. EDOP records environmental affordances and constraints; CDOP contributes what cultures have done within particular physical settings (Fig 1). CDOP work has begun by identifying and preparing spatialized datasets representing cultural phenomena of various kinds.</p>
+<p>These core datasets, mentioned above as being integral to EDOP signature validation work, will see further use in seeking patterns of co-relation:</p>
+<p><strong>D-PLACE</strong>: "...contains cultural, linguistic, environmental and geographic information for over 1400 human 'societies'. A 'society' in D-PLACE represents a group of people in a particular locality, who often share a language and cultural identity.</p>
+<p><strong>Cliopatria</strong>: "...a comprehensive open-source [temporally scoped] geospatial dataset of worldwide states, political groups, events, and rulers from 3400BCE to the present day. It is part of the Seshat Global History Databank project."</p>
+<p><strong>Chandler-Modelski historical population</strong>: "...the first spatially explicit dataset of urban settlements from 3700 BC to AD 2000..." previously published by Reba et al (2016) derived from work by Chandler and Modelski."</p>
+<p>Experiments have begun in the Computing Place platform prototype<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> with descriptive text for 258 UNESCO World Heritage Cities, and similar semantic embedding experiments are planned using nomination documents for Intangible Cultural Heritage listings.</p>
+<p>The linking of EDOP and CDOP data can facilitate answering many kinds of questions, including but not limited to: Do cultural traits cluster in particular environmental regimes? How do environmental gradients correspond to linguistic, social, or economic variation? How stable are signatures across historical change?</p>
+<p>One early demonstrator developed sets of signatures for the extents of Northern Song Dynasty over an 18-year period, as recorded in the Cliopatria dataset. Mapping the aridity value of contained basins illustrates what was arguably a deliberate move to acquire more arable territory (Fig 2).</p>
+<p><img alt="*Figure 2: Expansion of Northern Song Dynasty into territory with greater moisture availability (isolating BasinATLAS 'Global Aridity Index'), 962-980CE*" src="/images/song_transition.jpg" /></p>
+<h2>8. Current state and next steps</h2>
+<p>The Computing Place project began in early January, 2026 and produced a prototype web platform to display work-in-progress a month later at <a href="https://cedop.kgeographer.org/edop/">https://cedop.kgeographer.org/edop/</a>. Early work included developing:</p>
+<ul>
+<li>
+<p>Three ways of specifying a place to obtain a basin signature: integrated WHG toponym lookup, small (97k) internal gazetteer lookup, and selecting one of 258 World Heritage Cities (WHC).</p>
+</li>
+<li>
+<p>Signature service returning a summary profile and full Band A-D attribute groupings per submitted place.</p>
+</li>
+<li>
+<p>Tool for finding and mapping cities with similar profiles in the WHC set of 258.</p>
+</li>
+<li>
+<p>Tool for browsing and mapping basin type clusters developed with   principal components analysis.</p>
+</li>
+<li>
+<p>Tool for drilling down through the OneEarth bioregion/ecoregion   hierarchy, displaying maps, and at the ecoregion level, Wikipedia summary descriptions.</p>
+</li>
+<li>
+<p>Experimental interface to D-PLACE data, mapping societies according to   two of the many dimensions of its data: <em>dominant subsistence</em> and <em>high gods</em>.</p>
+</li>
+<li>
+<p>Search/browse for World Heritage Cities, returning signatures and   optional lookup of cities with similar EDOP signatures and semantic content derived from Wikipedia article embeddings for four themes: <em>environment</em>, <em>history</em>, <em>culture</em>, and <em>'modern'.</em></p>
+</li>
+<li>
+<p>A public API exposing documented endpoints</p>
+</li>
+</ul>
+<h3>Next steps</h3>
+<p>Refining the EDOP component of Computing Place is now the top priority--work that includes three efforts mentioned earlier: studies of scale sensitivity and upstream/downstream distance weighting, and validation against settlement datasets.</p>
+<p>EDOP is intended to have broad utility to researchers in several disciplines, and ideally will be supported on a permanent basis by one or more institutions with that capability and inclination. Inquiries are being made.</p>
+<p>Feedback is most welcome on either of the Computing Place components, as well as on the overall project. A more technical overview is available on request.</p>
+<h2>In closing</h2>
+<p>"An ordered presentation of the landscapes of the earth is a formidable undertaking." -- Carl Sauer (1925)</p>
+<p>"Nothing for it but to do it" -- Karl Grossner (2026)</p>
+<p>Computing Place is admittedly ambitious, perhaps overly so. It is driven by personal research questions about culture and geography that require a way of summarizing environmental settings efficiently but robustly--namely EDOP--so that is where the initial focus is. The CDOP work is so far only meanderings, a search for patterns that may or may not lead to empirical findings and even theory. But first things first, as the saying goes.</p>
+<h2>References</h2>
+<p>Dinerstein, E., Olson, D., Joshi, A., Vynne, C., Burgess, N. D., Wikramanayake, E., &amp; Saleem, M. (2017). An ecoregion-based approach to protecting half the terrestrial realm. <em>BioScience</em>, <em>67</em>(6), 534-545.</p>
+<p>Reba, M., Reitsma, F., &amp; Seto, K. C. (2016). Spatializing 6,000 years of global urbanization from 3700 BC to AD 2000. <em>Scientific data</em>, <em>3</em>(1), 160034.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>https://www.hydrosheds.org/hydroatlas&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>https://www.oneearth.org/bioregions-2023/&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>https://d-place.org&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>https://github.com/Seshat-Global-History-Databank/cliopatria&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>https://seshatdatabank.info/&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>https://cedops.kgeographer.org&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/computing_place.html" rel="bookmark"
+                           title="Permalink to Introducing Computing Place">Introducing Computing Place</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2026-02-09T00:00:00+01:00">
                 Published: Mon 09 February 2026
@@ -52,35 +193,12 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="/category/research/">research</a>.</p>
-<p>tags: <a href="/tag/place.html">place</a> <a href="/tag/landscape.html">landscape</a> <a href="/tag/culture.html">culture</a> <a href="/tag/environment.html">environment</a> <a href="/tag/geohumanities.html">geohumanities</a> </p>
-</footer><!-- /.post-info --><p>Computing Place is a new research initiative aimed at building rich, computable descriptions of places, linking environmental and cultural data to support systematic analyses across those numerous dimensions. This work starts from a simple premise: places differ, and the quality of comparative analyses depends upon the quality and completeness of formal descriptions. Environment and culture are inextricably intertwined, as studied and understood from numerous disciplinary perspectives. I will be experimenting with ways to represent places computationally without collapsing them into a single metric or theory.</p>
-<h3>Some background</h3>
-<p>My reading of geographer Carl Sauer's 1925 article, <a href="/pubs/Sauer_Morphology.pdf" target="_blank" rel="noopener noreferrer">The Morphology of Landscape</a> has had a significant influence on my conception of place as it developed over the years. Sauer introduced the term <strong>cultural landscape</strong> to American readers, having borrowed it from the <em>Kulturlandschaft</em> conception of earlier German geographers.</p>
-<blockquote>
-<p>"The content of landscape is found therefore in the physical qualities of area that are significant to man and in the forms of his use of the area, <strong>in facts of physical background and facts of human culture</strong>." (emphasis added, p.325)</p>
-</blockquote>
-<p>Sauer's <em>morphological method</em> was most concerned with the chorological description of the evidence of cultures' impact upon the natural landscape over time and less so with the impact of environment upon culture. He did however allow for other perspectives, noting that "the continued synthesis of phenomena by morphologic method has been employed with greatest success perhaps in anthropology (p. 327)"</p>
-<p>That concession matters here because the blended conceptualization of place used in this project borrows from the phenomenological view of Yi-Fu Tuan ("place as experienced space" as I paraphrase it), and Doreen Massey's poetic framing of place as a "meeting up of histories." Computing Place is therefore not operationalizing Sauer's cultural landscape concept so much as extending it, treating place as a coupled record of environmental setting and cultural traces, supporting questions in both directions without reverting to determinism.</p>
-<p>The development of the <strong>Computing Place</strong> platform has begun in stepwise fashion, first with an <strong>EDOP</strong> module (Environmental Dimensions of Place) and then with tentative steps for a <strong>CDOP</strong> module (Cultural Dimensions of Place). These datasets and their respective analytic and visualization tools will in time offer both distinct and unified API endpoints that can be consumed internally in features of a Computing Place platform, and by external applications.</p>
-<h3>Environment and Culture (EDOP &amp; CDOP)</h3>
-<h4>EDOP (Environmental Dimensions of Place)</h4>
-<p>A prototype environmental signature has been developed using 42 of the roughly 300 properties for 190,000 Level 8 subbasins in the <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">BasinAtlas v1.0 portion of the HydroAtlas dataset</a>. These have been grouped in four rough temporally scoped bands corresponding to relative persistence and applicability to successive historical eras: <em>A - Physiographic bedrock</em>, <em>B - Hydroclimatic baselines</em>, <em>C - Bioclimatic proxies</em>, and <em>D - Anthropocene markers</em>. Point locations for places can be submitted to a web tool in a few ways so far, including a <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> lookup. Lists of places similar in either environmental terms or in semantic dimensions derived from Wikipedia text embeddings are returned on request.</p>
-<h4>CDOP (Cultural Dimensions of Place)</h4>
-<p>A first step at integrating cultural data has been instantiated within the EDOP module, by linking the 1291 indigenous societies from the <a href="https://d-place.org" target="_blank">D-PLACE dataset</a> to their containing ecoregions on two sample attributes: "Dominant subsistence" and "High Gods."</p>
-<p>An important next step for CDOP is determining what attributes of culture to work with. Evidence of culture is for me a very broad domain, including but not limited to descriptive narrative texts (travel writing, folklore, mythology, and other literature, encyclopedic sources, etc.), folk and "fine" art, and architectural motifs. That said, CDOP experiments will be constrained by what data may be readily available. </p>
-<h3>Linked Traces</h3>
-<p>In 2019 considerable work was done to develop the <strong>Linked Traces annotation format (LTF)</strong> in coordination with the <a href="https://github.com/LinkedPasts/linked-places-format" target= "_blank"><strong>Linked Places Format (LPF)</strong></a> that became a contribution and interconnection standard for World Historical Gazetteer and other projects associated with the <a href="https://pelagios.org" target = "_blank">Pelagios Network</a>.</p>
-<p>LTF has seen limited uptake but is likely now applicable in the Computing Place platform architecture. A <em>trace</em> in LTF is defined as a "web-published resource concerning historical entities of any kind, and conventionally, to the entities themselves." Trace data takes the form of W3C web annotations, as explained on the <a href="https://github.com/LinkedPasts/linked-traces-format" target= "_blank">LTF Github repository</a>. LTF follows Linked Open Data principles in extending the relatively constrained place descriptions of digital gazetteers with all manner of related thematic material. EDOP and CDOP data would seem to fit that framing well.</p>
-<h3>Computing Place and World Historical Gazetteer</h3>
-<p>Computing Place is a research initiative that can also be understood as a downstream application in the ecosystem that <a href="https://whgazetteer.org" target="_blank">World Historical Gazetteer (WHG)</a> was designed to support. WHG’s core contribution is to provide stable, reconcilable place anchors—identifiers and attested names, geometries, and basic relations—while leaving richer thematic data and interpretive detail to external project contributors. Computing Place aligns with that division of labor. It will treat WHG place records as a reference layer, and attach additional evidence to them as linked “traces”: environmental signatures, cultural descriptors, and other place-referenced materials that can be analyzed, compared, and explored. These annotations will be patterned after the Linked Traces Format mentioned above, developed in 2019 under the aegis of the <a href="https://pelagios.org" target="_blank">Pelagios Network</a>.</p>
-<p>Integration between the two can take several forms over time. In the simplest case, Computing Place’s EDOP module will provide API endpoints that WHG and other clients can call on demand&mdash;sending a representative geometry and retrieving environmental context in the form of a concise profile derived from EDOP’s basin-based signatures. Computing Place can also potentially contribute curated sets of place records to WHG that link back to rich Computing Place landing pages for those places; at a larger scale, it can publish an annotation index keyed to WHG identifiers.</p>
-<p>In all cases, the intent is not to expand WHG into a thematic encyclopedia, but to use WHG’s place framework as the anchoring substrate linking to a variety of rich, computable descriptions of place, much as many WHG contributors do now.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+<p>In <a href="/category/research/">research</a> | tags: <a href="/tag/place.html">place</a>, <a href="/tag/landscape.html">landscape</a>, <a href="/tag/culture.html">culture</a>, <a href="/tag/environment.html">environment</a>, <a href="/tag/geohumanities.html">geohumanities</a></p>
+
+</footer><!-- /.post-info -->                <p>Introduction to the personal Computing Place project</p>
+                <a class="readmore" href="/computing_place.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -97,8 +215,8 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="/category/research/">Research</a>.</p>
-<p>tags: <a href="/tag/creation-myths.html">creation myths</a> <a href="/tag/llms.html">LLMs</a> <a href="/tag/folklore.html">folklore</a> <a href="/tag/ontology.html">ontology</a> <a href="/tag/concept-modeling.html">concept modeling</a> </p>
+<p>In <a href="/category/research/">Research</a> | tags: <a href="/tag/creation-myths.html">creation myths</a>, <a href="/tag/llms.html">LLMs</a>, <a href="/tag/folklore.html">folklore</a>, <a href="/tag/ontology.html">ontology</a>, <a href="/tag/concept-modeling.html">concept modeling</a></p>
+
 </footer><!-- /.post-info -->                <p>GLOS hits an epistemological roadblock</p>
                 <a class="readmore" href="/glos_on_pause.html">read more</a>
                 </div><!-- /.entry-content -->
@@ -119,8 +237,8 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="/category/research/">research</a>.</p>
-<p>tags: <a href="/tag/creation-myths.html">creation myths</a> <a href="/tag/schema.html">schema</a> <a href="/tag/llms.html">LLMs</a> <a href="/tag/folklore.html">folklore</a> <a href="/tag/ontology.html">ontology</a> <a href="/tag/concept-modeling.html">concept modeling</a> </p>
+<p>In <a href="/category/research/">research</a> | tags: <a href="/tag/creation-myths.html">creation myths</a>, <a href="/tag/schema.html">schema</a>, <a href="/tag/llms.html">LLMs</a>, <a href="/tag/folklore.html">folklore</a>, <a href="/tag/ontology.html">ontology</a>, <a href="/tag/concept-modeling.html">concept modeling</a></p>
+
 </footer><!-- /.post-info -->                <p>Using large language models to induce and evaluate a schema for conceptual content in creation myths.</p>
                 <a class="readmore" href="/glos_creation_schema.html">read more</a>
                 </div><!-- /.entry-content -->
@@ -141,32 +259,10 @@
         <address class="vcard author">
                 By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
         </address>
-<p>In <a href="/category/research/">research</a>.</p>
-<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
+<p>In <a href="/category/research/">research</a> | tags: <a href="/tag/folklore.html">folklore</a>, <a href="/tag/place.html">place</a>, <a href="/tag/ai.html">AI</a></p>
+
 </footer><!-- /.post-info -->                <p>Status update on the Geographic Lens on Stories (GLOS) project, co-authored with ChatGPT. It explores the digitization of folklore indexes and the analysis of creation myths, using computational methods to reveal cultural patterns.</p>
                 <a class="readmore" href="/glos_june2025.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/glos_and_machine.html" rel="bookmark"
-                           title="Permalink to GLOS and the Machine">GLOS and the Machine</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2025-04-27T00:00:00+02:00">
-                Published: Sun 27 April 2025
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/karl-grossner.html">Karl Grossner</a>
-        </address>
-<p>In <a href="/category/research/">research</a>.</p>
-<p>tags: <a href="/tag/folklore.html">folklore</a> <a href="/tag/place.html">place</a> <a href="/tag/ai.html">AI</a> </p>
-</footer><!-- /.post-info -->                <p>Reflections on collaboration with chatbots in the GLOS project</p>
-                <a class="readmore" href="/glos_and_machine.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
                 </ol><!-- /#posts-list -->
