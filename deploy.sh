@@ -1,13 +1,20 @@
 #!/bin/bash
 
-# Safer deploy script for Pelican site using gh-pages
+# Deploy Pelican site to gh-pages
+# Usage: ./deploy.sh ["optional commit message"]
+# If no message is given, defaults to "Update site content"
 
-set -e  # Exit on any error
+set -e
 
+COMMIT_MSG="${1:-Update site content}"
 TMPDIR=$(mktemp -d)
 
-echo "🌀 Switching to main branch..."
+echo "🌀 Ensuring we're on main branch..."
 git checkout main
+
+echo "📝 Committing any pending changes on main..."
+git add -A
+git diff --cached --quiet || git commit -m "$COMMIT_MSG"
 
 echo "🧹 Cleaning up unnecessary files..."
 find . -type d -name '__pycache__' -exec rm -rf {} +
@@ -22,23 +29,19 @@ echo "🔁 Switching to gh-pages branch..."
 git checkout gh-pages
 
 echo "🧹 Cleaning gh-pages working tree..."
-# Remove everything except .git, .nojekyll, and CNAME
 find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name '.nojekyll' ! -name 'CNAME' -exec rm -rf {} +
 
-echo "♻️  Copying files from temp to root of gh-pages..."
+echo "♻️  Copying built site from temp..."
 cp -r "$TMPDIR"/* ./
 
-echo "📂 Staging files for commit..."
+echo "📂 Staging and committing..."
 git add -A
-
-echo "✅ Committing changes..."
-git commit -m "Deploy latest site updates" || echo "No changes to commit."
+git diff --cached --quiet || git commit -m "Deploy: $COMMIT_MSG"
 
 echo "🚀 Pushing to GitHub..."
-git fetch origin
 git push --force origin gh-pages
 
-echo "🔄 Switching back to main branch..."
+echo "🔄 Switching back to main..."
 git checkout main
 
-echo "✅ Deployment complete."
+echo "✅ Deployment complete. Site will be live at kgeographer.org shortly."

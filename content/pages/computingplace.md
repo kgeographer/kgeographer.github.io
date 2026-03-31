@@ -7,6 +7,8 @@ Summary: Environmental and cultural profiling infrastructure for historical gaze
 
 A Computing Place web platform is being developed modularly. **EDOP** (Environmental Dimensions of Place) is the first component, now live with 190,000+ watershed profiles using HydroATLAS data, digital elevation models, and ecoregion classifications. **CDOP** (Cultural Dimensions of Place) will add semantic and anthropological dimensions through text embeddings and ethnographic datasets. The platform will in time link these complementary signals, offering APIs and interactive tools that existing spatial humanities infrastructures can consume to enrich their place records.
 
+→ [Complete Project Prospectus](/computing-place-prospectus/) — full description of EDOP, CDOP, methodology, and current state (March 2026)
+
 <div class="cp-tiles">
   <a href="http://cedop.kgeographer.org/edop" target="_blank" class="cp-tile cp-tile-active">
     <img src="/images/cp03_edop01.jpg" alt="Environmental Dimensions of Place">
