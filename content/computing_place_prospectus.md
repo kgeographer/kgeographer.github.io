@@ -31,7 +31,7 @@ While there are clear relations between cultural phenomena of all kinds and thei
 
 ### 3.1 Signature components
 
-For any terrestrial location, the EDOP service delivers a set of values for selected environmental attributes drawn from one or more global datasets. At present the principal source is the Global BasinATLAS[^1] dataset, which compiles a wide range of hydro-environmental attributes from existing global datasets in a consistent, globally applicable format. BasinATLAS is organized hierarchically in 12 "levels" of increasing granularity (decreasing area). Initially, 47 of the 281 BasinATLAS attributes, were drawn from all six of its categories (hydrology, physiography, climate, landcover, soils & geology, anthropogenic) at Level 08 (~190k basins). For EDOP purposes, the attributes have been grouped into four "persistence bands," intended to reflect potential temporal validity. Signature requests can include the values of any combination of bands:
+For any terrestrial location, the EDOP service delivers a set of values for selected environmental attributes drawn from one or more global datasets. At present the principal source is the <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">Global BasinATLAS</a> dataset, which compiles a wide range of hydro-environmental attributes from existing global datasets in a consistent, globally applicable format. BasinATLAS is organized hierarchically in 12 "levels" of increasing granularity (decreasing area). Initially, 47 of the 281 BasinATLAS attributes, were drawn from all six of its categories (hydrology, physiography, climate, landcover, soils & geology, anthropogenic) at Level 08 (~190k basins). For EDOP purposes, the attributes have been grouped into four "persistence bands," intended to reflect potential temporal validity. Signature requests can include the values of any combination of bands:
 
 - **A - Physiographic bedrock (millennia)** *[elevation, slope, stream gradient, lithology, karst extent]*. Indicative of the energy cost of   movement, defensive advantages of terrain, and raw materials available   for construction and agriculture, stable over millennia.
 
@@ -61,9 +61,9 @@ Spatial data and descriptive text from OneEarth ecoregion datasets--including Wi
 
 ## 5. The EDOP data infrastructure
 
-The BasinATLAS and OneEarth ecoregions data[^2] are both available under open CC-BY licenses, as are Wikipedia ecoregion articles. The current EDOP prototype utilizes BasinATLAS Level 08 data, which partitions the terrestrial Earth surface into 190,675 nested drainage units (catchments). BasinATLAS defines a 12-level hierarchy (Levels 01--12), spanning scales from continental basins to fine-grained local catchments.
+The <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">BasinATLAS</a> and <a href="https://www.oneearth.org/bioregions-2023/" target="_blank">OneEarth ecoregions</a> data are both available under open CC-BY licenses, as are Wikipedia ecoregion articles. The current EDOP prototype utilizes BasinATLAS Level 08 data, which partitions the terrestrial Earth surface into 190,675 nested drainage units (catchments). BasinATLAS defines a 12-level hierarchy (Levels 01--12), spanning scales from continental basins to fine-grained local catchments.
 
-A well-known characteristic of spatial data is the *Modifiable Areal Unit Problem (MAUP)*, which can result in widely varying aggregate property values depending on the size and shape of the containing spatial unit considered. A signature computed for the watershed containing Rome looks different from one computed for the small sub-basin immediately beneath a single representative point given for the Capitoline Hill. A systematic scale sensitivity analysis across multiple BasinATLAS levels is the next planned analytical contribution, and will inform which level is most appropriate for which research contexts. When multiple levels are considered, sharp signature changes across them can provide useful information about a place's positioning at edges of ecological zones. Providing real-time multi-level responses will require significant computing and storage capability, but a one-time analysis across many samples should provide useful guidelines for users' choice of level.
+A well-known characteristic of spatial data is the <a href="https://gistbok-ltb.ucgis.org/page/current/concept/FC-07-026" target="_blank">*Modifiable Areal Unit Problem (MAUP)*</a>, which can result in widely varying aggregate property values depending on the size and shape of the containing spatial unit considered. A signature computed for the watershed containing Rome looks different from one computed for the small sub-basin immediately beneath a single representative point given for the Capitoline Hill. A systematic scale sensitivity analysis across multiple BasinATLAS levels is the next planned analytical contribution, and will inform which level is most appropriate for which research contexts. When multiple levels are considered, sharp signature changes across them can provide useful information about a place's positioning at edges of ecological zones. Providing real-time multi-level responses will require significant computing and storage capability, but a one-time analysis across many samples should provide useful guidelines for users' choice of level.
 
 The _OneEarth_ project, self-described as "global network of climate strategists and storytellers," has incorporated data for the 845 "widely cited" ecoregions developed by an international consortium of conservation scientists (Dinerstein, et al, 2017) into a new *bioregion framework*, presented in maps and essays on their web platform. Ecoregions classify the terrestrial surface into biogeographically distinct areas sharing characteristic species assemblages and ecological conditions. The spatial data for these ecoregions is freely available. Comprehensive articles describing virtually all of them, authored during an earlier World Wildlife Fund effort, are available in Wikipedia, and will be incorporated into the EDOPS prototype as optional contextual outputs alongside numerical signatures.
 
@@ -73,7 +73,7 @@ EDOPS signatures represent computable and configurable summarizations of environ
 
 Attempts to predict known settlement locations are sure to have mixed results, because humans have adapted to a great variety of environmental settings. The test is simple in principle: do environmentally favorable locations correspond to where people actually settled? Defining 'favorable' independently of the settlement record itself is the methodological challenge --one the planned validation study will address using held-out data and established SDM techniques. Failure is diagnostic, success will build confidence in the model. The interesting outputs won't be matches, but residuals. The difference between predicted settlement probability and actual settlement record will be the most revealing aspect. In cases of genuine historical absence we can ask: Was there poor connectivity to diffusion networks? Competitive exclusion? Or is there an explanatory variable the current signature doesn't provide? In cases of dense or persistent settlement but an apparently unfavorable signature, were there strategic imperatives like trade or defense? Were there localized resources not captured in the model or was it sheer historical contingency?
 
-Existing datasets identified for use in a validation process include (i) point locations of anthropological fieldwork in indigenous societies in *D-PLACE*[^3], (ii) polygon geometry for over 800 temporally scoped historical polities, from the recent Cliopatria dataset[^4] developed by the Seshat *Global History Databank* project[^5], and (iii) temporally scoped point locations for roughly 1700 historical settlements spanning 6,000 years, developed by Reba, et al (2016).
+Existing datasets identified for use in a validation process include (i) point locations of anthropological fieldwork in indigenous societies in <a href="https://d-place.org" target="_blank">*D-PLACE*</a>, (ii) polygon geometry for over 800 temporally scoped historical polities, from the recent <a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank">Cliopatria dataset</a> developed by the <a href="https://seshatdatabank.info/" target="_blank">Seshat *Global History Databank* project</a>, and (iii) temporally scoped point locations for roughly 1700 historical settlements spanning 6,000 years, developed by Reba, et al (2016).
 
 One important caveat is that given the dimensions of the current EDOP model, signatures are most likely to be predictive of fixed settlements relying on terrestrial resources. Hence there will be blind spots that need to be accounted for. We can expect signatures across the Eurasian steppe would read as unfavorable, despite it having been occupied intensively by mobile cultures whose movement was adaptive to apparently hostile conditions. Likewise, the terrestrial signature for Tierra del Fuego is undoubtedly relatively harsh: hyper-humid and wind-battered, with low growing-season temperatures and minimal agricultural potential, yet the rich marine resources allowed the Yaghan to thrive for millennia, and the presence of guanaco in the interior supported the Selknam societies.
 
@@ -84,13 +84,13 @@ The Cultural Dimensions of Place (CDOP) component of Computing Place complements
 
 These core datasets, mentioned above as being integral to EDOP signature validation work, will see further use in seeking patterns of co-relation:
 
-**D-PLACE**: "...contains cultural, linguistic, environmental and geographic information for over 1400 human 'societies'. A 'society' in D-PLACE represents a group of people in a particular locality, who often share a language and cultural identity.
+**<a href="https://d-place.org" target="_blank">D-PLACE</a>**: "...contains cultural, linguistic, environmental and geographic information for over 1400 human 'societies'. A 'society' in D-PLACE represents a group of people in a particular locality, who often share a language and cultural identity.
 
-**Cliopatria**: "...a comprehensive open-source [temporally scoped] geospatial dataset of worldwide states, political groups, events, and rulers from 3400BCE to the present day. It is part of the Seshat Global History Databank project."
+**<a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank">Cliopatria</a>**: "...a comprehensive open-source [temporally scoped] geospatial dataset of worldwide states, political groups, events, and rulers from 3400BCE to the present day. It is part of the Seshat Global History Databank project."
 
 **Chandler-Modelski historical population**: "...the first spatially explicit dataset of urban settlements from 3700 BC to AD 2000..." previously published by Reba et al (2016) derived from work by Chandler and Modelski."
 
-Experiments have begun in the Computing Place platform prototype[^6] with descriptive text for 258 UNESCO World Heritage Cities, and similar semantic embedding experiments are planned using nomination documents for Intangible Cultural Heritage listings.
+Experiments have begun in the <a href="https://cedop.kgeographer.org" target="_blank">Computing Place platform prototype</a> with descriptive text for 258 UNESCO World Heritage Cities, and similar semantic embedding experiments are planned using nomination documents for Intangible Cultural Heritage listings.
 
 The linking of EDOP and CDOP data can facilitate answering many kinds of questions, including but not limited to: Do cultural traits cluster in particular environmental regimes? How do environmental gradients correspond to linguistic, social, or economic variation? How stable are signatures across historical change?
 
@@ -100,7 +100,7 @@ One early demonstrator developed sets of signatures for the extents of Northern 
 
 ## 8. Current state and next steps
 
-The Computing Place project began in early January, 2026 and produced a prototype web platform to display work-in-progress a month later at <https://cedop.kgeographer.org/edop/>. Early work included developing:
+The Computing Place project began in early January, 2026 and produced a prototype web platform to display work-in-progress a month later at <a href="https://cedop.kgeographer.org/edop/" target="_blank">cedop.kgeographer.org/edop</a>. Early work included developing:
 
 - Three ways of specifying a place to obtain a basin signature: integrated WHG toponym lookup, small (97k) internal gazetteer lookup, and selecting one of 258 World Heritage Cities (WHC).
 
@@ -139,15 +139,3 @@ Computing Place is admittedly ambitious, perhaps overly so. It is driven by pers
 Dinerstein, E., Olson, D., Joshi, A., Vynne, C., Burgess, N. D., Wikramanayake, E., & Saleem, M. (2017). An ecoregion-based approach to protecting half the terrestrial realm. *BioScience*, *67*(6), 534-545.
 
 Reba, M., Reitsma, F., & Seto, K. C. (2016). Spatializing 6,000 years of global urbanization from 3700 BC to AD 2000. *Scientific data*, *3*(1), 160034.
-
-[^1]: https://www.hydrosheds.org/hydroatlas
-
-[^2]: https://www.oneearth.org/bioregions-2023/
-
-[^3]: https://d-place.org
-
-[^4]: https://github.com/Seshat-Global-History-Databank/cliopatria
-
-[^5]: https://seshatdatabank.info/ 
-
-[^6]: https://cedops.kgeographer.org 
