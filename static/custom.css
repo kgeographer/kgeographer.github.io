@@ -62,8 +62,10 @@
 /* Inline centered figures (Fig 1, Fig 2, etc.) */
 .figure-inline {
     display: block;
+    float: none !important;
     clear: both;
-    margin: 1.5em auto;
+    max-width: 100% !important;
+    margin: 1.5em auto !important;
     text-align: center;
 }
 .figure-inline img {
