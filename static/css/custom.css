@@ -46,6 +46,24 @@ p {
   }
 }
 
+/* Inline centered figures (Fig 1, Fig 2, etc.) */
+.figure-inline {
+  display: block;
+  clear: both;
+  margin: 1.5em auto;
+  text-align: center;
+}
+.figure-inline img {
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+.figure-inline figcaption {
+  margin-top: 0.4em;
+  font-size: 0.9em;
+  color: #555;
+}
+
 /* Modal overlay */
 .image-modal {
   position: fixed;
