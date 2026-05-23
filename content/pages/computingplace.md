@@ -10,7 +10,7 @@ A Computing Place web platform is being developed modularly. **EDOP** (Environme
 → [Complete Project Prospectus](/computing-place-prospectus.html) — full description of EDOP, CDOP, methodology, and current state (March 2026)
 
 <div class="cp-tiles">
-  <a href="http://cedop.kgeographer.org/edop" target="_blank" class="cp-tile cp-tile-active">
+  <a href="http://cedop.kgeographer.org/edops" target="_blank" class="cp-tile cp-tile-active">
     <img src="/images/cp03_edop01.jpg" alt="Environmental Dimensions of Place">
     <div class="cp-tile-info">
       <span class="cp-tile-label">Environmental Dimensions<br/>of Place</span>
