@@ -35,6 +35,7 @@ echo "♻️  Copying built site from temp..."
 cp -r "$TMPDIR"/* ./
 
 echo "📂 Staging and committing..."
+echo "memory/" >> .gitignore
 git add -A
 git diff --cached --quiet || git commit -m "Deploy: $COMMIT_MSG"
 
