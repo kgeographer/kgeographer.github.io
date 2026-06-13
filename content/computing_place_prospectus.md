@@ -7,6 +7,8 @@ Tags: place, landscape, culture, environment, geohumanities, EDOP, CDOP
 Author: Karl Grossner
 Status: published
 
+<p style="color:#996633; background-color:whitesmoke; font-weight: bold;">This March 2026 prospectus describes the initiative as it was originally conceived. For current state, see [this new post] and the latest <a href="/pubs/EDOP_summary_20260608.pdf" target="_blank" rel="noopener noreferrer">EDOP Project Summary</a>.</p>
+
 ## 1. Introduction
 
 "One has not fully understood the nature of an area until one has learned to see it as an organic unit, to comprehend land and life in terms of each other."
@@ -31,7 +33,7 @@ While there are clear relations between cultural phenomena of all kinds and thei
 
 ### 3.1 Signature components
 
-For any terrestrial location, the EDOP service delivers a set of values for selected environmental attributes drawn from one or more global datasets. At present the principal source is the <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">Global BasinATLAS</a> dataset, which compiles a wide range of hydro-environmental attributes from existing global datasets in a consistent, globally applicable format. BasinATLAS is organized hierarchically in 12 "levels" of increasing granularity (decreasing area). Initially, 47 of the 281 BasinATLAS attributes, were drawn from all six of its categories (hydrology, physiography, climate, landcover, soils & geology, anthropogenic) at Level 08 (~190k basins). For EDOP purposes, the attributes have been grouped into four "persistence bands," intended to reflect potential temporal validity. Signature requests can include the values of any combination of bands:
+For any terrestrial location, the EDOP service delivers a set of values for selected environmental attributes drawn from one or more global datasets. At present the principal source is the global <a href="https://www.hydrosheds.org/hydroatlas" target="_blank">BasinATLAS</a> dataset, which compiles a wide range of hydro-environmental attributes from existing global datasets in a consistent, globally applicable format. BasinATLAS is organized hierarchically in 12 "levels" of increasing granularity (decreasing area). Initially, 47 of the 281 BasinATLAS attributes, were drawn from all six of its categories (hydrology, physiography, climate, landcover, soils & geology, anthropogenic) at Level 08 (~190k basins). For EDOP purposes, the attributes have been grouped into four "persistence bands," intended to reflect potential temporal validity. Signature requests can include the values of any combination of bands:
 
 - **A - Physiographic bedrock (millennia)** *[elevation, slope, stream gradient, lithology, karst extent]*. Indicative of the energy cost of   movement, defensive advantages of terrain, and raw materials available   for construction and agriculture, stable over millennia.
 

@@ -1,4 +1,4 @@
-# Python artifacts
+. # Python artifacts
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -17,3 +17,10 @@ output/
 .idea/
 
 prompts/
+
+# private data — not for public repo
+content/data/
+notebooks/
+scripts/
+drafts/
+memory/
