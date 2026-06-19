@@ -20,7 +20,7 @@ echo "🧹 Cleaning up unnecessary files..."
 find . -type d -name '__pycache__' -exec rm -rf {} +
 
 echo "🛠  Building site with Pelican..."
-pelican content
+pelican content -s publishconf.py
 
 echo "📦 Copying output to temp directory..."
 cp -r output/* "$TMPDIR"
@@ -35,7 +35,7 @@ echo "♻️  Copying built site from temp..."
 cp -r "$TMPDIR"/* ./
 
 echo "📂 Staging and committing..."
-echo "memory/" >> .gitignore
+grep -qxF 'memory/' .gitignore 2>/dev/null || echo "memory/" >> .gitignore
 git add -A
 git diff --cached --quiet || git commit -m "Deploy: $COMMIT_MSG"
 
