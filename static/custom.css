@@ -1,13 +1,14 @@
-/* Computing Place tiles - 3 across */
+/* Computing Place tiles - 2 across */
 .cp-tiles {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5em;
+    grid-template-columns: repeat(2, minmax(0, 240px));
+    gap: 1em;
     margin: 2em 0;
+    justify-content: center;
 }
 
 .cp-tile {
-    max-height: 250px;
+    max-height: 160px;
     border-radius: 8px;
     overflow: hidden;
     background: #f9f9f9;
@@ -64,4 +65,47 @@
     .cp-tiles {
         grid-template-columns: 1fr;
     }
+}
+
+/* EDOP summary modal */
+.edop-modal {
+    position: relative;
+    width: min(820px, 92vw);
+    max-height: 85vh;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.edop-modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.edop-modal-close {
+    position: absolute;
+    top: 0.2em;
+    right: 0.4em;
+    z-index: 1;
+    background: none;
+    border: none;
+    font-size: 1.9em;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+}
+
+.edop-modal-close:hover {
+    color: #000;
+}
+
+.edop-modal-body {
+    padding: 2.6em 2.4em 2em;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.edop-modal-body .entry-title {
+    margin-top: 0;
 }
