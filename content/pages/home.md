@@ -24,7 +24,7 @@ These projects are described in more detail in the <a href="/portfolio">**Portfo
 
 KGEO Research focuses on:
 
-- **Concept and data modeling** for humanities and social science projects  
+- **Conceptual and data modeling** for humanities and social science projects  
 - **Geographic information workflows** involving spatial-temporal databases, historical place data, and thematic content
 - **Building web applications and notebooks** using Python, Django and related software stacks, from pilots to finished platforms
 - **Narrative and text-analysis pipelines**, experimental use and evaluation of AI technologies and methods (LLMs, embeddings)
