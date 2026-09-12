@@ -14,11 +14,12 @@ p {
 .project-screens img {
   cursor: pointer;
   border: 1px solid gainsboro;
+  width: 220px;
 }
 .project-screens figure {
   margin: 0;
   text-align: center;
-  width: 240px;
+  width: 220px;
 }
 .project-screens figcaption {
   font-size: 0.85rem;
