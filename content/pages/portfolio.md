@@ -3,6 +3,14 @@ Template: page
 Slug: portfolio
 
 
+<img src="/images/projects/edops-1.png" alt="Environmental Dimensions of Place Service home page" height="150" class="portfolio-thumb">
+### Environmental Dimensions of Place Service (EDOPS; <a href="https://edops.computingplace.org" target="_blank">web site</a>)
+
+EDOPS generates structured environmental profiles (“signatures”) for any location on Earth, derived from global datasets aggregated to hydrological basins at multiple scales. Developed as the first component of my Computing Place research initiative, in partnership with the Institute for Spatial History Innovation (ISHI) at the University of Pittsburgh.  
+[Read more →](/edops/)
+---
+
+
 <img src="/images/projects/whg-1.png" alt="World Historical Gazetteer home page" height="160" class="portfolio-thumb">
 ### World Historical Gazetteer (WHG; <a href="https://whgazetteer.org" target="_blank">web site</a>)
 
@@ -12,7 +20,7 @@ A global digital humanities platform for linking, reconciling, and publishing hi
 
 
 <img src="/images/projects/lpf-1.png" alt="Linked Places Format (LPF)" height="150" class="portfolio-thumb">
-### Linked Places Format (LPF)
+### Linked Places Format (LPF; <a href="https://github.com/LinkedPasts/linked-places-format" target="_blank">repo</a>)
 A lightweight JSON-LD/GeoJSON extension for representing historical places with temporal depth. With early collaborative input I created LPF as the successor to my earlier GeoJSON-T, enabling multiple temporally scoped names, geometries, types, and relations in a single place record for interoperable linked gazetteer workflows.  
 [Read more →](/linked-places-format/)
 ---

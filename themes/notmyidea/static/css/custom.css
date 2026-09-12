@@ -6,9 +6,24 @@ p {
 }
 
 /* Thumbnails: hand cursor */
+.project-screens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .project-screens img {
   cursor: pointer;
   border: 1px solid gainsboro;
+}
+.project-screens figure {
+  margin: 0;
+  text-align: center;
+  width: 240px;
+}
+.project-screens figcaption {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
 }
 .portfolio-thumb {
   margin-left:2px;
