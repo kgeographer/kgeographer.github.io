@@ -36,7 +36,10 @@ THEME_STATIC_DIR = 'static'
 EXTRA_PATH_METADATA = {
     'extra/custom.css': {'path': 'static/custom.css'},
     'extra/Klee-ManHead.png': {'path': 'Klee-ManHead.png'},
+    'extra/japan-2026/index.html': {'path': 'japan-2026/index.html'},
 }
+# Stand-alone HTML under extra/ is copied as-is, not parsed as an article.
+ARTICLE_EXCLUDES = ['extra']
 
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 CATEGORY_URL = 'category/{slug}/'
