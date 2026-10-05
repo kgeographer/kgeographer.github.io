@@ -31,15 +31,17 @@ MENUITEMS = [
 WITH_FUTURE_DATES = True
 
 PAGE_PATHS = ['projects', 'pages']
-STATIC_PATHS = ['images', 'extra', 'pubs']
+STATIC_PATHS = ['images', 'extra', 'pubs', 'travels']
 THEME_STATIC_DIR = 'static'
 EXTRA_PATH_METADATA = {
     'extra/custom.css': {'path': 'static/custom.css'},
     'extra/Klee-ManHead.png': {'path': 'Klee-ManHead.png'},
-    'extra/japan-2026/index.html': {'path': 'japan-2026/index.html'},
 }
-# Stand-alone HTML under extra/ is copied as-is, not parsed as an article.
-ARTICLE_EXCLUDES = ['extra']
+# Stand-alone HTML under extra/ and travels/ is copied as-is, not parsed as an
+# article. travels/<phase>/ holds the map+gallery pages (e.g. travels/japan-2026/);
+# each page's own photos/ subfolder travels with it untouched, no per-file remap
+# needed (confirmed with a scratch Pelican build before applying this).
+ARTICLE_EXCLUDES = ['extra', 'travels']
 
 CATEGORY_SAVE_AS = 'category/{slug}/index.html'
 CATEGORY_URL = 'category/{slug}/'

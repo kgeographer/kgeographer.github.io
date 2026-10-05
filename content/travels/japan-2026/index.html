@@ -110,6 +110,36 @@
   .stay { display: block; font-size: 13px; color: var(--ink-2); }
   .more { display: block; font-size: 13.5px; color: var(--ink); margin: 4px 0 2px; max-width: 60ch; }
   .more[hidden] { display: none; }
+
+  .photo-dot { fill: var(--on-mark); stroke: var(--ink); stroke-width: 1.1; opacity: 0; }
+  .has-photos .photo-dot { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .photo-dot { transition: none; } }
+
+  .thumbs { display: flex; gap: 6px; margin: 8px 0 2px; overflow-x: auto; }
+  .thumbs[hidden] { display: none; }
+  .thumbs button { flex: 0 0 auto; width: 56px; height: 56px; padding: 0; border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden; background: var(--land); cursor: pointer; }
+  .thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumbs button:hover, .thumbs button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+  .modal-backdrop { position: fixed; inset: 0; z-index: 50; background: rgba(8, 12, 15, .85);
+    display: flex; align-items: center; justify-content: center;
+    padding: calc(env(safe-area-inset-top, 0px) + 16px) 16px calc(env(safe-area-inset-bottom, 0px) + 16px); }
+  .modal-backdrop[hidden] { display: none; }
+  .modal { width: min(92vw, 1100px); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .modal-stage { position: relative; display: flex; justify-content: center; width: 100%; }
+  .modal-stage img { max-width: 100%; max-height: 72vh; width: auto; border-radius: 4px; display: block; background: #111; }
+  .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, .45); color: #fff;
+    border: 0; border-radius: 50%; width: 42px; height: 42px; display: grid; place-items: center; cursor: pointer; }
+  .modal-nav.prev { left: 6px; } .modal-nav.next { right: 6px; }
+  .modal-nav:disabled { opacity: .3; cursor: default; }
+  .modal-close { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); right: 16px; z-index: 51;
+    background: rgba(0, 0, 0, .45); color: #fff; border: 0; border-radius: 50%; width: 40px; height: 40px;
+    display: grid; place-items: center; cursor: pointer; }
+  .modal-nav:focus-visible, .modal-close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .modal-cap { color: rgba(255, 255, 255, .92); text-align: center; }
+  .modal-cap .nm { display: block; font: 700 14px var(--font-body); margin-bottom: 2px; }
+  .modal-cap span:last-child { font: 500 12px var(--font-mono); color: rgba(255, 255, 255, .65); }
 </style>
 </head>
 <body>
@@ -129,11 +159,30 @@
         <span><svg viewBox="0 0 26 10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--ink-2)" stroke-width="2.6" stroke-linecap="round"/></svg>drive</span>
         <span><svg viewBox="0 0 26 10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--ink-2)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 6"/></svg>car ferry</span>
         <span><svg viewBox="0 0 26 10"><circle cx="13" cy="5" r="4.5" fill="none" stroke="var(--ink-2)" stroke-width="1.6" stroke-dasharray="3 3"/></svg>festival anchor</span>
+        <span><svg viewBox="0 0 26 10"><circle cx="13" cy="5" r="3.2" fill="var(--ink-2)" stroke="var(--land)" stroke-width="1"/></svg>has photos</span>
       </div>
-      <p class="foot">Stops sit on the town centre; legs are straight lines between stops, not roads. Coastline and Lake Biwa: Natural Earth (public domain).</p>
+      <p class="foot">Stops sit on the town centre; legs are straight lines between stops, not roads. Built 20 Sep 2026 from <code>DSTYD_Japan.md</code> — to change the plan, edit the <code>STOPS</code> list in this file. Coastline and Lake Biwa: Natural Earth (public domain).</p>
     </div>
     <aside class="panel" id="panel" aria-label="Stops in order"></aside>
   </div>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="modal-stage">
+      <button type="button" class="modal-nav prev" id="modalPrev" aria-label="Previous photo">
+        <svg viewBox="0 0 20 20" width="18" height="18"><path d="M12 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <img id="modalImg" alt="">
+      <button type="button" class="modal-nav next" id="modalNext" aria-label="Next photo">
+        <svg viewBox="0 0 20 20" width="18" height="18"><path d="M8 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-cap"><span class="nm" id="modalName"></span><span id="modalCount"></span></div>
+  </div>
+  <button type="button" class="modal-close" id="modalClose" aria-label="Close">
+    <svg viewBox="0 0 20 20" width="16" height="16"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  </button>
 </div>
 
 <script>
@@ -207,6 +256,88 @@
   }
   function col(ph) { return "var(" + PHASES[ph].css + ")"; }
 
+  // Photos: drop files named "<marker-id>_01.jpg", "<marker-id>_02.jpg", … (2-digit,
+  // contiguous from 01, .jpg only) in a photos/ folder next to this page. Marker ids
+  // are the "id" field in STOPS above. Probed lazily per marker on load — nothing to
+  // edit here when photos are added or removed.
+  var PHOTO_MAX = 40;
+  var PHOTOS = {};
+  function probePhotos(id, done) {
+    var found = [], i = 0;
+    (function next() {
+      i++;
+      if (i > PHOTO_MAX) return finish();
+      var n = i < 10 ? "0" + i : String(i);
+      var img = new Image();
+      img.onload = function () { found.push("photos/" + id + "_" + n + ".jpg"); next(); };
+      img.onerror = finish;
+      img.src = "photos/" + id + "_" + n + ".jpg";
+    })();
+    function finish() { PHOTOS[id] = found; done(found); }
+  }
+
+  var modalBackdrop = document.getElementById("modalBackdrop"), modalImg = document.getElementById("modalImg"),
+    modalName = document.getElementById("modalName"), modalCount = document.getElementById("modalCount"),
+    modalPrev = document.getElementById("modalPrev"), modalNext = document.getElementById("modalNext"),
+    modalClose = document.getElementById("modalClose");
+  var mState = { id: null, photos: [], idx: 0, trigger: null };
+  function openModal(id, idx, trigger) {
+    var photos = PHOTOS[id] || [];
+    if (!photos.length) return;
+    mState = { id: id, photos: photos, idx: idx, trigger: trigger || document.activeElement };
+    renderModal();
+    modalBackdrop.hidden = false;
+    document.body.style.overflow = "hidden";
+    modalClose.focus();
+    document.addEventListener("keydown", onModalKey);
+  }
+  function closeModal() {
+    modalBackdrop.hidden = true;
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", onModalKey);
+    if (mState.trigger && mState.trigger.focus) mState.trigger.focus();
+  }
+  function stepModal(d) {
+    var n = mState.photos.length;
+    mState.idx = (mState.idx + d + n) % n;
+    renderModal();
+  }
+  function renderModal() {
+    var photos = mState.photos, idx = mState.idx, s = byId[mState.id];
+    modalImg.src = photos[idx];
+    modalImg.alt = s.name + " — photo " + (idx + 1) + " of " + photos.length;
+    modalName.textContent = s.name;
+    modalCount.textContent = (idx + 1) + " / " + photos.length;
+    modalPrev.disabled = modalNext.disabled = photos.length < 2;
+    [1, -1].forEach(function (d) {
+      var i = (idx + d + photos.length) % photos.length, src = photos[i];
+      if (src) (new Image()).src = src;
+    });
+  }
+  function onModalKey(e) {
+    if (e.key === "Escape") { closeModal(); return; }
+    if (e.key === "ArrowLeft") { stepModal(-1); return; }
+    if (e.key === "ArrowRight") { stepModal(1); return; }
+    if (e.key === "Tab") {
+      var f = [modalPrev, modalNext, modalClose].filter(function (b) { return !b.disabled; });
+      var i = f.indexOf(document.activeElement);
+      e.preventDefault();
+      var j = e.shiftKey ? (i <= 0 ? f.length - 1 : i - 1) : (i === f.length - 1 ? 0 : i + 1);
+      f[j].focus();
+    }
+  }
+  modalPrev.addEventListener("click", function () { stepModal(-1); });
+  modalNext.addEventListener("click", function () { stepModal(1); });
+  modalClose.addEventListener("click", closeModal);
+  modalBackdrop.addEventListener("click", function (e) { if (e.target === modalBackdrop) closeModal(); });
+  var touchX = null;
+  modalBackdrop.addEventListener("touchstart", function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  modalBackdrop.addEventListener("touchend", function (e) {
+    if (touchX == null) return;
+    var dx = e.changedTouches[0].clientX - touchX; touchX = null;
+    if (Math.abs(dx) > 40) stepModal(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
   var svg = document.getElementById("map");
   el("rect", { x: 0, y: 0, width: W, height: H, fill: "var(--sea)" }, svg);
 
@@ -263,6 +394,7 @@
       el("circle", { "class": "disc", cx: p[0], cy: p[1], r: 9.5, fill: c }, grp);
       el("text", { "class": "num", x: p[0], y: p[1] + .5 }, grp, String(s.n));
     }
+    el("circle", { "class": "photo-dot", cx: p[0] + 7, cy: p[1] - 7, r: 3.2 }, grp);
     el("text", { "class": "lbl", x: p[0] + s.lbl[1], y: p[1] + s.lbl[2], "text-anchor": s.lbl[0] }, svg, s.name);
     nodes[s.id] = grp;
     grp.addEventListener("click", function () { select(s.id, true); });
@@ -299,14 +431,38 @@
     if (current) {
       nodes[current].classList.remove("on");
       rows[current].b.classList.remove("on"); rows[current].b.setAttribute("aria-expanded", "false"); rows[current].more.hidden = true;
+      if (rows[current].thumbs) rows[current].thumbs.hidden = true;
       current = null;
     }
     if (same && !scroll) return;
     current = id;
     nodes[id].classList.add("on");
     rows[id].b.classList.add("on"); rows[id].b.setAttribute("aria-expanded", "true"); rows[id].more.hidden = false;
+    if (rows[id].thumbs) rows[id].thumbs.hidden = false;
     if (scroll) rows[id].b.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
+
+  function onPhotos(id, photos) {
+    if (!photos.length) return;
+    nodes[id].classList.add("has-photos");
+    var strip = document.createElement("div");
+    strip.className = "thumbs";
+    strip.hidden = current !== id;
+    photos.forEach(function (src, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", byId[id].name + ", photo " + (i + 1) + " of " + photos.length);
+      var im = document.createElement("img");
+      im.src = src; im.loading = "lazy"; im.alt = "";
+      b.appendChild(im);
+      b.addEventListener("click", function () { openModal(id, i, b); });
+      strip.appendChild(b);
+    });
+    rows[id].more.insertAdjacentElement("afterend", strip);
+    rows[id].thumbs = strip;
+  }
+  STOPS.forEach(function (s) { probePhotos(s.id, function (photos) { onPhotos(s.id, photos); }); });
+
   select("takayama", false);
 })();
 </script>
