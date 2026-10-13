@@ -80,7 +80,7 @@
   .stop .disc { stroke: var(--land); stroke-width: 2; }
   .stop .num { fill: var(--on-mark); font: 700 11px var(--font-mono); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
   .stop .ring { fill: none; stroke: var(--ink); stroke-width: 1.6; opacity: 0; }
-  .stop .anchor { fill: none; stroke-width: 1.6; stroke-dasharray: 3 3; }
+  .stop .festival { fill: none; stroke-width: 1.6; stroke-dasharray: 3 3; }
   .stop:hover .ring, .stop:focus-visible .ring, .stop.on .ring { opacity: 1; }
   .stop:focus-visible .ring { stroke: var(--focus); stroke-width: 2.5; }
 
@@ -158,10 +158,10 @@
       <div class="key" aria-hidden="true">
         <span><svg viewBox="0 0 26 10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--ink-2)" stroke-width="2.6" stroke-linecap="round"/></svg>drive</span>
         <span><svg viewBox="0 0 26 10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--ink-2)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 6"/></svg>car ferry</span>
-        <span><svg viewBox="0 0 26 10"><circle cx="13" cy="5" r="4.5" fill="none" stroke="var(--ink-2)" stroke-width="1.6" stroke-dasharray="3 3"/></svg>festival anchor</span>
+        <span><svg viewBox="0 0 26 10"><circle cx="13" cy="5" r="4.5" fill="none" stroke="var(--ink-2)" stroke-width="1.6" stroke-dasharray="3 3"/></svg>festival</span>
         <span><svg viewBox="0 0 26 10"><circle cx="13" cy="5" r="3.2" fill="var(--ink-2)" stroke="var(--land)" stroke-width="1"/></svg>has photos</span>
       </div>
-      <p class="foot">Stops sit on the town centre; legs are straight lines between stops, not roads. Built 20 Sep 2026 from <code>DSTYD_Japan.md</code> — to change the plan, edit the <code>STOPS</code> list in this file. Coastline and Lake Biwa: Natural Earth (public domain).</p>
+      <p class="foot">Stops sit on the town centre; legs are straight lines between stops, not roads. Coastline and Lake Biwa: Natural Earth (public domain).</p>
     </div>
     <aside class="panel" id="panel" aria-label="Stops in order"></aside>
   </div>
@@ -199,40 +199,40 @@
 
   // lbl: [text-anchor, dx, dy] — label placement relative to the marker.
   var STOPS = [
-    { id: "nrt", n: "NRT", name: "Narita", jp: "成田", ph: "a", lat: 35.772, lon: 140.393, dates: "29 Sep · 21 Oct", stay: "Airport, rental car",
-      note: "Arrive 29 Sep 18:05 on JAL from Bangkok and pick up the car. Return it by 15:30 on 21 Oct; the flight to Bangkok leaves at 18:25.", lbl: ["start", 14, 18], kind: "air" },
-    { id: "katori", n: 1, name: "Katori", jp: "香取", ph: "a", lat: 35.887, lon: 140.50, dates: "29 Sep", stay: "Route-Inn",
+    { id: "nrt", n: "NRT", name: "Narita", jp: "成田", ph: "a", lat: 35.772, lon: 140.393, dates: "29 Sep · 21 Oct",
+      note: "Arrive from Bangkok on 29 Sep and pick up the rental car.", lbl: ["start", 14, 18], kind: "air" },
+    { id: "katori", n: 1, name: "Katori", jp: "香取", ph: "a", lat: 35.887, lon: 140.50, dates: "29 Sep",
       note: "First night, a short drive from the airport.", lbl: ["start", 14, -8] },
-    { id: "matsushima", n: 2, name: "Matsushima", jp: "松島", ph: "a", lat: 38.368, lon: 141.062, dates: "30 Sep – 1 Oct", stay: "Hotel Waraku",
-      note: "Coastal route north, about 7.5 hours. The 1 Oct free day is for the bay and Zuiganji.", lbl: ["end", -14, 4] },
-    { id: "sado1", n: 3, name: "Sado · Sado town", jp: "佐渡", ph: "a", lat: 38.07, lon: 138.44, dates: "2 – 3 Oct", stay: "Yasakabase",
-      note: "Drive to Niigata port for the 16:05 car ferry, arriving about 18:30. On 3 Oct: Taiko Center (¥3,000, 11:00 or 13:30, reserve 2–3 days ahead) or the gold mines.", lbl: ["end", -14, 4] },
-    { id: "sado2", n: 4, name: "Sado · Ogimachi", jp: "佐渡", ph: "a", lat: 37.815, lon: 138.28, dates: "4 Oct", stay: "Hanaya",
-      note: "Whichever of the gold mines and Taiko Center didn't happen on 3 Oct.", lbl: ["end", -14, 4] },
-    { id: "kanazawa", n: 5, name: "Kanazawa", jp: "金沢", ph: "a", lat: 36.561, lon: 136.656, dates: "5 Oct", stay: "KOKO Hotel Premier Korinbo",
-      note: "Ogi ferry at 10:35 to Naoetsu, then on to Kanazawa.", lbl: ["end", -14, 4] },
-    { id: "gokayama", n: 6, name: "Gokayama", jp: "五箇山", ph: "b", lat: 36.43, lon: 136.94, dates: "6 – 9 Oct", stay: "Akaokan (6–7), Gokasanso (8–9)",
-      note: "Onsen and old villages. Still to check: that the Tokai-Hokuriku Expressway through Gokayama is open in early October.", lbl: ["end", -14, 18] },
-    { id: "takayama", n: 7, name: "Takayama Matsuri", jp: "高山", ph: "b", lat: 36.146, lon: 137.252, dates: "9 – 10 Oct", stay: "No overnight — festival anchor",
-      note: "Both festival days. About an hour from Gokasanso on the 9th, then on to Mino after day 2.", lbl: ["start", 15, 4], anchor: true },
-    { id: "mino", n: 8, name: "Mino · Gifu", jp: "美濃", ph: "b", lat: 35.544, lon: 136.91, dates: "10 Oct", stay: "Machiya Hotel Oyado Baison",
-      note: "A machiya hotel after the festival's second day.", lbl: ["end", -14, 4] },
-    { id: "moriyama", n: 9, name: "Moriyama", jp: "守山", ph: "c", lat: 35.058, lon: 135.995, dates: "11 Oct", stay: "Hotel Biwako Plaza",
-      note: "Kyoto environs by way of Lake Biwa. Central Kyoto is skipped on purpose — visited in 2024.", lbl: ["end", -14, 4] },
-    { id: "nara", n: 10, name: "Nara", jp: "奈良", ph: "c", lat: 34.685, lon: 135.805, dates: "12 – 13 Oct", stay: "Nara Royal Hotel or Novotel Nara",
-      note: "Two holds; pick one before 10 Oct. Tōdai-ji and the deer park.", lbl: ["end", -14, 4] },
-    { id: "nosegawa", n: 11, name: "Nosegawa", jp: "野迫川", ph: "c", lat: 34.06, lon: 135.62, dates: "14 Oct", stay: "Ino Yado",
-      note: "The valley below Kōyasan. Kōyasan itself was fully booked.", lbl: ["end", -14, 4] },
-    { id: "shingu", n: 12, name: "Shingu", jp: "新宮", ph: "c", lat: 33.7245, lon: 135.993, dates: "15 Oct", stay: "Hotel Newpalace",
-      note: "About 4 hours on mountain roads. Nachi Waterfall, Kumano Nachi Taisha, Daimon-zaka.", lbl: ["end", -14, 4] },
-    { id: "ise", n: 13, name: "Ise · Futami", jp: "伊勢", ph: "c", lat: 34.51, lon: 136.785, dates: "16 – 17 Oct", stay: "Kirisame Magic Shop",
-      note: "Coastal route north from Shingu. On 17 Oct, Ise Jingū properly — Naiku and Geku, no rush.", lbl: ["start", 14, 4] },
-    { id: "iida", n: 14, name: "Iida", jp: "飯田", ph: "d", lat: 35.515, lon: 137.8215, dates: "18 Oct", stay: "Super Hotel Nagano Iida Inter",
-      note: "Up the Ina Valley. Splits the 6.5–8 hour Ise–Tomioka drive roughly in half.", lbl: ["start", 14, 20] },
-    { id: "tomioka", n: 15, name: "Tomioka", jp: "富岡", ph: "d", lat: 36.259, lon: 138.889, dates: "19 Oct", stay: "Myogi Green Hotel & Terrace",
-      note: "The silk mill and its surroundings — a real stop, not just transit.", lbl: ["middle", 0, -16] },
-    { id: "shimotsuma", n: 16, name: "Shimotsuma", jp: "下妻", ph: "d", lat: 36.184, lon: 139.9665, dates: "20 Oct", stay: "Hotel Route-Inn Shimotsuma",
-      note: "Outer bypass expressways, clear of central Tokyo. Mt. Tsukuba is close.", lbl: ["middle", 0, -16] }
+    { id: "matsushima", n: 2, name: "Matsushima", jp: "松島", ph: "a", lat: 38.368, lon: 141.062, dates: "30 Sep – 1 Oct",
+      note: "A long coastal drive north to Matsushima Bay and its pine-covered islets, and Zuiganji temple.", lbl: ["end", -14, 4] },
+    { id: "sado1", n: 3, name: "Sado · Sado town", jp: "佐渡", ph: "a", lat: 38.07, lon: 138.44, dates: "2 – 3 Oct",
+      note: "Car ferry from Niigata across to Sado Island. Two local festivals, and a big scenic loop around the whole northern end of the island, out to its very tip.", lbl: ["end", -14, 4] },
+    { id: "sado2", n: 4, name: "Sado · Ogimachi", jp: "佐渡", ph: "a", lat: 37.815, lon: 138.28, dates: "4 Oct",
+      note: "Taiko drumming and the gold mine on the way down to Ogimachi, at the southern end of the island.", lbl: ["end", -14, 4] },
+    { id: "kanazawa", n: 5, name: "Kanazawa", jp: "金沢", ph: "a", lat: 36.561, lon: 136.656, dates: "5 Oct",
+      note: "Ferry back to the mainland, then on to Kanazawa: its castle and gardens.", lbl: ["end", -14, 4] },
+    { id: "gokayama", n: 6, name: "Gokayama", jp: "五箇山", ph: "b", lat: 36.43, lon: 136.94, dates: "6 – 9 Oct",
+      note: "Mountain villages of steep-roofed thatched farmhouses, and two different onsens.", lbl: ["end", -14, 18] },
+    { id: "takayama", n: 7, name: "Takayama Matsuri", jp: "高山", ph: "b", lat: 36.146, lon: 137.252, dates: "9 – 10 Oct",
+      note: "Both days of the Takayama autumn festival.", lbl: ["start", 15, 4], festival: true },
+    { id: "mino", n: 8, name: "Mino · Gifu", jp: "美濃", ph: "b", lat: 35.544, lon: 136.91, dates: "10 Oct",
+      note: "A night in an old merchant townhouse, remodeled as a boutique hotel.", lbl: ["end", -14, 4] },
+    { id: "moriyama", n: 9, name: "Moriyama", jp: "守山", ph: "c", lat: 35.058, lon: 135.995, dates: "11 Oct",
+      note: "Lake Biwa, and the next morning up Mount Hiei to Enryaku-ji, the Buddhist temple complex on its summit.", lbl: ["end", -14, 4] },
+    { id: "nara", n: 10, name: "Nara", jp: "奈良", ph: "c", lat: 34.685, lon: 135.805, dates: "12 – 14 Oct",
+      note: "Three nights. Tōdai-ji's Great Buddha and the deer park.", lbl: ["end", -14, 4] },
+    { id: "koyasan", n: 11, name: "Kōyasan", jp: "高野山", ph: "c", lat: 34.213, lon: 135.585, dates: "15 Oct",
+      note: "A stop on the mountain drive south: Kōyasan, the centre of Shingon Buddhism, with the Okunoin cemetery and the Danjō Garan temple complex.", lbl: ["end", -14, 4] },
+    { id: "shingu", n: 12, name: "Shingu", jp: "新宮", ph: "c", lat: 33.7245, lon: 135.993, dates: "15 Oct",
+      note: "Down to the Kumano coast. Next morning: Nachi Waterfall, Kumano Nachi Taisha shrine and the Daimon-zaka stone stairway.", lbl: ["end", -14, 4] },
+    { id: "ise", n: 13, name: "Ise · Futami", jp: "伊勢", ph: "c", lat: 34.51, lon: 136.785, dates: "16 – 17 Oct",
+      note: "Up the coast to Ise for two nights, with a full, unhurried day at Ise Jingū — Naikū and Gekū.", lbl: ["start", 14, 4] },
+    { id: "iida", n: 14, name: "Iida", jp: "飯田", ph: "d", lat: 35.515, lon: 137.8215, dates: "18 Oct",
+      note: "Starting the trip back, up the Ina Valley between two ranges of the Japanese Alps.", lbl: ["start", 14, 20] },
+    { id: "tomioka", n: 15, name: "Tomioka", jp: "富岡", ph: "d", lat: 36.259, lon: 138.889, dates: "19 Oct",
+      note: "The Tomioka silk mill, a World Heritage site from Japan's early industrial era.", lbl: ["middle", 0, -16] },
+    { id: "shimotsuma", n: 16, name: "Shimotsuma", jp: "下妻", ph: "d", lat: 36.184, lon: 139.9665, dates: "20 Oct",
+      note: "Last night, near Mt. Tsukuba.", lbl: ["middle", 0, -16] }
   ];
   var TRANSIT = {
     niigata: { name: "Niigata port", lat: 37.942, lon: 139.097, ph: "a", lbl: ["start", 9, 4] },
@@ -240,7 +240,7 @@
   };
   // Drive order: [node, "f" if the leg into it is a car ferry, phase override for the leg].
   var ROUTE = [["nrt"], ["katori"], ["matsushima"], ["niigata"], ["sado1", "f"], ["sado2"], ["naoetsu", "f"], ["kanazawa"],
-    ["gokayama"], ["takayama"], ["mino"], ["moriyama"], ["nara"], ["nosegawa"], ["shingu"], ["ise"], ["iida"], ["tomioka"], ["shimotsuma"], ["nrt", "", "d"]];
+    ["gokayama"], ["takayama"], ["mino"], ["moriyama"], ["nara"], ["koyasan"], ["shingu"], ["ise"], ["iida"], ["tomioka"], ["shimotsuma"], ["nrt", "", "d"]];
 
   var byId = {};
   STOPS.forEach(function (s) { byId[s.id] = s; });
@@ -386,7 +386,7 @@
     var p = px(s), c = col(s.ph);
     var grp = el("g", { "class": "stop", tabindex: 0, role: "button", "data-id": s.id,
       "aria-label": (s.kind === "air" ? "" : "Stop " + s.n + ": ") + s.name + ", " + s.dates }, svg);
-    if (s.anchor) el("circle", { "class": "anchor", cx: p[0], cy: p[1], r: 16.5, stroke: c }, grp);
+    if (s.festival) el("circle", { "class": "festival", cx: p[0], cy: p[1], r: 16.5, stroke: c }, grp);
     el("circle", { "class": "ring", cx: p[0], cy: p[1], r: 13.5 }, grp);
     if (s.kind === "air") {
       el("rect", { "class": "disc", x: p[0] - 6, y: p[1] - 6, width: 12, height: 12, fill: c, transform: "rotate(45 " + p[0] + " " + p[1] + ")" }, grp);
@@ -418,7 +418,7 @@
     b.type = "button"; b.className = "row"; b.style.setProperty("--c", col(s.ph)); b.setAttribute("aria-expanded", "false");
     b.innerHTML = '<span class="badge' + (s.kind === "air" ? " nrt" : "") + '"><span>' + (s.kind === "air" ? "✈" : s.n) + '</span></span>' +
       '<span><span class="head"><span class="nm">' + s.name + '</span><span class="jp">' + s.jp + '</span><span class="dt">' + s.dates + '</span></span>' +
-      '<span class="stay">' + s.stay + '</span><span class="more" hidden></span></span>';
+      (s.stay ? '<span class="stay">' + s.stay + '</span>' : '') + '<span class="more" hidden></span></span>';
     b.querySelector(".more").textContent = s.note;
     li.appendChild(b); list.appendChild(li);
     rows[s.id] = { b: b, more: b.querySelector(".more") };
