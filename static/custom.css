@@ -1,0 +1,111 @@
+/* Computing Place tiles - 2 across */
+.cp-tiles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 240px));
+    gap: 1em;
+    margin: 2em 0;
+    justify-content: center;
+}
+
+.cp-tile {
+    max-height: 160px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f9f9f9;
+    border: 2px solid #ddd;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    text-decoration: none;
+    /* switched to grid so the image can take the available space and the info row keeps its natural height */
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    justify-items: center;
+}
+
+.cp-tile img {
+    /* make the image fill the tile's image area and keep its aspect ratio */
+    width: 100%;
+    height: 100%;
+    min-height: 0;       /* allow the grid item to shrink below intrinsic size */
+    display: block;
+    object-fit: contain; /* use 'cover' if you prefer cropping rather than letterboxing */
+}
+
+.cp-tile-info {
+    padding: 0.5em 0 0.8em 0;
+}
+
+.cp-tile-label {
+    display: block;
+    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1em;
+    color: #333;
+}
+
+.cp-tile-active {
+    border-color: #4a9c5d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.cp-tile-active:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    background-color: #f9f9f9;
+    color: inherit;
+}
+
+
+.cp-tile-disabled {
+    opacity: 0.7;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 600px) {
+    .cp-tiles {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* EDOP summary modal */
+.edop-modal {
+    position: relative;
+    width: min(820px, 92vw);
+    max-height: 85vh;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.edop-modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.edop-modal-close {
+    position: absolute;
+    top: 0.2em;
+    right: 0.4em;
+    z-index: 1;
+    background: none;
+    border: none;
+    font-size: 1.9em;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+}
+
+.edop-modal-close:hover {
+    color: #000;
+}
+
+.edop-modal-body {
+    padding: 2.6em 2.4em 2em;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.edop-modal-body .entry-title {
+    margin-top: 0;
+}
