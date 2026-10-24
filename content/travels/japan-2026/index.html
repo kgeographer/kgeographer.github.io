@@ -111,12 +111,13 @@
   .more { display: block; font-size: 13.5px; color: var(--ink); margin: 4px 0 2px; max-width: 60ch; }
   .more[hidden] { display: none; }
 
-  .photo-dot { fill: var(--on-mark); stroke: var(--ink); stroke-width: 1.1; opacity: 0; }
-  .has-photos .photo-dot { opacity: 1; }
-  @media (prefers-reduced-motion: reduce) { .photo-dot { transition: none; } }
-
-  .thumbs { display: flex; gap: 6px; margin: 8px 0 2px; overflow-x: auto; }
+  .rowbody { min-width: 0; }
+  .thumbs { display: flex; gap: 6px; margin: 8px 0 2px; overflow-x: auto;
+    scrollbar-width: thin; scrollbar-color: var(--ink-3) transparent; }
   .thumbs[hidden] { display: none; }
+  .thumbs::-webkit-scrollbar { height: 6px; }
+  .thumbs::-webkit-scrollbar-track { background: transparent; }
+  .thumbs::-webkit-scrollbar-thumb { background: var(--ink-3); border-radius: 3px; }
   .thumbs button { flex: 0 0 auto; width: 56px; height: 56px; padding: 0; border: 1px solid var(--rule);
     border-radius: 4px; overflow: hidden; background: var(--land); cursor: pointer; }
   .thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -159,7 +160,6 @@
         <span><svg viewBox="0 0 26 10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--ink-2)" stroke-width="2.6" stroke-linecap="round"/></svg>drive</span>
         <span><svg viewBox="0 0 26 10"><line x1="1" y1="5" x2="25" y2="5" stroke="var(--ink-2)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 6"/></svg>car ferry</span>
         <span><svg viewBox="0 0 26 10"><circle cx="13" cy="5" r="4.5" fill="none" stroke="var(--ink-2)" stroke-width="1.6" stroke-dasharray="3 3"/></svg>festival</span>
-        <span><svg viewBox="0 0 26 10"><circle cx="13" cy="5" r="3.2" fill="var(--ink-2)" stroke="var(--land)" stroke-width="1"/></svg>has photos</span>
       </div>
       <p class="foot">Stops sit on the town centre; legs are straight lines between stops, not roads. Coastline and Lake Biwa: Natural Earth (public domain).</p>
     </div>
@@ -221,8 +221,8 @@
       note: "Lake Biwa, and the next morning up Mount Hiei to Enryaku-ji, the Buddhist temple complex on its summit.", lbl: ["end", -14, 4] },
     { id: "nara", n: 10, name: "Nara", jp: "奈良", ph: "c", lat: 34.685, lon: 135.805, dates: "12 – 14 Oct",
       note: "Three nights. Tōdai-ji's Great Buddha and the deer park.", lbl: ["end", -14, 4] },
-    { id: "koyasan", n: 11, name: "Kōyasan", jp: "高野山", ph: "c", lat: 34.213, lon: 135.585, dates: "15 Oct",
-      note: "A stop on the mountain drive south: Kōyasan, the centre of Shingon Buddhism, with the Okunoin cemetery and the Danjō Garan temple complex.", lbl: ["end", -14, 4] },
+    { id: "hongu", n: 11, name: "Hongu", jp: "本宮", ph: "c", lat: 33.836, lon: 135.773, dates: "15 Oct",
+      note: "A brief stop at the Kumano Hongū Heritage Center on the way to Shingu.", lbl: ["end", -14, 4] },
     { id: "shingu", n: 12, name: "Shingu", jp: "新宮", ph: "c", lat: 33.7245, lon: 135.993, dates: "15 Oct",
       note: "Down to the Kumano coast. Next morning: Nachi Waterfall, Kumano Nachi Taisha shrine and the Daimon-zaka stone stairway.", lbl: ["end", -14, 4] },
     { id: "ise", n: 13, name: "Ise · Futami", jp: "伊勢", ph: "c", lat: 34.51, lon: 136.785, dates: "16 – 17 Oct",
@@ -240,7 +240,7 @@
   };
   // Drive order: [node, "f" if the leg into it is a car ferry, phase override for the leg].
   var ROUTE = [["nrt"], ["katori"], ["matsushima"], ["niigata"], ["sado1", "f"], ["sado2"], ["naoetsu", "f"], ["kanazawa"],
-    ["gokayama"], ["takayama"], ["mino"], ["moriyama"], ["nara"], ["koyasan"], ["shingu"], ["ise"], ["iida"], ["tomioka"], ["shimotsuma"], ["nrt", "", "d"]];
+    ["gokayama"], ["takayama"], ["mino"], ["moriyama"], ["nara"], ["hongu"], ["shingu"], ["ise"], ["iida"], ["tomioka"], ["shimotsuma"], ["nrt", "", "d"]];
 
   var byId = {};
   STOPS.forEach(function (s) { byId[s.id] = s; });
@@ -394,7 +394,6 @@
       el("circle", { "class": "disc", cx: p[0], cy: p[1], r: 9.5, fill: c }, grp);
       el("text", { "class": "num", x: p[0], y: p[1] + .5 }, grp, String(s.n));
     }
-    el("circle", { "class": "photo-dot", cx: p[0] + 7, cy: p[1] - 7, r: 3.2 }, grp);
     el("text", { "class": "lbl", x: p[0] + s.lbl[1], y: p[1] + s.lbl[2], "text-anchor": s.lbl[0] }, svg, s.name);
     nodes[s.id] = grp;
     grp.addEventListener("click", function () { select(s.id, true); });
@@ -417,7 +416,7 @@
     var b = document.createElement("button");
     b.type = "button"; b.className = "row"; b.style.setProperty("--c", col(s.ph)); b.setAttribute("aria-expanded", "false");
     b.innerHTML = '<span class="badge' + (s.kind === "air" ? " nrt" : "") + '"><span>' + (s.kind === "air" ? "✈" : s.n) + '</span></span>' +
-      '<span><span class="head"><span class="nm">' + s.name + '</span><span class="jp">' + s.jp + '</span><span class="dt">' + s.dates + '</span></span>' +
+      '<span class="rowbody"><span class="head"><span class="nm">' + s.name + '</span><span class="jp">' + s.jp + '</span><span class="dt">' + s.dates + '</span></span>' +
       (s.stay ? '<span class="stay">' + s.stay + '</span>' : '') + '<span class="more" hidden></span></span>';
     b.querySelector(".more").textContent = s.note;
     li.appendChild(b); list.appendChild(li);
@@ -439,12 +438,15 @@
     nodes[id].classList.add("on");
     rows[id].b.classList.add("on"); rows[id].b.setAttribute("aria-expanded", "true"); rows[id].more.hidden = false;
     if (rows[id].thumbs) rows[id].thumbs.hidden = false;
+    else if (!rows[id].probed) {
+      rows[id].probed = true;
+      probePhotos(id, function (photos) { onPhotos(id, photos); });
+    }
     if (scroll) rows[id].b.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }
 
   function onPhotos(id, photos) {
     if (!photos.length) return;
-    nodes[id].classList.add("has-photos");
     var strip = document.createElement("div");
     strip.className = "thumbs";
     strip.hidden = current !== id;
@@ -461,7 +463,6 @@
     rows[id].more.insertAdjacentElement("afterend", strip);
     rows[id].thumbs = strip;
   }
-  STOPS.forEach(function (s) { probePhotos(s.id, function (photos) { onPhotos(s.id, photos); }); });
 
   select("takayama", false);
 })();
