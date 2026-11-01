@@ -29,7 +29,7 @@ echo "🔁 Switching to gh-pages branch..."
 git checkout gh-pages
 
 echo "🧹 Cleaning gh-pages working tree..."
-find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name '.nojekyll' ! -name 'CNAME' ! -name 'memory' -exec rm -rf {} +
+find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name '.nojekyll' ! -name 'CNAME' ! -name 'memory' ! -name 'photos.log' -exec rm -rf {} +
 
 echo "♻️  Copying built site from temp..."
 cp -r "$TMPDIR"/* ./
