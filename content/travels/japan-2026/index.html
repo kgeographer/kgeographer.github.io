@@ -261,24 +261,38 @@
   // are the "id" field in STOPS above. Probed lazily per marker on load — nothing to
   // edit here when photos are added or removed.
   var PHOTO_MAX = 40;
+  var PHOTO_BATCH = 8; // probe this many indices concurrently per round
   var PHOTOS = {};
   // Cache-bust per page load: fixed timestamp, applied to every photo URL below,
   // so a renamed/renumbered/deleted file can never surface stale cached content —
   // each fresh load re-checks everything for real.
   var CACHE_BUST = "?v=" + Date.now();
   function probePhotos(id, done) {
-    var found = [], i = 0;
-    (function next() {
-      i++;
-      if (i > PHOTO_MAX) return finish();
-      var n = i < 10 ? "0" + i : String(i);
-      var src = "photos/" + id + "_" + n + ".jpg";
-      var img = new Image();
-      img.onload = function () { found.push(src + CACHE_BUST); next(); };
-      img.onerror = finish;
-      img.src = src + CACHE_BUST;
-    })();
+    var found = [];
+    function loadOne(i) {
+      return new Promise(function (resolve) {
+        var n = i < 10 ? "0" + i : String(i);
+        var src = "photos/" + id + "_" + n + ".jpg";
+        var img = new Image();
+        img.onload = function () { resolve(src + CACHE_BUST); };
+        img.onerror = function () { resolve(null); };
+        img.src = src + CACHE_BUST;
+      });
+    }
+    function nextBatch(start) {
+      if (start > PHOTO_MAX) return finish();
+      var batch = [];
+      for (var i = start; i < start + PHOTO_BATCH && i <= PHOTO_MAX; i++) batch.push(i);
+      Promise.all(batch.map(loadOne)).then(function (results) {
+        for (var j = 0; j < results.length; j++) {
+          if (results[j] == null) return finish();
+          found.push(results[j]);
+        }
+        nextBatch(start + PHOTO_BATCH);
+      });
+    }
     function finish() { PHOTOS[id] = found; done(found); }
+    nextBatch(1);
   }
 
   var modalBackdrop = document.getElementById("modalBackdrop"), modalImg = document.getElementById("modalImg"),
