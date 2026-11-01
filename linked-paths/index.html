@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Linked Paths</title>
+        <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/static/css/custom.css" type="text/css" />
+        <link rel="stylesheet" href="/static/custom.css" type="text/css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y48JVZT7PM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Y48JVZT7PM');
+    </script>
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <h1>
+                <a href="/"><img src="/images/roundabout.png" alt="KGEO Research logo" height="48" style="vertical-align:bottom;">
+                  kgeographer <strong>Karl Grossner, PhD</strong></a>
+            </h1>
+            <nav>
+                <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/portfolio/">Portfolio</a></li>
+                        <li><a href="/computing-place/">Computing Place</a></li>
+                        <li><a href="/category/research/">Blog</a></li>
+                        <li><a href="/category/personal/">Personal</a></li>
+                        <li><a href="/cv/">CV</a></li>
+                </ul>
+            </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Linked Paths</h1>
+    
+    <h2>Screenshots</h2>
+<div class="project-screens">
+  <figure>
+    <a href="/images/projects/linked-paths-2.png" class="modal-image">
+      <img src="/images/projects/linked-paths-2.png"
+           alt="Linked Paths map view with a historical route layer active" width="240">
+    </a>
+    <figcaption>Map view</figcaption>
+  </figure>
+  <figure>
+    <a href="/images/projects/linked-paths-3.png" class="modal-image">
+      <img src="/images/projects/linked-paths-3.png"
+           alt="Linked Paths network graph, detached from geography" width="240">
+    </a>
+    <figcaption>Network graph view</figcaption>
+  </figure>
+  <figure>
+    <a href="/images/projects/linked-paths-4.png" class="modal-image">
+      <img src="/images/projects/linked-paths-4.png"
+           alt="Xuanzang journey dataset with an event timeline" width="240">
+    </a>
+    <figcaption>Journey dataset with event timeline</figcaption>
+  </figure>
+</div>
+<hr />
+<h2>Platform</h2>
+<p><a href="http://linkedpaths.kgeographer.org" target="_blank">Linked Paths</a></p>
+<p><a href="https://github.com/kgeographer/linked-paths" target="_blank">GitHub repository</a></p>
+<h2>Organization</h2>
+<p>KGEO Research (that's me) — personal research prototype</p>
+<h2>Roles</h2>
+<p>Creator; Sole Developer</p>
+<h2>Technologies</h2>
+<p>Mapbox.js (Leaflet); D3.js (timeline, histogram, force-directed graph); Elasticsearch + Typeahead/Bloodhound; Bootstrap; jQuery; Handlebars; Grunt/Browserify/Babel; Python (data build); GeoJSON-T</p>
+<hr />
+<h2>Description</h2>
+<p><strong>Linked Paths</strong> is a personal research prototype, built in 2017–18, for visualizing and analyzing historical geographic movement. It was designed specifically to test and demonstrate <strong>GeoJSON-T</strong>, an experimental extension to GeoJSON I was developing for representing temporal movement data and the records of historical gazetteers — the same format that went on to mature into the <strong>Linked Places Format (LPF)</strong>, now the core data model of the World Historical Gazetteer.</p>
+<p>The application organizes historical datasets into three distinct categories of movement: <strong>journeys</strong> (individual travel, such as the 4th-century Bordeaux Pilgrim and Xuanzang's 7th-century pilgrimage to India), <strong>flows</strong> (repeated movement between nodes, such as the Venetian Incanto galley trade of 1283–1453), and <strong>historical routes</strong> (named route systems, including the Ming Courier Routes and Old World Trade Routes). Each dataset type drives its own tailored timeline — an event timeline, a period timeline, or a histogram — built with D3.js alongside a Mapbox/Leaflet map, with place search powered by a local Elasticsearch index.</p>
+<p>GeoJSON-T's structure means a flow or network's relations can be read independent of its geography — a connection graph of what links to what, not just a map of where. The app demonstrates this directly: pick a flow dataset, such as the Venetian Incanto trade, and it renders as a force-directed graph, detached entirely from the map. For a solo side project built with 2017-era tooling (Grunt, Browserify, Mapbox.js v3), it previewed analytical capabilities that wouldn't become standard in historical GIS tools for years afterward.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://github.com/kgeographer">Github</a></li>
+                            <li><a href="https://whgazetteer">World Historical Gazetteer</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://bsky.app/profile/kgeographer.bsky.social">@kgeographer on Bluesky</a></li>
+                            <li><a href="https://mas.to/@kgeographer">@kgeographer on Mastodon</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<!-- Image modal -->
+<div id="image-modal" class="image-modal" aria-hidden="true">
+  <div class="image-modal-inner">
+    <button class="image-modal-close" aria-label="Close image">&times;</button>
+    <img id="image-modal-img" alt="">
+  </div>
+</div>
+<script>
+  (function () {
+    var modal = document.getElementById('image-modal');
+    if (!modal) return;
+
+    var modalImg = document.getElementById('image-modal-img');
+    var closeBtn = modal.querySelector('.image-modal-close');
+
+    function openModal(src, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+
+    // Click on any <a class="modal-image">
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a.modal-image');
+      if (!link) return;
+
+      e.preventDefault();
+      var img = link.querySelector('img');
+      openModal(link.href, img ? img.alt : '');
+    });
+
+    // Click on the X button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeModal();
+      });
+    }
+
+    // Click on the dark background (outside the inner box)
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // ESC key closes modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      }
+    });
+  })();
+</script>
+</body>
+</html>
