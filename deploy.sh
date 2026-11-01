@@ -36,6 +36,7 @@ cp -r "$TMPDIR"/* ./
 
 echo "📂 Staging and committing..."
 grep -qxF 'memory/' .gitignore 2>/dev/null || echo "memory/" >> .gitignore
+grep -qxF 'photos.log' .gitignore 2>/dev/null || echo "photos.log" >> .gitignore
 git add -A
 git diff --cached --quiet || git commit -m "Deploy: $COMMIT_MSG"
 
