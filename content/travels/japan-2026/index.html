@@ -214,7 +214,7 @@
     { id: "gokayama", n: 6, name: "Gokayama", jp: "五箇山", ph: "b", lat: 36.43, lon: 136.94, dates: "6 – 9 Oct",
       note: "Mountain villages of steep-roofed thatched farmhouses, and two different onsens.", lbl: ["end", -14, 18] },
     { id: "takayama", n: 7, name: "Takayama Matsuri", jp: "高山", ph: "b", lat: 36.146, lon: 137.252, dates: "9 – 10 Oct",
-      note: "Both days of the Takayama autumn festival.", lbl: ["start", 15, 4], festival: true },
+      note: "Takayama autumn festival.", lbl: ["start", 15, 4], festival: true },
     { id: "mino", n: 8, name: "Mino · Gifu", jp: "美濃", ph: "b", lat: 35.544, lon: 136.91, dates: "10 Oct",
       note: "A night in an old merchant townhouse, remodeled as a boutique hotel.", lbl: ["end", -14, 4] },
     { id: "moriyama", n: 9, name: "Moriyama", jp: "守山", ph: "c", lat: 35.058, lon: 135.995, dates: "11 Oct",
@@ -262,16 +262,21 @@
   // edit here when photos are added or removed.
   var PHOTO_MAX = 40;
   var PHOTOS = {};
+  // Cache-bust per page load: fixed timestamp, applied to every photo URL below,
+  // so a renamed/renumbered/deleted file can never surface stale cached content —
+  // each fresh load re-checks everything for real.
+  var CACHE_BUST = "?v=" + Date.now();
   function probePhotos(id, done) {
     var found = [], i = 0;
     (function next() {
       i++;
       if (i > PHOTO_MAX) return finish();
       var n = i < 10 ? "0" + i : String(i);
+      var src = "photos/" + id + "_" + n + ".jpg";
       var img = new Image();
-      img.onload = function () { found.push("photos/" + id + "_" + n + ".jpg"); next(); };
+      img.onload = function () { found.push(src + CACHE_BUST); next(); };
       img.onerror = finish;
-      img.src = "photos/" + id + "_" + n + ".jpg";
+      img.src = src + CACHE_BUST;
     })();
     function finish() { PHOTOS[id] = found; done(found); }
   }

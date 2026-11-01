@@ -21,6 +21,13 @@ Slug: linked-paths
     </a>
     <figcaption>Network graph view</figcaption>
   </figure>
+  <figure>
+    <a href="/images/projects/linked-paths-4.png" class="modal-image">
+      <img src="/images/projects/linked-paths-4.png"
+           alt="Xuanzang journey dataset with an event timeline" width="240">
+    </a>
+    <figcaption>Journey dataset with event timeline</figcaption>
+  </figure>
 </div>
 ---
 
