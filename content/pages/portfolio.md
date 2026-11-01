@@ -73,6 +73,14 @@ A landmark digital reconstruction of movement and transport across the Roman wor
 ---
 
 
+<img src="/images/projects/linked-paths-1.png" alt="Linked Paths home page" height="150" class="portfolio-thumb">
+### Linked Paths (<a href="http://linkedpaths.kgeographer.org" target="_blank">web site</a>)
+
+A personal research prototype (2017–18) for visualizing historical geographic movement — journeys, recurring trade flows, and named route systems — built to test and demonstrate GeoJSON-T, the temporal-GeoJSON format that matured into the Linked Places Format (LPF) now underlying the World Historical Gazetteer. A distinctive feature demonstrates that GeoJSON-T's structure supports reading a network purely as its relations — what links to what — independent of geography.  
+[Read more →](/linked-paths/)
+---
+
+
 <img src="/images/projects/teachspatial-1.png" alt="TeachSpatial home page (retired)" height="150" class="portfolio-thumb">
 <h2>TeachSpatial: Resources for Spatial Thinking and Learning</h2>  
 
